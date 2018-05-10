@@ -9,8 +9,10 @@
 		</figure>
 		<div class="entry__cms">
 			<header class="entry__header">
-				<h1 class="entry__title"><?php the_title(); ?></h1>
-				<time class="entry__date"><span class="entypo-clock"></span><?php the_date(); ?></time>
+				<h1 class="entry__title"><?php esc_html_e( get_the_title() ); ?></h1>
+				<time class="entry__date">
+					<span class="entypo-clock"></span><?php esc_html_e( get_the_date() ); ?>
+				</time>
 			</header>
 			<?php the_content(); ?>
 			<div class="entry__tags"><?php the_tags( '<span class="entypo-archive"></span> ', ' / ' ); ?></div>
@@ -20,8 +22,8 @@
 				$next_post = get_next_post();
 				$prev_post = get_previous_post();
 
-				// Next Post
-				if ( empty( $next_post ) === false ) :
+				/** Next Post */
+				if ( false === empty( $next_post ) ) :
 			?>
 
 			<span class="entry__nav-link entry__nav-link--next">
@@ -32,8 +34,8 @@
 			<?php
 				endif;
 
-				// Previous Post
-				if ( $prev_post ) :
+				/** Previous Post */
+				if ( false === empty( $prev_post ) ) :
 			?>
 
 			<span class="entry__nav-link entry__nav-link--prev">

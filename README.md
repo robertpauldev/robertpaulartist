@@ -1,2 +1,2 @@
 # robertpaulartist
-The WordPress theme for Robert Paul - Artist.
+The WordPress theme for **Robert Paul - Artist.**

@@ -1,60 +1,77 @@
 <?php
 
-/*****************
-Facebook OpenGraph
-*****************/
-
+/**
+ * Returns Facebook OpenGraph data based on data type.
+ *
+ * @param string $type Sets which OpenGraph property to define.
+ * @return void
+ */
 function rpa_og( $type = null ) {
 
-	// URL
-	if ( $type === 'url' ) {
-		$og = get_the_permalink();
+	/** URL */
+	if ( 'url' === $type ) {
+		echo esc_url( get_the_permalink() );
 	}
 
-	// Type
-	elseif ( $type === 'type' ) {
-		$og = 'article';
+	/** Type */
+	elseif ( 'type' === $type ) {
+		echo 'article';
 	}
 
-	// Title
-	elseif ( $type === 'title' ) {
-		$og = ( is_single() ? get_the_title() : get_bloginfo( 'name' ) . ' : ' . get_the_title() );
+	/** Title */
+	elseif ( 'title' === $type ) {
+		echo is_single() ? esc_html( get_the_title() ) : esc_html( get_bloginfo( 'name' ) ) . ' : ' . ( get_the_title() );
 	}
 
-	// Description
-	elseif ( $type === 'description' ) {
-		$og = ( is_singular( 'post' ) ? get_the_excerpt() : get_the_title() );
+	/** Description */
+	elseif ( 'description' === $type ) {
+		echo is_singular( 'post' ) ? esc_html( get_the_excerpt() ) : esc_html( get_the_title() );
 	}
 
-	// Image
-	elseif ( $type === 'image' ) {
-		$og = ( is_single() ? get_the_post_thumbnail_url() : RPA_DIRECTORY_URI . '/assets/images/og.jpg' );
+	/** Image */
+	elseif ( 'image' === $type ) {
+		echo is_single() ? esc_url( get_the_post_thumbnail_url() ) : RPA_DIRECTORY_URI . '/assets/images/og.jpg';
 	}
-
-	echo $og;
 }
 
-/*********
-Navigation
-*********/
+/**
+ * Returns a formatted Facebook URL icon link.
+ *
+ * @return string Returns a formatted Facebook URL string.
+ */
+function rpa_facebook() {
+	return '<a class="icon--facebook entypo-facebook-circled" href="' . esc_url( 'https://www.facebook.com/rpaul.artist/' ) . '"></a>';
+}
 
-// Navigation > Register
+/**
+ * Registers the 'navbar' menu.
+ *
+ * @return void
+ */
 function rpa_navigation() {
 	register_nav_menu( 'navbar', 'Nav Bar' );
 }
 add_action( 'init', 'rpa_navigation' );
 
-// Navigation > Add static links
+/**
+ * Returns a custom nav menu structure, incorporating a Facebook icon. 
+ *
+ * @return string Returns a HTML string.
+ */
 function rpa_nav_menu() {
-	$html = '<ul class="%2$s">';
-		$html .= '%3$s';
-		$html .= '<li>' . rpa_facebook() . '</li>';
-	$html .= '</ul>';
-
-	return $html;
+	return '<ul class="%2$s">%3$s <li>' . rpa_facebook() . '</li></ul>';
 }
 
-// Navigation > Setup
+/**
+ * Displays the 'navbar' navigation menu.
+ *
+ * @uses rpa_nav_menu() for the nav HTML structure.
+ * 
+ * @param string $id Define the menu ID to use.
+ * @param string $parent_id Define the parent ID attribute.
+ * @param string $child_id Define the child ID attribute.
+ * @return void
+ */
 function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
 	wp_nav_menu( array(
 		'menu'            => $id,
@@ -67,7 +84,13 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
 	) );
 }
 
-// Projects
+/**
+ * Get posts of the Project post type.
+ *
+ * @param integer $count Set the post count of the query.
+ * @param string $tag Filter projects by tag.
+ * @return array Returns a WP_Query array object.
+ */
 function rpa_get_projects( $count = 10, $tag = null ) {
 
 	$args = array(
@@ -75,18 +98,10 @@ function rpa_get_projects( $count = 10, $tag = null ) {
 		'posts_per_page' => $count
 	);
 
-	if ( empty($tag) === false ) {
+	/** If tag is defined, use it */
+	if ( false === empty( $tag ) ) {
 		$args['tag_id'] = $tag;
 	}
 
-	// Return
 	return new WP_Query( $args );
-}
-
-/*****
-Social
-*****/
-
-function rpa_facebook() {
-	return '<a class="icon--facebook entypo-facebook-circled" href="' . esc_url('https://www.facebook.com/rpaul.artist/') . '"></a>';
 }

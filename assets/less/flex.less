@@ -1,0 +1,74 @@
+//////////
+// Flex //
+//////////
+
+.home {
+	.flex {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+.flex {
+	.flex-display;
+	.flex-direction;
+	.flex-wrap( wrap );
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.flex__item {
+	.flex-grow;
+	.flex-shrink;
+	padding: 10px;
+}
+
+.flex__link {
+	position: relative;
+	display: block;
+
+	// Hover
+	&:hover {
+		.flex__label {
+			opacity: 1;
+		}
+	}
+}
+
+.flex__label {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	background-color: darken( rgba( 230, 59, 59, .85 ), 10% );
+	opacity: 0;
+
+	.transition(all ease .12s);
+}
+
+.flex__label-table {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.flex__label-cell {
+	display: table-cell;
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 120%;
+	vertical-align: middle;
+	.font__oswald;
+	font-size: 2.4rem;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.flex__image {
+	display: block;
+	width: 100%;
+}

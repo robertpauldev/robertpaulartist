@@ -1,0 +1,76 @@
+//////////
+// Post //
+//////////
+
+// Thumbnail
+.entry__thumbnail {
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+		width: auto;
+		max-height: 690px;
+	}
+}
+
+// Content
+.entry__cms {
+
+	// iframe
+	iframe {
+		max-width: 100%;
+	}
+}
+
+// Image Embeds
+.wp-caption {
+
+	// Image
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	// Caption
+	.wp-caption-text {
+		padding: 3px 6px;
+		background-color: #f8f8f8;
+		font-size: 1.3rem;
+	}
+
+	// Center
+	&.aligncenter {
+		margin: 1.5em auto;
+	}
+}
+
+// Tags
+.entry__tags {
+	margin-top: 2rem;
+	font-size: 1.6rem;
+	text-align: center;
+	color: @colour__body_copy;
+
+	// Icon
+	.entypo-archive {
+		margin-right: 4px;
+		font-size: 1.6rem;
+		color: #aaa;
+	}
+
+	// Links
+	a {
+		.font__oswald;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: @colour__body_copy;
+
+		.transition(all ease .12s);
+
+		// Hover
+		&:hover {
+			color: @colour__link;
+		}
+	}
+}

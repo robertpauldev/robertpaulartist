@@ -1,0 +1,31 @@
+//////////////
+// Masthead //
+//////////////
+
+// Masthead
+.masthead {
+	.transition(padding ease .2s);
+}
+
+// Logo
+.logo {
+	max-height: 26px;
+
+	// SVG
+	svg {
+		display: block;
+	}
+
+	path {
+		fill: @colour__link;
+
+		.transition(all ease .12s);
+	}
+
+	// Hover
+	&:hover {
+		path {
+			fill: #000;
+		}
+	}
+}

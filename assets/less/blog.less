@@ -1,0 +1,42 @@
+//////////
+// Blog //
+//////////
+
+.list {
+	position: relative;
+	.font__oswald;
+	text-align: center;
+
+	.entypo-clock {
+		margin-right: 4px;
+	}
+
+	&:not(:first-of-type) {
+		border-top: 1px solid #ddd;
+	}
+}
+
+.list__title {
+	margin-bottom: .5em;
+	line-height: 130%;
+	font-weight: 200;
+}
+
+.list__link {
+	font-size: inherit;
+	text-decoration: none;
+	color: #000;
+
+	.transition(all ease .12s);
+
+	// Hover
+	&:hover {
+		color: @colour__link;
+	}
+}
+
+.list__date {
+	font-size: 1.6rem;
+	font-weight: 200;
+	color: #aaa;
+}

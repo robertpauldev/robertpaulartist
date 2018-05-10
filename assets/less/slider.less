@@ -1,0 +1,58 @@
+////////////
+// Slider //
+////////////
+
+// Slider
+.slider__wrap {
+	position: relative;
+}
+
+.slider {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.slide__link {
+	display: block;
+	height: 100%;
+}
+
+.slide__image {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	max-height: 100%;
+}
+
+.slider__ui {
+	z-index: 1000;
+	position: absolute;
+	top: 50%;
+	text-align: center;
+	color: #aaa;
+
+	.box-sizing(content-box);
+	.transition(all ease .12s);
+
+	// Hover
+	&:hover {
+		cursor: pointer;
+		color: #000;
+	}
+}
+
+.slider__ui--prev {
+	left: 0;
+}
+
+.slider__ui--next {
+	right: 0;
+}

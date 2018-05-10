@@ -1,0 +1,109 @@
+////////////////
+// Typography //
+////////////////
+
+// Oswald
+.font__oswald() {
+	font-family: 'Oswald';
+}
+
+// Open Sans
+.font__sans() {
+	font-family: 'Open Sans';
+}
+
+// Droid Serif
+.font__serif() {
+	font-family: 'Droid Serif';
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+	font-family: 'entypo', sans-serif;
+}
+
+// Titles
+.page-title {
+	margin-bottom: 1rem;
+	.font__oswald;
+	font-weight: 400;
+	font-size: 2.6rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+// CMS
+.entry__cms {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 620px;
+
+	// Titles
+	h1,
+	h2,
+	h3 {
+		.font__oswald;
+	}
+
+	h2 {
+		margin-bottom: 1em;
+		font-size: 2.4rem;
+		font-weight: 400;
+	}
+
+	h3 {
+		margin-bottom: 1em;
+		font-size: 1.8rem;
+		font-weight: 200;
+	}
+
+	// Body copy
+	p {
+		.body-copy;
+
+		&:not(:last-child) {
+			margin-bottom: 1.5em;
+		}
+
+		// Link
+		a {
+			color: @colour__link;
+		}
+	}
+
+	// Lists
+	ul,
+	ol {
+		.body-copy;
+
+		li {
+			margin-bottom: 1em;
+		}
+	}
+}
+
+.entry__header {
+	margin-bottom: 2rem;
+	.font__oswald;
+	text-align: center;
+}
+
+.entry__title {
+	margin-bottom: .5em;
+	font-size: 3.2rem;
+	font-weight: 400;
+}
+
+.entry__date {
+	display: inline-block;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+	font-size: 1.6rem;
+	font-weight: 200;
+	text-transform: uppercase;
+	color: #aaa;
+
+	.entypo-clock {
+		margin-right: 4px;
+	}
+}

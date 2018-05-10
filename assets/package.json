@@ -1,0 +1,13 @@
+{
+	"name": "rpa-gulp",
+	"version": "1.0.0",
+	"devDependencies": {
+		"gulp": "*",
+		"gulp-less": "*",
+		"gulp-autoprefixer": "*",
+		"gulp-plumber": "*",
+		"gulp-clean-css": "*",
+		"gulp-watch": "*",
+		"path": "*"
+	}
+}

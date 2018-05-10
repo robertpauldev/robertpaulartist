@@ -1,6 +1,6 @@
 <?php
 
-// Tag
+/** Check for Tag */
 $tag = '';
 
 if ( is_tag() ) {
@@ -8,19 +8,28 @@ if ( is_tag() ) {
 	$tag = $queried_object->term_id;
 }
 
-$projects = rpa_get_projects( -1, $tag )->posts;
+/** Get Projects */
+$projects = rpa_get_projects( -1, $tag );
+update_post_thumbnail_cache( $projects );
+
+$projects = $projects->posts;
+
+if ( false === empty( $projects ) ) :
 ?>
 
 <div class="flex">
 	<?php
+		/** Loop through Projects */
 		foreach ( $projects as $project ) :
 			setup_postdata( $project );
 	?>
 
 	<div class="flex__item">
-		<a class="flex__link" href="<?php echo get_the_permalink( $project->ID ); ?>">
+		<a class="flex__link" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>">
 			<span class="flex__label">
-				<span class="flex__label-table"><span class="flex__label-cell">View Project</span></span>
+				<span class="flex__label-table">
+					<span class="flex__label-cell">View Project</span>
+				</span>
 			</span>
 			<?php echo get_the_post_thumbnail( $project->ID, 'square', array( 'class' => 'flex__image' ) ); ?>
 		</a>
@@ -30,3 +39,5 @@ $projects = rpa_get_projects( -1, $tag )->posts;
 		endforeach;
 	?>
 </div>
+
+<?php endif;

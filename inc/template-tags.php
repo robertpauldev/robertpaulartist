@@ -1,6 +1,24 @@
 <?php
 
 /**
+ * Adds the URL escaping shorthand that WordPress so badly needs.
+ */
+if ( false === function_exists( 'esc_url_e' ) ) {
+
+	/**
+	 * Adds the URL escaping shorthand that WordPress so badly needs.
+	 *
+	 * @param string $url The URL to be escaped.
+	 * @param [type] $protocols ...
+	 * @param string $_context ...
+	 * @return void
+	 */
+	function esc_url_e( $url, $protocols = null, $_context = 'display' ) {
+		echo apply_filters( 'esc_url_e', esc_url( $url, $protocols, $_context ) );
+	}
+}
+
+/**
  * Returns Facebook OpenGraph data based on data type.
  *
  * @param string $type Sets which OpenGraph property to define.
@@ -10,7 +28,7 @@ function rpa_og( $type = null ) {
 
 	/** URL */
 	if ( 'url' === $type ) {
-		echo esc_url( get_the_permalink() );
+		esc_url_e( get_the_permalink() );
 	}
 
 	/** Type */

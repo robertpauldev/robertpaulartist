@@ -1,43 +1,52 @@
 <?php
-/*********
-Essentials
-*********/
 
-define( 'RPA_VERSION', '1.0.0' );
+/**
+ * Define constants
+ */
+define( 'RPA_VERSION', '1.0.1' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 
+/** Required files */
 require_once( 'inc/template-tags.php' );
 
-/**********
-Theme Setup
-**********/
-
-// Theme Setup > Support
+/**
+ * After 'robertpaulartist' theme is set up.
+ *
+ * @return void
+ */
 function rpa_setup() {
 
-	//  Thumbnails
+	/** Thumbnails */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'square', 300, 300, true );
 }
 add_action( 'after_setup_theme', 'rpa_setup' );
 
-// Theme Setup > Scripts
+/**
+ * Enqueues the styles and scripts used by the theme.
+ *
+ * @return void
+ */
 function rpa_scripts() {
 
-	// Enqueue styles
+	/** Enqueue styles */
 	wp_enqueue_style( 'rpa-oswald', 'https://fonts.googleapis.com/css?family=Oswald:300,400,600' );
 	wp_enqueue_style( 'rpa-droid', 'https://fonts.googleapis.com/css?family=Droid+Serif' );
 	wp_enqueue_style( 'rpa-entypo', RPA_DIRECTORY_URI . '/assets/css/entypo.css', '', RPA_VERSION );
 	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style-min.css', '', RPA_VERSION );
 
-	// Enqueue scripts
+	/** Enqueue scripts */
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
 	wp_enqueue_script( 'cycle2', RPA_DIRECTORY_URI . '/assets/js/cycle2.min.js', 'jquery', '2.1.6' );
 }
 add_action( 'wp_enqueue_scripts', 'rpa_scripts' );
 
-// Theme Setup > Projects post type
+/**
+ * Sets up the Project custom post type.
+ *
+ * @return void
+ */
 function rpa_post_type_projects() {
 	$labels = array(
 		'name'                  => _x( 'Projects', 'Post Type General Name', 'text_domain' ),
@@ -92,7 +101,11 @@ function rpa_post_type_projects() {
 }
 add_action( 'init', 'rpa_post_type_projects', 0 );
 
-// Disable Emojis
+/**
+ * Disables emojis on the theme. :)
+ *
+ * @return void
+ */
 function rpa_disable_emojis() {
 	remove_action('wp_head', 'print_emoji_detection_script', 7);
 	remove_action('wp_print_styles', 'print_emoji_styles');

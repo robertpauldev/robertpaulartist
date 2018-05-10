@@ -28,7 +28,7 @@ function rpa_og( $type = null ) {
 
 	/** URL */
 	if ( 'url' === $type ) {
-		echo esc_url( get_the_permalink() );
+		esc_url_e( get_the_permalink() );
 	}
 
 	/** Type */

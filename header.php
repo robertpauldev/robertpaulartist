@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<title><?php echo get_bloginfo('name'); ?></title>
+		<title><?php esc_html_e( get_bloginfo( 'name' ) ); ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
 
@@ -27,7 +27,7 @@
 	<body <?php body_class(); ?>>
 		<header class="masthead">
 			<div class="wrap clearfix">
-				<a class="logo" href="<?php echo esc_url( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
+				<a class="logo" href="<?php esc_url_e( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
 				<?php rpa_nav( '', 'nav', 'nav-bar' ); ?>
 			</div>
 		</header>

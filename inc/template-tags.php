@@ -25,30 +25,26 @@ if ( false === function_exists( 'esc_url_e' ) ) {
  * @return void
  */
 function rpa_og( $type = null ) {
-
-	/** URL */
-	if ( 'url' === $type ) {
-		esc_url_e( get_the_permalink() );
-	}
-
-	/** Type */
-	elseif ( 'type' === $type ) {
+	switch ( $type ) {
+		case 'url':
+		echo get_the_permalink();
+		break;
+		
+		case 'type':
 		echo 'article';
-	}
+		break;
 
-	/** Title */
-	elseif ( 'title' === $type ) {
+		case 'title':
 		echo is_single() ? esc_html( get_the_title() ) : esc_html( get_bloginfo( 'name' ) ) . ' : ' . ( get_the_title() );
-	}
+		break;
 
-	/** Description */
-	elseif ( 'description' === $type ) {
+		case 'description':
 		echo is_singular( 'post' ) ? esc_html( get_the_excerpt() ) : esc_html( get_the_title() );
-	}
+		break;
 
-	/** Image */
-	elseif ( 'image' === $type ) {
+		case 'image':
 		echo is_single() ? esc_url( get_the_post_thumbnail_url() ) : RPA_DIRECTORY_URI . '/assets/images/og.jpg';
+		break;
 	}
 }
 

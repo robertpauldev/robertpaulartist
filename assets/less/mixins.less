@@ -23,7 +23,6 @@
 .flex-display(@display: flex) {
 	display: ~"-webkit-@{display}";
 	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
-	display: ~"-ms-@{display}"; // IE11
 	display: @display;
 }
 
@@ -140,6 +139,7 @@
 .transition(@transition) {
 	-moz-transition: @transition;
 	-webkit-transition: @transition;
+	-o-transition: @transition;
 	transition: @transition;
 }
 

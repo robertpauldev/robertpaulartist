@@ -25,35 +25,26 @@
 				color: #f5f5f5;
 			}
 		}
+	}
 
+	// Current
+	.current-menu-item {
 		a {
-			font-weight: 200;
-			text-decoration: none;
-			color: #666;
-
-			.transition(all ease .2s);
-
-			// Hover
-			&:hover {
-				color: @colour__link;
-			}
-
-			// Facebook
-			&.icon--facebook {
-				color: @colour__link;
-
-				// Hover
-				&:hover {
-					color: #000;
-				}
-			}
+			color: @colour__link;
 		}
+	}
 
-		// Current
-		&.current-menu-item {
-			a {
-				color: @colour__link;
-			}
+	// Link
+	a {
+		font-weight: 200;
+		text-decoration: none;
+		color: #666;
+
+		.transition(all ease .2s);
+
+		// Hover
+		&:hover {
+			color: @colour__link;
 		}
 	}
 }

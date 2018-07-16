@@ -35,11 +35,11 @@ function rpa_og( $type = null ) {
 		break;
 
 		case 'title':
-		echo is_single() ? esc_html( get_the_title() ) : esc_html( get_bloginfo( 'name' ) ) . ' : ' . ( get_the_title() );
+		echo get_the_title() . ' | ' . esc_html( get_bloginfo( 'name' ) );
 		break;
 
 		case 'description':
-		echo is_singular( 'post' ) ? esc_html( get_the_excerpt() ) : esc_html( get_the_title() );
+		echo is_singular( 'post' ) ? esc_html( get_the_excerpt() ) . ' | ' . esc_html( get_bloginfo( 'name' ) ) : get_the_title() . ' | ' . esc_html( get_bloginfo( 'name' ) );
 		break;
 
 		case 'image':

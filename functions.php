@@ -3,7 +3,7 @@
 /**
  * Define constants
  */
-define( 'RPA_VERSION', '1.0.1' );
+define( 'RPA_VERSION', '1.0.2' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 

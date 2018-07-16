@@ -25,7 +25,7 @@ if ( false === empty( $projects ) ) :
 	?>
 
 	<div class="flex__item">
-		<a class="flex__link" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>">
+		<a title="<?php esc_attr_e( $project->post_title ); ?> | <?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" class="flex__link" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>">
 			<span class="flex__label">
 				<span class="flex__label-table">
 					<span class="flex__label-cell">View Project</span>

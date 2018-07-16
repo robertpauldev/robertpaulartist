@@ -35,11 +35,11 @@ function rpa_og( $type = null ) {
 		break;
 
 		case 'title':
-		echo is_single() ? esc_html( get_the_title() ) : esc_html( get_bloginfo( 'name' ) ) . ' : ' . ( get_the_title() );
+		echo get_the_title() . ' | ' . esc_html( get_bloginfo( 'name' ) );
 		break;
 
 		case 'description':
-		echo is_singular( 'post' ) ? esc_html( get_the_excerpt() ) : esc_html( get_the_title() );
+		echo is_singular( 'post' ) ? esc_html( get_the_excerpt() ) . ' | ' . esc_html( get_bloginfo( 'name' ) ) : get_the_title() . ' | ' . esc_html( get_bloginfo( 'name' ) );
 		break;
 
 		case 'image':
@@ -54,7 +54,7 @@ function rpa_og( $type = null ) {
  * @return string Returns a formatted Facebook URL string.
  */
 function rpa_facebook() {
-	return '<a class="icon--facebook entypo-facebook-circled" href="' . esc_url( 'https://www.facebook.com/rpaul.artist/' ) . '"></a>';
+	return '<a title="Find ' . esc_attr( get_bloginfo( 'name' ) ) . ' on Facebook" class="icon--facebook entypo-facebook-circled" href="' . esc_url( 'https://www.facebook.com/rpaul.artist/' ) . '"></a>';
 }
 
 /**

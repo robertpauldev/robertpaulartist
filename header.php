@@ -27,7 +27,7 @@
 	<body <?php body_class(); ?>>
 		<header class="masthead">
 			<div class="wrap clearfix">
-				<a class="logo" href="<?php esc_url_e( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
+				<a title="<?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" class="logo" href="<?php esc_url_e( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
 				<?php rpa_nav( '', 'nav', 'nav-bar' ); ?>
 			</div>
 		</header>

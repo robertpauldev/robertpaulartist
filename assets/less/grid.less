@@ -1,0 +1,61 @@
+//////////
+// Grid //
+//////////
+
+.grid {
+	display: grid;
+	grid-gap: 20px 20px;
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+// Link
+.grid__link {
+	position: relative;
+	display: block;
+
+	// Hover
+	&:hover {
+		.grid__view {
+			opacity: 1;
+		}
+	}
+}
+
+// 'View Project'
+.grid__view {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	background-color: darken( #e63b3b, 10% );
+	background-color: darken( rgba( 230, 59, 59, .85 ), 10% );
+	opacity: 0;
+
+	.transition(all ease .12s);
+
+	span {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		padding-left: 20px;
+		padding-right: 20px;
+		height: 100%;
+		.font__oswald;
+		font-size: 2.4rem;
+		font-weight: 200;
+		text-align: center;
+		text-transform: uppercase;
+		color: #fff;
+	}
+}
+
+// Image
+.grid__image {
+	display: block;
+	width: 100%;
+}

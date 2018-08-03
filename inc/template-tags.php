@@ -1,30 +1,15 @@
 <?php
-
 /**
- * Adds the URL escaping shorthand that WordPress so badly needs.
+ * Template Tags
  */
-if ( false === function_exists( 'esc_url_e' ) ) {
-
-	/**
-	 * Adds the URL escaping shorthand that WordPress so badly needs.
-	 *
-	 * @param string $url The URL to be escaped.
-	 * @param [type] $protocols ...
-	 * @param string $_context ...
-	 * @return void
-	 */
-	function esc_url_e( $url, $protocols = null, $_context = 'display' ) {
-		echo apply_filters( 'esc_url_e', esc_url( $url, $protocols, $_context ) );
-	}
-}
 
 /**
  * Returns Facebook OpenGraph data based on data type.
  *
- * @param string $type Sets which OpenGraph property to define.
+ * @param string $type (Required) Sets which OpenGraph property to define.
  * @return void
  */
-function rpa_og( $type = null ) {
+function rpa_og( $type ) {
 	switch ( $type ) {
 		case 'url':
 		echo get_the_permalink();
@@ -81,9 +66,9 @@ function rpa_nav_menu() {
  *
  * @uses rpa_nav_menu() for the nav HTML structure.
  * 
- * @param string $id Define the menu ID to use.
- * @param string $parent_id Define the parent ID attribute.
- * @param string $child_id Define the child ID attribute.
+ * @param string $id        (Optional) Define the menu ID to use.
+ * @param string $parent_id (Optional) Define the parent ID attribute.
+ * @param string $child_id  (Optional) Define the child ID attribute.
  * @return void
  */
 function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
@@ -101,8 +86,8 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
 /**
  * Get posts of the Project post type.
  *
- * @param integer $count Set the post count of the query.
- * @param string $tag Filter projects by tag.
+ * @param int $count  (Required) Set the post count of the query; default 10.
+ * @param string $tag (Optional) Filter projects by tag.
  * @return array Returns a WP_Query array object.
  */
 function rpa_get_projects( $count = 10, $tag = null ) {
@@ -112,7 +97,7 @@ function rpa_get_projects( $count = 10, $tag = null ) {
 		'posts_per_page' => $count
 	);
 
-	/** If tag is defined, use it */
+	/** If tag is defined, add to query */
 	if ( false === empty( $tag ) ) {
 		$args['tag_id'] = $tag;
 	}

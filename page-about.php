@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template: About
+ */
+
+get_header();
+?>
 
 <section class="wrap">
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -15,4 +21,5 @@
 	<?php endwhile; ?>
 </section>
 
-<?php get_footer();
+<?php
+get_footer();

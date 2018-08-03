@@ -1,11 +1,17 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template: Index
+ */
+
+get_header();
+?>
 
 <section class="wrap">
 	<?php
-		/** Loop */
-		if ( have_posts() ) :
-			while ( have_posts() ) :
-				the_post();
+	/** Loop */
+	if ( have_posts() ) :
+		while ( have_posts() ) :
+			the_post();
 	?>
 
 	<div class="entry__cms">
@@ -13,14 +19,15 @@
 	</div>
 
 	<?php
-				/** Homepage */
-				if ( is_front_page() ) :
-					get_template_part( 'template-parts/template', 'slider' );
-					get_template_part( 'template-parts/template', 'flex' );
-				endif;
-			endwhile;
-		endif;
+			/** Homepage */
+			if ( is_front_page() ) :
+				get_template_part( 'template-parts/template', 'slider' );
+				get_template_part( 'template-parts/template', 'grid' );
+			endif;
+		endwhile;
+	endif;
 	?>
 </section>
 
-<?php get_footer();
+<?php
+get_footer();

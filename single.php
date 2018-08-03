@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template: Single
+ */
+
+get_header();
+?>
 
 <section class="wrap">
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -14,8 +20,15 @@
 					<span class="entypo-clock"></span><?php echo esc_html( get_the_date() ); ?>
 				</time>
 			</header>
-			<?php the_content(); ?>
-			<div class="entry__tags"><?php the_tags( '<span class="entypo-archive"></span> ', ' / ' ); ?></div>
+			<?php
+			/** Content */
+			the_content();
+			
+			/** Tags */
+			if ( has_tag() ) :
+				get_template_part( 'template-parts/template', 'entry-tags' );
+			endif;
+			?>
 		</div>
 		<div class="entry__nav clearfix">
 			<?php
@@ -50,4 +63,5 @@
 	<?php endwhile; ?>
 </section>
 
-<?php get_footer();
+<?php
+get_footer();

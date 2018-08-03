@@ -28,11 +28,9 @@ if ( false === empty( $projects ) ) :
 	?>
 
 	<div class="grid__item">
-		<a title="<?php esc_attr_e( $project->post_title ); ?> | <?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" class="grid__link" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>">
-			<span class="grid__label">
-				<span class="grid__label-table">
-					<span class="grid__label-cell">View Project</span>
-				</span>
+		<a class="grid__link" title="<?php esc_attr_e( $project->post_title ); ?> | <?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>">
+			<span class="grid__view">
+				<span>View Project</span>
 			</span>
 			<?php echo get_the_post_thumbnail( $project->ID, 'square', array( 'class' => 'grid__image' ) ); ?>
 		</a>

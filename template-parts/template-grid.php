@@ -28,7 +28,7 @@ if ( false === empty( $projects ) ) :
 	?>
 
 	<div class="grid__item">
-		<a class="grid__link" title="<?php esc_attr_e( $project->post_title ); ?> | <?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>">
+		<a class="grid__link" title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
 			<span class="grid__view">
 				<span>View Project</span>
 			</span>

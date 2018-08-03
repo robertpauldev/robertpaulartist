@@ -17,7 +17,7 @@ if ( false === empty( $projects ) ) :
 				setup_postdata( $project );
 		?>
 		<li class="slide">
-			<a title="<?php esc_attr_e( $project->post_title ); ?> | <?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" class="slide__link" href="<?php esc_url_e( get_the_permalink( $project->ID ) ); ?>"><?php echo get_the_post_thumbnail( $project->ID, '', array( 'class' => 'slide__image' ) ); ?></a>
+			<a title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="slide__link" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>"><?php echo get_the_post_thumbnail( $project->ID, '', array( 'class' => 'slide__image' ) ); ?></a>
 		</li>
 		<?php wp_reset_postdata();
 			endforeach;

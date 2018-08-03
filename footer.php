@@ -1,3 +1,10 @@
+<?php
+/**
+ * Template: Footer
+ */
+
+?>
+		
 		</main>
 		<footer class="footer">
 			<div class="wrap">

@@ -9,23 +9,20 @@
 
 // Logo
 .logo {
-	max-height: 26px;
+	display: inline-block;
+	width: 100%;
+	max-width: 300px;
+}
 
-	// SVG
-	svg {
-		display: block;
-	}
+.logo__svg {
+	display: block;
+	width: 100%;
+}
 
-	path {
-		fill: @colour__link;
+.logo__2 {
+	opacity: .25; 
+}
 
-		.transition(all ease .12s);
-	}
-
-	// Hover
-	&:hover {
-		path {
-			fill: #000;
-		}
-	}
+.logo__3 {
+	opacity: .5;
 }

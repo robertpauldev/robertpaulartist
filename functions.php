@@ -33,7 +33,7 @@ function rpa_scripts() {
 	/** Enqueue styles */
 	wp_enqueue_style( 'rpa-oswald', 'https://fonts.googleapis.com/css?family=Oswald:300,400,600' );
 	wp_enqueue_style( 'rpa-droid', 'https://fonts.googleapis.com/css?family=Droid+Serif' );
-	wp_enqueue_style( 'rpa-entypo', RPA_DIRECTORY_URI . '/assets/css/entypo.css', '', RPA_VERSION );
+	wp_enqueue_style( 'rpa-elegant', RPA_DIRECTORY_URI . '/assets/css/elegant.css', '', RPA_VERSION );
 	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style-min.css', '', RPA_VERSION );
 
 	/** Enqueue scripts */

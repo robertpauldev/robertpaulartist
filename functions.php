@@ -3,7 +3,7 @@
 /**
  * Define constants
  */
-define( 'RPA_VERSION', '1.0.6' );
+define( 'RPA_VERSION', '1.0.7' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 
@@ -33,7 +33,6 @@ function rpa_scripts() {
 	/** Enqueue styles */
 	wp_enqueue_style( 'rpa-oswald', 'https://fonts.googleapis.com/css?family=Oswald:300,400,600' );
 	wp_enqueue_style( 'rpa-droid', 'https://fonts.googleapis.com/css?family=Droid+Serif' );
-	wp_enqueue_style( 'rpa-entypo', RPA_DIRECTORY_URI . '/assets/css/entypo.css', '', RPA_VERSION );
 	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style-min.css', '', RPA_VERSION );
 
 	/** Enqueue scripts */

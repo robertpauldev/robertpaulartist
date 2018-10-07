@@ -27,9 +27,8 @@ if ( false === empty( $projects ) ) :
 		endforeach;
 		?>
 	</ul>
-
-	<span class="slider__ui slider__ui--prev entypo-left-open-big"></span>
-	<span class="slider__ui slider__ui--next entypo-right-open-big"></span>
+	<span class="slider__ui slider__ui--prev icon-caret-left"></span>
+	<span class="slider__ui slider__ui--next icon-caret-right"></span>
 	<div class="slider_pager"></div>
 </div>
 

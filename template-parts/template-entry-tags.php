@@ -5,4 +5,4 @@
 
 ?>
 
-<div class="entry__tags"><?php the_tags( '<span class="entypo-archive"></span> ', ' / ' ); ?></div>
+<div class="entry__tags"><?php the_tags( '<span class="icon-archive"></span> ', ' / ' ); ?></div>

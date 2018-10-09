@@ -20,19 +20,19 @@ $projects = $projects->posts;
 if ( false === empty( $projects ) ) :
 ?>
 
-<div class="grid">
+<div class="projects grid">
 	<?php
 	/** Loop through Projects */
 	foreach ( $projects as $project ) :
 		setup_postdata( $project );
 	?>
 
-	<div class="grid__item">
-		<a class="grid__link" title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
-			<span class="grid__view">
+	<div class="project__item">
+		<a class="project__link" title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
+			<span class="project__view">
 				<span>View Project</span>
 			</span>
-			<?php echo get_the_post_thumbnail( $project->ID, 'square', array( 'class' => 'grid__image' ) ); ?>
+			<?php echo get_the_post_thumbnail( $project->ID, 'square', array( 'class' => 'project__image' ) ); ?>
 		</a>
 	</div>
 

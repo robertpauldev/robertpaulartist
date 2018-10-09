@@ -20,6 +20,7 @@ function rpa_setup() {
 	/** Thumbnails */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'square', 300, 300, true );
+	add_image_size( 'square-large', 600, 600, true );
 }
 add_action( 'after_setup_theme', 'rpa_setup' );
 

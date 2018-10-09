@@ -11,8 +11,6 @@ get_header();
 	<?php
 		if ( is_tag( 'pencil' ) || is_tag( 'ink' ) ) :
 			get_template_part( 'template-parts/template', 'grid' );
-		else :
-			get_template_part( 'template-parts/template', 'list' );
 		endif;
 	?>
 </section>

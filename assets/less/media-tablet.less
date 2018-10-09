@@ -47,12 +47,7 @@
 	}
 
 	// Blog
-	.list {
-		padding-top: @grid__pad_desktop;
-		padding-bottom: @grid__pad_desktop;
-	}
-
-	.list__title {
+	.blog__title {
 		font-size: 2.8rem;
 	}
 
@@ -80,8 +75,8 @@
 		font-size: @icon__desktop;
 	}
 
-	// Grid
-	.grid {
+	// Projects
+	.projects {
 		grid-template-columns: repeat(5, 1fr);
 	}
 
@@ -96,8 +91,15 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
-	// Grid
-	.grid {
+	// Projects
+	.projects {
 		grid-template-columns: repeat(4, 1fr);
+	}
+
+	// Blog
+	.blog {
+		.grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 }

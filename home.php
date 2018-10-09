@@ -11,7 +11,7 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) :
 			the_post();
-			get_template_part( 'template-parts/template', 'list' );
+			get_template_part( 'template-parts/template', 'blog' );
 		endwhile;
 	else :
 		get_template_part( 'template-parts/template', 'empty' );

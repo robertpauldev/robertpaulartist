@@ -4,17 +4,31 @@
 
 @media only screen and (max-width: 480px) {
 
-	// Grid
-	.grid {
+	// Projects
+	.projects {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	// Blog
+	.blog {
+		.grid {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
 
-	// Grid
-	.grid {
+	// Projects
+	.projects {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	// Blog
+	.blog {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 }
 
@@ -61,12 +75,7 @@
 	}
 
 	// Blog
-	.list {
-		padding-top: @grid__pad_mobile;
-		padding-bottom: @grid__pad_mobile;
-	}
-
-	.list__title {
+	.blog__title {
 		font-size: 2.0rem;
 	}
 

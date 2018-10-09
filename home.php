@@ -6,11 +6,9 @@
 get_header();
 ?>
 
-<section class="wrap">
+<section class="wrap grid">
 	<?php
 	if ( have_posts() ) :
-
-		/** Loop */
 		while ( have_posts() ) :
 			the_post();
 			get_template_part( 'template-parts/template', 'list' );

@@ -22,7 +22,7 @@ get_header();
 			/** Homepage */
 			if ( is_front_page() ) :
 				get_template_part( 'template-parts/template', 'slider' );
-				get_template_part( 'template-parts/template', 'grid' );
+				get_template_part( 'template-parts/template', 'projects' );
 			endif;
 		endwhile;
 	endif;

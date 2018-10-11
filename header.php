@@ -33,7 +33,9 @@
 	<body <?php body_class(); ?>>
 		<header class="masthead">
 			<div class="wrap clearfix">
-				<a title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="logo" href="<?php echo esc_url( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
+				<h1 class="logo__wrap">
+					<a title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="logo" href="<?php echo esc_url( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
+				</h1>
 				<?php rpa_nav( '', 'nav', 'nav-bar' ); ?>
 			</div>
 		</header>

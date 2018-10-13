@@ -10,7 +10,7 @@ get_header();
 	<h1 class="page-title"><?php the_archive_title(); ?></h1>
 	<?php
 		if ( is_tag( 'pencil' ) || is_tag( 'ink' ) ) :
-			get_template_part( 'template-parts/template', 'grid' );
+			get_template_part( 'template-parts/template', 'projects' );
 		endif;
 	?>
 </section>

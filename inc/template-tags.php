@@ -39,7 +39,13 @@ function rpa_og( $type ) {
  * @return string Returns a formatted Facebook URL string.
  */
 function rpa_facebook() {
-	return '<a title="Find ' . esc_attr( get_bloginfo( 'name' ) ) . ' on Facebook" class="icon-facebook icon--facebook" href="' . esc_url( 'https://www.facebook.com/rpaul.artist/' ) . '"></a>';
+	return sprintf(
+		'<a title="Find %1$s on Facebook" class="icon-facebook icon--facebook" href="$2$s">
+			<span class="icon-facebook__text">Find %1$s on Facebook</span>
+		</a>',
+		esc_attr( get_bloginfo( 'name' ) ),
+		esc_url( 'https://www.facebook.com/rpaul.artist/' )
+	);
 }
 
 /**

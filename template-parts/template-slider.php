@@ -18,9 +18,15 @@ if ( false === empty( $projects ) ) :
 		/** Loop through Projects */
 		foreach ( $projects as $project ) :
 			setup_postdata( $project );
+
+			/** Get alt text */
+			$image_id  = get_post_thumbnail_id( $project->ID );
+			$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 		?>
 		<li class="slide">
-			<a title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="slide__link" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>"><?php echo get_the_post_thumbnail( $project->ID, '', array( 'class' => 'slide__image' ) ); ?></a>
+			<a title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="slide__link" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
+				<img class="slide__image" alt="<?php echo esc_attr( $image_alt ); ?>" src="<?php echo esc_url( get_the_post_thumbnail_url( $project->ID ) ) ?>" />
+			</a>
 		</li>
 		<?php
 			wp_reset_postdata();

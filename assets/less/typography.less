@@ -118,7 +118,11 @@
 	p {
 		.body-copy;
 
-		&:not(:last-child) {
+		&:not(:first-of-type) {
+			margin-top: 1.5em;
+		}
+
+		&:not(:last-of-type) {
 			margin-bottom: 1.5em;
 		}
 

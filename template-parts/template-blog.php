@@ -15,7 +15,9 @@
 		</h2>
 		<?php rpa_the_excerpt( 'blog__excerpt' ); ?>
 		<time class="blog__date">
-			<span class="icon-clock"></span><?php echo esc_html( get_the_date() ); ?>
+			<span class="blog__date-wrap">
+				<span class="icon-clock"></span><?php echo esc_html( get_the_date() ); ?>
+			</span>
 		</time>
 	</figure>
 </article>

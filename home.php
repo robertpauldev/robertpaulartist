@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<section class="wrap grid">
+<section class="wrap wrap--grid">
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) :

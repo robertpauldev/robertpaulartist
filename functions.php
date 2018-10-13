@@ -39,6 +39,7 @@ function rpa_scripts() {
 	/** Enqueue scripts */
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
 	wp_enqueue_script( 'cycle2', RPA_DIRECTORY_URI . '/assets/js/cycle2.min.js', 'jquery', '2.1.6' );
+	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.js', 'jquery' );
 }
 add_action( 'wp_enqueue_scripts', 'rpa_scripts' );
 

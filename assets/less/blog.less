@@ -24,6 +24,13 @@
 	}
 }
 
+.blog__thumbnail {
+	.flex-display();
+	.flex-direction(column);
+
+	height: 100%;
+}
+
 .blog__thumbnail-media {
 	display: block;
 	width: 100%;
@@ -40,6 +47,8 @@
 }
 
 .blog__excerpt {
+	.flex(1 1 auto);
+
 	margin-bottom: 2rem;
 	line-height: 125%;
 	font-family: Georgia, sans-serif;
@@ -55,4 +64,10 @@
 	.icon-clock {
 		margin-right: 4px;
 	}
+}
+
+.blog__date-wrap {
+	display: inline-block;
+	padding-top: 4px;
+	border-top: 1px solid #eee;
 }

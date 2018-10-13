@@ -3,8 +3,6 @@
 //////////////
 
 .projects {
-	grid-gap: 20px 20px;
-
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -37,8 +35,14 @@
 	.transition(all ease .12s);
 
 	span {
-		display: flex;
+		.flex-display();
+
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 
 		padding-left: 20px;

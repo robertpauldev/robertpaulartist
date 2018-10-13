@@ -3,10 +3,8 @@
 //////////////
 
 .projects {
-	grid-gap: 20px 20px;
-
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 
 // Project > Link
@@ -37,14 +35,20 @@
 	.transition(all ease .12s);
 
 	span {
-		display: flex;
+		.flex-display();
+
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 2rem;
+		padding-right: 2rem;
 		height: 100%;
-		.font__oswald;
+		.font__oswald();
 		font-size: 2.4rem;
 		font-weight: 200;
 		text-align: center;

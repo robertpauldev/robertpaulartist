@@ -19,16 +19,16 @@
 }
 
 // Grid
-.grid {
-	display: -ms-grid;
-	display: grid;
+.grid(@display: grid) {
+	display: ~"-ms-@{display}";
+	display: @display;
 }
 
 // Flexbox > Flexbox display
 // flex or inline-flex
 .flex-display(@display: flex) {
 	display: ~"-webkit-@{display}";
-	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}box";
 	display: @display;
 }
 
@@ -152,7 +152,7 @@
 // Body Copy
 .body-copy() {
 	line-height: 150%;
-	.font__serif;
+	.font__serif();
 	font-size: 1.5rem;
 	color: @colour__body_copy;
 }

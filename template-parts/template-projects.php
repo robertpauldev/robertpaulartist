@@ -20,7 +20,7 @@ $projects = $projects->posts;
 if ( false === empty( $projects ) ) :
 ?>
 
-<div class="projects grid">
+<div class="projects wrap--grid">
 	<?php
 	/** Loop through Projects */
 	foreach ( $projects as $project ) :

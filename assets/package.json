@@ -1,6 +1,6 @@
 {
 	"name": "rpa-gulp",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"devDependencies": {
 		"gulp": "*",
 		"gulp-less": "*",

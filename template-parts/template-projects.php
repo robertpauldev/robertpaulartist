@@ -20,7 +20,7 @@ $projects = $projects->posts;
 if ( false === empty( $projects ) ) :
 ?>
 
-<div class="projects wrap--grid">
+<section class="projects wrap--grid">
 	<?php
 	/** Loop through Projects */
 	foreach ( $projects as $project ) :
@@ -40,7 +40,7 @@ if ( false === empty( $projects ) ) :
 		wp_reset_postdata();
 	endforeach;
 	?>
-</div>
+</section>
 
 <?php
 endif;

@@ -1,0 +1,39 @@
+///////////
+// About //
+///////////
+
+.about {
+	background-color: @colour__footer;
+
+	.wrap {
+		border-bottom: 1px solid lighten( @colour__footer, 10% );
+	}
+}
+
+.about__wrap {
+	.flex-display();
+	width: 100%;
+}
+
+.about__title {
+	margin-bottom: 2rem;
+	.font__oswald();
+	font-weight: 500;
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	color: #fff;
+
+	> span {
+		display: inline-block;
+		padding-bottom: 1rem;
+		border-bottom: 2px solid lighten( @colour__footer, 10% );
+	}
+}
+
+.about__cms p {
+	color: #fff;
+}
+
+.about__thumbnail-media {
+	margin: 0 auto;
+}

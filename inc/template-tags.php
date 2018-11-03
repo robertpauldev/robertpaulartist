@@ -40,7 +40,7 @@ function rpa_og( $type ) {
  */
 function rpa_facebook() {
 	return sprintf(
-		'<a title="Find %1$s on Facebook" class="icon-facebook icon--facebook" href="$2$s">
+		'<a title="Find %1$s on Facebook" class="icon-facebook icon--facebook" href="%2$s">
 			<span class="icon-facebook__text">Find %1$s on Facebook</span>
 		</a>',
 		esc_attr( get_bloginfo( 'name' ) ),

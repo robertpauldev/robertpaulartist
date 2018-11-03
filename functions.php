@@ -3,11 +3,12 @@
 /**
  * Define constants
  */
-define( 'RPA_VERSION', '1.0.13' );
+define( 'RPA_VERSION', '1.0.14' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 
 /** Required files */
+require_once( 'inc/shortcodes.php' );
 require_once( 'inc/template-tags.php' );
 
 /**

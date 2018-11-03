@@ -3,20 +3,21 @@
 ////////////
 
 .footer {
-	text-align: center;
+	background-color: @colour__footer;
+	color: #fff;
+
+	.wrap {
+		.flex-display();
+		.flex-direction(row);
+		.align-items(center);
+	}
 }
 
 .icon--facebook {
+	margin-left: 10px;
 	font-size: 2.6rem;
 	text-decoration: none;
-	color: #666;
-
-	.transition(color ease .12s);
-
-	// Hover
-	&:hover {
-		color: @colour__link;
-	}
+	color: #fff;
 
 	// Helper text
 	.icon-facebook__text {
@@ -26,8 +27,8 @@
 }
 
 .copyright {
-	margin-bottom: 1rem;
+	display: inline-block;
 	.font__serif();
 	font-size: 1.5rem;
-	color: @colour__body_copy;
+	color: #fff;
 }

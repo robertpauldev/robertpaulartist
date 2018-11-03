@@ -13,7 +13,7 @@ get_header();
 		<figure class="entry__thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</figure>
-		<div class="entry__cms">
+		<div class="entry__cms cms">
 			<header class="entry__header">
 				<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
 				<time class="entry__date">

@@ -34,18 +34,41 @@ function rpa_og( $type ) {
 }
 
 /**
- * Returns a formatted Facebook URL icon link.
+ * Returns a modified social network link via Yoast SEO.
  *
- * @return string Returns a formatted Facebook URL string.
+ * @param string $network The name of the social network (lowercase).
+ * @return void
  */
-function rpa_facebook() {
-	return sprintf(
-		'<a title="Find %1$s on Facebook" class="icon-facebook icon--facebook" href="%2$s">
-			<span class="icon-facebook__text">Find %1$s on Facebook</span>
-		</a>',
-		esc_attr( get_bloginfo( 'name' ) ),
-		esc_url( 'https://www.facebook.com/rpaul.artist/' )
-	);
+function rpa_social( $network ) {
+
+	if ( empty( $network ) ) {
+		return '';
+	}
+
+	$link      = '';
+	$profiles = get_option( 'wpseo_social' );
+
+	if ( 'facebook' === $network ) {
+		$link = $profiles['facebook_site'];
+	}
+
+	if ( 'instagram' === $network ) {
+		$link = $profiles['instagram_url'];
+	}
+
+	if ( false === empty( $link ) ) {
+		return sprintf(
+			'<a title="Find %1$s on %2$s" class="icon-%3$s icon--%3$s" href="%4$s" target="_blank" rel="noopener">
+				<span class="icon__text">Find %1$s on Facebook</span>
+			</a>',
+			esc_attr( get_bloginfo( 'name' ) ),
+			esc_html( ucfirst( $network ) ),
+			esc_html( $network ),
+			esc_url( $link )
+		);
+	}
+
+	return '';
 }
 
 /**
@@ -64,7 +87,7 @@ add_action( 'init', 'rpa_navigation' );
  * @return string Returns a HTML string.
  */
 function rpa_nav_menu() {
-	return '<ul class="%2$s">%3$s <li>' . rpa_facebook() . '</li></ul>';
+	return '<ul class="%2$s">%3$s <li>' . rpa_social( 'facebook' ) . '</li><li>' . rpa_social( 'instagram' ) . '</li></ul>';
 }
 
 /**

@@ -11,16 +11,21 @@
 		.flex-direction(row);
 		.align-items(center);
 	}
+
+	.icon--facebook,
+	.icon--instagram {
+		margin-left: 10px;
+		font-size: 1.3rem;
+		color: #fff;
+	}
 }
 
-.icon--facebook {
-	margin-left: 10px;
-	font-size: 2.6rem;
+.icon--facebook,
+.icon--instagram {
 	text-decoration: none;
-	color: #fff;
-
+	
 	// Helper text
-	.icon-facebook__text {
+	> span {
 		display: none;
 		.font__serif();
 	}

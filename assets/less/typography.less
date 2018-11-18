@@ -33,7 +33,8 @@
 .icon-caret-left,
 .icon-caret-right,
 .icon-clock,
-.icon-facebook {
+.icon-facebook,
+.icon-instagram {
 	font-family: 'ElegantIcons';
 	speak: none;
 	font-style: normal;
@@ -61,7 +62,11 @@
 }
 
 .icon-facebook:before {
-	content: '\e0aa';
+	content: '\e093';
+}
+
+.icon-instagram:before {
+	content: '\e09a';
 }
 
 // Titles
@@ -150,20 +155,55 @@
 
 	// Tables
 	table {
-		margin-top: 1em;
-		margin-bottom: 1em;
+		margin: 2rem auto;
+		width: 100%;
 		border-collapse: collapse;
-		.body-copy();
-		font-size: 1.6rem;
 
+		caption,
 		th,
 		td {
 			padding: 1rem;
-			border: 1px solid #eee;
-			text-align: left;
+			text-align: center;
 			vertical-align: top;
 		}
-		
+
+		caption,
+		th {
+			.font__oswald();
+			font-size: 2.0rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		th,
+		td {
+			width: 50%;
+		}
+
+		caption {
+			background-color: darken( @colour__footer, 2.5% );
+		}
+
+		th {
+			background-color: @colour__footer;
+		}
+
+		td {
+			border: 1px solid #eee;
+			
+			&.price-list__size {
+				.body-copy();
+				font-size: 1.4rem;
+			}
+
+			&.price-list__price {
+				.font__oswald();
+				font-size: 1.6rem;
+				font-weight: 500;
+			}
+		}
+
 		ul {
 			margin: 0;
 		}

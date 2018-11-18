@@ -18,6 +18,12 @@ get_header();
 
 	<section class="entry">
 		<div class="entry__cms cms">
+			<?php if ( is_singular( 'page' ) ) : ?>
+			<header class="entry__header">
+				<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
+			</header>
+			<?php endif; ?>
+
 			<?php the_content(); ?>
 		</div>
 	</section>

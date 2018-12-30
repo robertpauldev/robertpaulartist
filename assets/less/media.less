@@ -4,6 +4,10 @@
 
 @media screen and (max-width: 767px) {
 
+	body {
+		padding-top: 184px;
+	}
+
 	// Grid
 	.wrap {
 		padding-left: @grid__pad_mobile;
@@ -14,7 +18,17 @@
 	.masthead {
 		padding-top: @grid__pad_mobile;
 		padding-bottom: @grid__pad_mobile;
+		height: 184px;
 		text-align: center;
+
+		&.js-scrolling {
+			height: 64px;
+
+			.logo__svg {
+				margin: 0 auto;
+				width: 200px;
+			}
+		}
 	}
 
 	// Navigation
@@ -122,6 +136,10 @@
 
 @media screen and (min-width: 768px) {
 
+	body {
+		padding-top: 150px;
+	}
+
 	// Grid
 	.wrap {
 		padding-left: @grid__pad_desktop;
@@ -133,6 +151,17 @@
 	.masthead {
 		padding-top: @grid__pad_desktop;
 		padding-bottom: @grid__pad_desktop;
+		height: 150px;
+
+		&.js-scrolling {
+			padding-top: @grid__pad_mobile;
+			padding-bottom: @grid__pad_mobile;
+			height: 64px;
+
+			.logo__svg {
+				width: 200px;
+			}
+		}
 	}
 
 	.logo {

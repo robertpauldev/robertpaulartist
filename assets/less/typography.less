@@ -33,6 +33,7 @@
 .icon-caret-left,
 .icon-caret-right,
 .icon-clock,
+.icon-email,
 .icon-facebook,
 .icon-instagram {
 	font-family: 'ElegantIcons';
@@ -59,6 +60,10 @@
 
 .icon-clock:before {
 	content: '\7d';
+}
+
+.icon-email:before {
+	content: '\e010';
 }
 
 .icon-facebook:before {
@@ -258,5 +263,41 @@
 		display: block;
 		width: 48px;
 		height: 48px;
+	}
+}
+
+// Contact Me
+.contact-me {
+	.flex-display();
+	.flex-flow(row nowrap);
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+
+	a {
+		.flex(1 1 auto);
+		display: block;
+		font-size: 2rem;
+		font-weight: bold;
+		text-align: center;
+		text-decoration: none;
+		color: @colour__link;
+
+		&:before {
+			display: inline-block;
+			margin-right: 1rem;
+			margin-left: 1rem;
+		}
+	}
+
+	.icon__text {
+		display: inline-block;
+		line-height: 2rem;
+		.font__oswald();
+		font-size: 1.6rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #333;
 	}
 }

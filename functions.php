@@ -1,15 +1,17 @@
 <?php
+defined( 'ABSPATH' ) or die();
 
 /**
  * Define constants
  */
-define( 'RPA_VERSION', '1.1.0' );
+define( 'RPA_VERSION', '1.1.1' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 
 /** Required files */
-require_once( 'inc/shortcodes.php' );
-require_once( 'inc/template-tags.php' );
+require_once 'inc/options.php';
+require_once 'inc/shortcodes.php';
+require_once 'inc/template-tags.php';
 
 /**
  * After 'robertpaulartist' theme is set up.

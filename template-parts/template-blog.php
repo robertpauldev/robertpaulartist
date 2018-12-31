@@ -1,8 +1,9 @@
 <?php
+defined( 'ABSPATH' ) or die();
+
 /**
  * Template Part: Blog partial
  */
-
 ?>
 
 <article class="blog-post">

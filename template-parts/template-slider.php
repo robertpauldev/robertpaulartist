@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) or die();
+
 /**
  * Template Part: Slider
  */

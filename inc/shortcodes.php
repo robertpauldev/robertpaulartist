@@ -1,85 +1,46 @@
 <?php
+defined( 'ABSPATH' ) or die();
+
 /**
  * Shortcodes
  */
 
-function rpa_prices( $atts ) {
+/**
+ * Displays a Contact Me shortcode.
+ *
+ * @return string
+ */
+function rpa_shortcode_contact() {
 
-	/** Get shortcode attributes */
-	$atts = shortcode_atts(
-		array(
-			'type' => ''
-		), $atts
+	$html = '';
+
+	$yoast = get_option( 'wpseo_social' );
+
+	$channels = array(
+		'email'     => get_option( 'rpa_email' ),
+		'facebook'  => get_option( 'rpa_messenger' ),
+		'instagram' => $yoast['instagram_url'],
 	);
 
-	$type = $atts['type'];
+	if ( false === empty( $channels ) ) {
 
-	$prices = array(
-		'A5' => array(
-			'size'  => '210 &times; 148 mm',
-			'price' => ''
-		),
-		'A4' => array(
-			'size'  => '297 &times; 210 mm',
-			'price' => ''
-		),
-		'A3' => array(
-			'size'  => '420 &times; 297 mm',
-			'price' => ''
-		),
-		'Custom' => array(
-			'size'  => '...',
-			'price' => ''
-		),
-	);
+		foreach ( $channels as $k => $v ) {
 
-	/** Pencil */
-	if ( 'pencil' === $type ) {
-		$prices['A5']['price'] = '&pound;80';
-		$prices['A4']['price'] = '&pound;120';
-		$prices['A3']['price'] = '&pound;160';
-		$prices['Custom']['price'] = 'Get in touch';
+			if ( 'email' === $k ) {
+				$v = 'mailto:' . $v;
+			}
+
+			$html .= sprintf(
+				'<a class="icon-%1$s icon--%1$s" href="%2$s" target="_blank" rel="noopener">
+					<span class="icon__text">%3$s</span>
+				</a>',
+				esc_attr( $k ),
+				esc_url( $v ),
+				esc_html( ucfirst( $k ) )
+			);
+		}
 	}
 
-	/** Ink */
-	if ( 'ink' === $type ) {
-		$prices['A5']['price'] = '&pound;60';
-		$prices['A4']['price'] = '&pound;100';
-		$prices['A3']['price'] = '&pound;140';
-		$prices['Custom']['price'] = 'Get in touch';
-	}
-
-	/** Build HTML */
-	$html .= sprintf(
-		'<table class="price-list price-list--%1$s">
-			<caption colspan="2" class="price-list__caption">%2$s</caption>
-			<thead>
-				<tr>
-					<th class="price-list__size">%3$s</th>
-					<th class="price-list__price">%4$s</th>
-				</tr>
-			</thead>
-			<tbody>',
-		esc_attr( $type ),
-		esc_attr( ucfirst( $type ) ),
-		'Size',
-		'Price'
-	);
-
-	foreach ( $prices as $k => $v ) {
-		$html .= sprintf(
-			'<tr>
-				<td class="price-list__size"><strong>%1$s</strong> / %2$s</td>
-				<td class="price-list__price">%3$s</td>
-			</tr>',
-			esc_html( $k ),
-			esc_html( $v['size'] ),
-			esc_html( $v['price'] )
-		);
-	}
-
-	$html .= '</tbody></table>';
-
-	return $html;
+	return '<div class="contact-me">' . wp_kses_post( $html ) . '</div>';
 }
-add_shortcode( 'prices', 'rpa_prices' );
+add_shortcode( 'contactme', 'rpa_shortcode_contact' );

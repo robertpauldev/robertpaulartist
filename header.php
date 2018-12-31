@@ -1,8 +1,9 @@
 <?php
+defined( 'ABSPATH' ) or die();
+
 /**
  * Template: Header
  */
-
 ?>
 
 <!DOCTYPE html>

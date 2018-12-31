@@ -1,8 +1,9 @@
 <?php
+defined( 'ABSPATH' ) or die();
+
 /**
  * Template Part: Logo
  */
-
 ?>
 
 <svg class="logo__svg" enable-background="new 0 0 400 120" version="1.1" viewBox="0 0 400 120" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">

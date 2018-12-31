@@ -59,7 +59,7 @@ function rpa_social( $network ) {
 	if ( false === empty( $link ) ) {
 		return sprintf(
 			'<a title="Find %1$s on %2$s" class="icon-%3$s icon--%3$s" href="%4$s" target="_blank" rel="noopener">
-				<span class="icon__text">Find %1$s on Facebook</span>
+				<span class="icon__text">Find %1$s on %2$s</span>
 			</a>',
 			esc_attr( get_bloginfo( 'name' ) ),
 			esc_html( ucfirst( $network ) ),

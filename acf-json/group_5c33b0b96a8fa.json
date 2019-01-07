@@ -3,6 +3,25 @@
     "title": "Promo Banner",
     "fields": [
         {
+            "key": "field_5c33c05186e55",
+            "label": "Toggle",
+            "name": "promo_toggle",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
+        },
+        {
             "key": "field_5c33b0d3172cc",
             "label": "Title",
             "name": "promo_title",
@@ -27,7 +46,7 @@
             "name": "promo_content",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -97,5 +116,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Robert Paul Artist (2018)",
-    "modified": 1546892730
+    "modified": 1546895516
 }

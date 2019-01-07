@@ -25,7 +25,9 @@ if ( true === $toggle ) :
 			endif;
 
 			/** Content */
-			echo '<span class="promo__content">' . wp_kses_post( $content ) . '</span>';
+			if ( false === empty( $content ) ) :
+				echo '<span class="promo__content">' . wp_kses_post( $content ) . '</span>';
+			endif;
 
 			/** Button */
 			if ( false === empty( $button ) ) :

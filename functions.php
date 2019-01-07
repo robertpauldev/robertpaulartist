@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
 /**
  * Define constants
  */
-define( 'RPA_VERSION', '1.1.1' );
+define( 'RPA_VERSION', '1.2.0' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 

@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
 /**
  * Define constants
  */
-define( 'RPA_VERSION', '1.1.1' );
+define( 'RPA_VERSION', '1.2.0' );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 
@@ -52,6 +52,7 @@ add_action( 'wp_enqueue_scripts', 'rpa_scripts' );
  * @return void
  */
 function rpa_post_type_projects() {
+
 	$labels = array(
 		'name'                  => _x( 'Projects', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Project', 'Post Type Singular Name', 'text_domain' ),
@@ -81,6 +82,7 @@ function rpa_post_type_projects() {
 		'items_list_navigation' => __( 'Projects list navigation', 'text_domain' ),
 		'filter_items_list'     => __( 'Filter projects list', 'text_domain' ),
 	);
+
 	$args = array(
 		'label'                 => __( 'Project', 'text_domain' ),
 		'description'           => __( 'Project work', 'text_domain' ),
@@ -101,6 +103,7 @@ function rpa_post_type_projects() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
+
 	register_post_type( 'project', $args );
 }
 add_action( 'init', 'rpa_post_type_projects', 0 );
@@ -111,7 +114,7 @@ add_action( 'init', 'rpa_post_type_projects', 0 );
  * @return void
  */
 function rpa_disable_emojis() {
-	remove_action('wp_head', 'print_emoji_detection_script', 7);
-	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 }
 add_action( 'init', 'rpa_disable_emojis' );

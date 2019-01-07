@@ -41,3 +41,4 @@ defined( 'ABSPATH' ) or die();
 			</div>
 		</header>
 		<main class="content">
+			<?php get_template_part( 'template-parts/template', 'promo' ); ?>

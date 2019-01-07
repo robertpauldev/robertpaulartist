@@ -2,6 +2,13 @@
 // Mixins //
 ////////////
 
+// Box shadow
+.box-shadow(@shadow) {
+	-moz-box-shadow: @shadow;
+	-webkit-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
 // Box sizing
 .box-sizing(@type: border-box) {
 	-moz-box-sizing: @type;

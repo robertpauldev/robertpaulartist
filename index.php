@@ -8,40 +8,50 @@ defined( 'ABSPATH' ) or die();
 get_header();
 ?>
 
-<div class="wrap">
-	<?php
-	/** Loop */
-	if ( have_posts() ) :
-		while ( have_posts() ) :
-			the_post();
+<section class="content">
+	<div class="wrap">
+		<?php
+		/** Loop */
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
 
-			if ( false === empty( get_the_content() ) ) :
-	?>
+				if ( false === empty( get_the_content() ) ) :
+		?>
 
-	<section class="entry">
-		<div class="entry__cms cms">
-			<?php if ( is_singular( 'page' ) ) : ?>
-			<header class="entry__header">
-				<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
-			</header>
-			<?php endif; ?>
+		<div class="entry">
+			<div class="entry__cms cms">
+				<?php if ( is_singular( 'page' ) ) : ?>
+				<header class="entry__header">
+					<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
+				</header>
+				<?php endif; ?>
 
-			<?php the_content(); ?>
+				<?php the_content(); ?>
+			</div>
 		</div>
-	</section>
 
-	<?php
-			endif;
+		<?php
+				endif;
 
-			/** Homepage */
-			if ( is_front_page() ) :
-				get_template_part( 'template-parts/template', 'slider' );
-				get_template_part( 'template-parts/template', 'projects' );
-			endif;
-		endwhile;
-	endif;
-	?>
-</div>
+				/** Homepage */
+				if ( is_front_page() ) :
+		?>
+		
+		<div class="homepage-work">
+			<?php
+			get_template_part( 'template-parts/template', 'slider' );
+			get_template_part( 'template-parts/template', 'projects' );
+			?>
+		</div>
+
+		<?php
+				endif;
+			endwhile;
+		endif;
+		?>
+	</div>
+</section>
 
 <?php
 /** Homepage */

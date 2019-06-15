@@ -61,3 +61,29 @@
 	display: block;
 	width: 100%;
 }
+
+// Project > Attribution
+.attribution {
+	margin-top: 2rem;
+	padding: 1rem;
+	background-color: #fcfcfc;
+	font-size: 1.3rem;
+	font-style: italic;
+	color: #bbb;
+	border-radius: .4rem;
+
+	&:before {
+		content: '\00a9';
+		display: block;
+		float: left;
+		margin-right: .4rem;
+		font-family: 'Arial', sans-serif;
+		font-weight: bold;
+		font-size: 1.7rem;
+	}
+}
+
+.attribution > p {
+	font-size: inherit;
+	color: inherit;
+}

@@ -40,5 +40,5 @@ defined( 'ABSPATH' ) or die();
 				<?php rpa_nav( '', 'nav', 'nav-bar' ); ?>
 			</div>
 		</header>
-		<main class="content">
+		<main class="content-main">
 			<?php get_template_part( 'template-parts/template', 'promo' ); ?>

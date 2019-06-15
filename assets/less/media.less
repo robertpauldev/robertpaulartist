@@ -2,7 +2,7 @@
 // Media: Mobile //
 ///////////////////
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 
 	body {
 		padding-top: 184px;
@@ -130,11 +130,33 @@
 	}
 }
 
+///////////////////////////////
+// Media: WP Admin Bar fixes //
+///////////////////////////////
+
+@media only screen and (max-width: 782px) {
+
+	.admin-bar {
+		.masthead {
+			top: 46px;
+		}
+	}
+}
+
+@media only screen and (min-width: 783px) {
+
+	.admin-bar {
+		.masthead {
+			top: 32px;
+		}
+	}
+}
+
 ///////////////////
 // Media: Tablet //
 ///////////////////
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 
 	body {
 		padding-top: 150px;

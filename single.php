@@ -25,10 +25,15 @@ get_header();
 			<?php
 			/** Content */
 			the_content();
-			
+
 			/** Tags */
 			if ( has_tag() ) :
 				get_template_part( 'template-parts/template', 'entry-tags' );
+			endif;
+
+			/** Image attribution */
+			if ( is_singular( 'project' ) ) :
+				get_template_part( 'template-parts/template', 'image-attribution' );
 			endif;
 			?>
 		</div>

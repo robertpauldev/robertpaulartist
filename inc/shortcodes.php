@@ -44,3 +44,34 @@ function rpa_shortcode_contact() {
 	return '<div class="contact-me">' . wp_kses_post( $html ) . '</div>';
 }
 add_shortcode( 'contactme', 'rpa_shortcode_contact' );
+
+/**
+ * Displays a 'Buy [project] products now on Redbubble' link.
+ *
+ * @param array $atts The shortcode attributes.
+ * @return boolean|string
+ */
+function rpa_shortcode_redbubble( $atts ) {
+
+	/** Get attributes */
+	$atts = shortcode_atts(
+		array(
+			'url' => '',
+		), $atts
+	);
+
+	$url = $atts['url'];
+
+	/** Return false if no URL */
+	if ( empty( $atts['url'] ) ) {
+		return false;
+	}
+
+	/** Return shortcode */
+	return sprintf(
+		'<div class="btn__redbubble-wrap"><a class="btn__redbubble" href="%1$s" target="_blank" rel="noopener">Buy <strong>%2$s</strong> products now on Redbubble</a></div>',
+		esc_url( $url ),
+		esc_html( get_the_title() )
+	);
+}
+add_shortcode( 'redbubble', 'rpa_shortcode_redbubble' );

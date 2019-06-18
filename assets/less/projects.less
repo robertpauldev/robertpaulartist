@@ -88,3 +88,39 @@
 	font-size: inherit;
 	color: inherit;
 }
+
+// Project > Redbubble
+.btn__redbubble-wrap {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.btn__redbubble {
+	display: inline-block;
+	padding-top:  1rem;
+	padding-left: 6.4rem;
+	min-height: 4.8rem;
+	line-height: 125%;
+	background-image: url('../images/icons/icon_redbubble.svg');
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 4.8rem;
+	.font__oswald();
+	font-weight: 300;
+	font-size: 2rem;
+	text-decoration: none;
+	color: #000;
+
+	strong {
+		font-weight: 400;
+		color: @colour__link;
+	}
+
+	// Hover/focus
+	&:hover,
+	&:focus {
+		strong {
+			border-bottom: 2px solid @colour__link;
+		}
+	}
+}

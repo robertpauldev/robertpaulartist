@@ -14,7 +14,7 @@ if ( false === empty( $content ) ) :
 <section id="about" class="about">
 	<div class="wrap">
 		<h2 class="about__title">
-			<span>About</span>
+			<span>About Me</span>
 		</h2>
 		<?php if ( false === empty( $thumbnail ) ) : ?>
 		<figure class="about__thumbnail">

@@ -89,7 +89,7 @@ add_action( 'init', 'rpa_navigation' );
  * @return string Returns a HTML string.
  */
 function rpa_nav_menu() {
-	return '<ul class="%2$s">%3$s <li>' . rpa_social( 'facebook' ) . '</li><li>' . rpa_social( 'instagram' ) . '</li></ul>';
+	return '<ul class="%2$s">%3$s</ul>';
 }
 
 /**

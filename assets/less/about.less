@@ -3,35 +3,56 @@
 ///////////
 
 .about {
-	background-color: @colour__footer;
-
 	.wrap {
-		border-bottom: 1px solid lighten( @colour__footer, 10% );
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		width: 100%;
+		max-width: 600px;
 	}
 }
 
 .about__wrap {
-	.flex-display();
 	width: 100%;
 }
 
 .about__title {
-	margin-bottom: 2rem;
+	margin-bottom: 0;
 	.font__oswald();
 	font-weight: 500;
 	font-size: 3.2rem;
 	text-transform: uppercase;
-	color: #fff;
 
 	> span {
+		position: relative;
 		display: inline-block;
-		padding-bottom: 1rem;
-		border-bottom: 2px solid lighten( @colour__footer, 10% );
+		padding: 1.6rem;
+		background-color: @colour__link;
+		font-size: 2.8rem;
+		font-weight: 400;
+		color: #fff;
+
+		// Down arrow
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: -2rem;
+			left: 2rem;
+			display: block;
+			border: 1rem solid transparent;
+			border-top-color: @colour__link;
+			width: 2rem;
+			height: 2rem;
+			.box-sizing();
+		}
 	}
 }
 
 .about__cms p {
-	color: #fff;
+	color: #333;
+}
+
+.about__thumbnail {
+	margin-bottom: 2rem;
 }
 
 .about__thumbnail-media {

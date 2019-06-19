@@ -56,6 +56,16 @@
 	.footer {
 		padding-top: @grid__pad_mobile;
 		padding-bottom: @grid__pad_mobile;
+
+		// Social icons
+		.icon--facebook,
+		.icon--instagram {
+			font-size: 1.8rem;
+		}
+	}
+
+	.copyright {
+		margin-bottom: 2rem;
 	}
 
 	// Blog
@@ -98,28 +108,12 @@
 	}
 
 	// About
-	.about {
-		.wrap {
-			padding: @grid__pad_mobile;
-		}
-	}
-
-	.about__wrap {
-		.flex-direction(column);
-	}
-
 	.about__cms {
-		.flex-order(1);
-
 		h2 {
 			text-align: center;
 		}
 	}
 
-	.about__thumbnail {
-		.flex-order(2);
-		padding-top: @grid__pad_mobile;
-	}
 
 	// CMS
 	.entry__cms {
@@ -213,6 +207,18 @@
 	.footer {
 		padding-top: @grid__pad_desktop;
 		padding-bottom: @grid__pad_desktop;
+
+		.wrap {
+			.flex-display();
+			.flex-direction(row);
+			.align-items(flex-start);
+		}
+
+		// Social icons
+		.icon--facebook,
+		.icon--instagram {
+			font-size: 1.6rem;
+		}
 	}
 
 	// Blog
@@ -251,26 +257,6 @@
 		font-size: @icon__desktop;
 	}
 
-	// About
-	.about {
-		.wrap {
-			padding-top: 6.4rem;
-			padding-bottom: 6.4rem;
-		}
-	}
-
-	.about__wrap {
-		.flex-direction(row);
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 80%;
-	}
-
-	.about__thumbnail {
-		.flex(1 0 33.33%);
-		padding-right: @grid__pad_desktop;
-	}
-
 	// CMS
 	.entry__cms {
 		&:not(:empty) {
@@ -279,7 +265,15 @@
 		}
 	}
 
-	// Button: Redbubble
+	// Shopify
+	.entry__cms {
+		.shopify-buy-frame {
+			margin-left: -4.8rem !important;
+			margin-right: -4.8rem !important;
+		}
+	}
+
+	// Redbubble
 	.btn__redbubble-wrap {
 		text-align: center;
 	}

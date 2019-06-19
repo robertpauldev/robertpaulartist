@@ -6,16 +6,17 @@
 	background-color: @colour__footer;
 	color: #fff;
 
-	.wrap {
-		.flex-display();
-		.flex-direction(row);
-		.align-items(center);
+	// Logo
+	.logo__svg {
+		margin-bottom: 2rem;
+		max-width: 200px;
+		fill: #fff;
 	}
 
+	// Social icons
 	.icon--facebook,
 	.icon--instagram {
 		margin-left: 10px;
-		font-size: 1.3rem;
 		color: #fff;
 	}
 }
@@ -35,5 +36,9 @@
 	display: inline-block;
 	.font__serif();
 	font-size: 1.5rem;
-	color: #fff;
+	color: #aaa;
+}
+
+.social {
+	margin-left: auto;
 }

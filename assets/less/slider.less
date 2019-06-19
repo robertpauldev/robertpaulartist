@@ -23,6 +23,32 @@
 .slide__link {
 	display: block;
 	height: 100%;
+
+	// Product Icon
+	.product-icon {
+		top: 2rem;
+		right: -2rem;
+	}
+
+	.product-icon__wrap {
+		padding: 1rem;
+		box-shadow: -3px 3px 2px 0 rgba(0,0,0,.15);
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -2rem;
+			right: 0;
+			width: 2rem;
+			height: 2rem;
+			background: url('../images/icons/icon_corner.svg') center center no-repeat;
+			background-size: 100%;
+		}
+	}
+
+	.product-icon__svg {
+		margin-right: 1rem;
+	}
 }
 
 .slide__image {

@@ -12,7 +12,7 @@ $products = rpa_get_products();
 ?>
 
 <section class="wrap">
-	<div class="shop flex js-loading">
+	<div class="shop <?php echo false === empty( $products ) ? 'js-loading' : ''; ?>">
 		<header class="entry__header">
 			<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
 		</header>
@@ -23,8 +23,8 @@ $products = rpa_get_products();
 			<?php endforeach; ?>
 		</div>
 		<?php else : ?>
-		<div class="shop__empty">
-			<?php printf( '<h3 class="shop__empty-title">%s</h3>', 'Sorry, no products for sale at the moment. :(' ); ?>
+		<div class="shop__empty flex">
+			<?php printf( '<h3 class="shop__empty-title">%s</h3>', 'Sorry, nothing for sale at the moment' ); ?>
 		</div>
 		<?php endif; ?>
 	</div>

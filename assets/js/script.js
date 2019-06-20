@@ -3,7 +3,7 @@
 
 	$(document).ready(function () {
 
-		var delta = 1,
+		let delta = 1,
 			didScroll,
 			lastScrollTop    = 0,
 			siteContent      = $('.content'),
@@ -12,6 +12,7 @@
 
 		/** Video */
 		$('iframe').each(function () {
+
 			var src = $(this).attr('src');
 
 			if (src !== undefined && (~src.indexOf('youtube.com') || ~src.indexOf('vimeo.com'))) {
@@ -41,6 +42,7 @@
 
 		/** Scroll */
 		function hasScrolled() {
+
 			var scrollPosition = $(window).scrollTop(),
 				roundScrollPos = roundScroll(scrollPosition, delta);
 
@@ -52,7 +54,10 @@
 			/** Scroll Down / Up */
 			if (scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight) {
 				siteHeader.add(siteContent).addClass('js-scrolling');
-			} else {
+			}
+
+			/** Top of page */
+			if (scrollPosition <= siteHeaderHeight ) {
 				siteHeader.add(siteContent).removeClass('js-scrolling');
 			}
 

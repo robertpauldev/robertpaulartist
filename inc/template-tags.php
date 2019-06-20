@@ -133,7 +133,10 @@ function rpa_get_projects( $count = 10, $tag = null ) {
 		$args['tag_id'] = $tag;
 	}
 
-	return new WP_Query( $args );
+	$projects = new WP_Query( $args );
+	update_post_thumbnail_cache( $projects );
+
+	return $projects;
 }
 
 /**
@@ -147,4 +150,43 @@ function rpa_the_excerpt( $class = '' ) {
 	$excerpt = get_the_excerpt();
 
 	echo false === empty( $excerpt ) ? sprintf( '<p class="excerpt %1$s">%2$s</p>', esc_html( $class ), esc_html( $excerpt ) ) : '';
+}
+
+/**
+ * Returns a list of projects with Shopify product codes.
+ *
+ * @return array|string
+ */
+function rpa_get_products() {
+
+	/** Get projects */
+	$projects = rpa_get_projects();
+
+	if ( empty( $projects ) ) {
+		return;
+	}
+
+	$products = array();
+
+	$i = 0;
+
+	/** Check which projects contain Shopify ACF values */
+	foreach ( $projects->posts as $project ) {
+
+		$shopify = get_field( 'shopify_code', $project->ID );
+
+		/** Populate $products with Shopify codes */
+		if ( false === empty( $shopify ) ) {
+			$products[$i]['title'] = $project->post_title;
+			$products[$i]['code']  = $shopify;
+		}
+
+		++$i;
+	}
+
+	if ( false === empty( $products ) ) {
+		return $products;
+	}
+
+	return '';
 }

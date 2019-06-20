@@ -15,7 +15,16 @@ if ( false === empty( $projects ) ) :
 ?>
 
 <div class="slider">
-	<ul class="cycle-slideshow" data-cycle-slides=".slide" data-cycle-fx="fade" data-cycle-timeout="0" data-cycle-speed="250" data-cycle-auto-height="16:9" data-cycle-prev=".slider__ui--prev" data-cycle-next=".slider__ui--next" data-cycle-pager=".slider__pager">
+	<ul class="cycle-slideshow"
+		data-cycle-slides=".slide"
+		data-cycle-fx="fade"
+		data-cycle-timeout="0"
+		data-cycle-speed="250"
+		data-cycle-auto-height="16:9"
+		data-cycle-prev=".slider__ui--prev"
+		data-cycle-next=".slider__ui--next"
+		data-cycle-pager=".slider__pager"
+		data-cycle-log="false">
 		<?php
 		/** Loop through Projects */
 		foreach ( $projects as $project ) :

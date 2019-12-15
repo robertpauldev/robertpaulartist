@@ -331,8 +331,23 @@
 // Typography > FAQs
 .faq {
 
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:hover,
+	&:focus {
+		.faq__title {
+			&::-webkit-details-marker,
+			&::marker {
+				color: @colour__link;
+			}
+		}
+	}
+
 	// Typography > FAQs > Title
 	&__title {
+		// displa
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		.font__oswald();

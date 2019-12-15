@@ -35,7 +35,6 @@ add_action( 'after_setup_theme', 'rpa_setup' );
 function rpa_scripts() {
 
 	/** Enqueue styles */
-	wp_enqueue_style( 'rpa-oswald', 'https://fonts.googleapis.com/css?family=Oswald:300,400,600' );
 	wp_enqueue_style( 'rpa-droid', 'https://fonts.googleapis.com/css?family=Droid+Serif' );
 	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style-min.css', '', RPA_VERSION );
 

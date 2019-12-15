@@ -6,33 +6,37 @@
 	z-index: 100;
 	position: absolute;
 	display: inline-block;
-	background-color: @colour__link;
-}
+	background-color: @colour_link;
 
-.product-icon__wrap {
-	position: relative;
-}
+	// Product Icons > Wrap
+	&__wrap {
+		position: relative;
+	}
 
-.product-icon__svg {
-	display: inline-block;
-	width: 2rem;
-	height: 2rem;
-}
+	// Product Icons > SVG
+	&__svg {
+		display: inline-block;
+		width: 2rem;
+		height: 2rem;
 
-.product-icon__svg-path {
-	fill: #fff;
-}
+		&-path {
+			fill: #fff;
+		}
+	}
 
-.product-icon__label {
-	display: inline-block;
-	.font__oswald();
-	font-size: 1.8rem;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #fff;
-}
+	// Product Icons > Labels
+	&__label {
+		display: inline-block;
+		.font--oswald();
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #fff;
+	}
 
-.product-icon__svg,
-.product-icon__label {
-	vertical-align: middle;
+	// Product Icons > Shared LESS
+	&__svg,
+	&__label {
+		vertical-align: middle;
+	}
 }

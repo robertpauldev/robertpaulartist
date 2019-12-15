@@ -10,22 +10,25 @@
 
 	// Grid
 	.wrap {
-		padding-left: @grid__pad_mobile;
-		padding-right: @grid__pad_mobile;
+		padding-left: @grid_pad_mobile;
+		padding-right: @grid_pad_mobile;
 	}
 
 	// Masthead
 	.masthead {
-		padding-top: @grid__pad_mobile;
-		padding-bottom: @grid__pad_mobile;
+		padding-top: @grid_pad_mobile;
+		padding-bottom: @grid_pad_mobile;
 		height: 184px;
 		text-align: center;
 
+		// Masthead > Scroll state
 		&.js-scrolling {
 			height: 64px;
 
+			// Masthead > Scroll state > Logo
 			.logo__svg {
-				margin: 0 auto;
+				margin-left: auto;
+				margin-right: auto;
 				width: 200px;
 			}
 		}
@@ -35,18 +38,18 @@
 	.nav {
 		margin-top: 2rem;
 		text-align: center;
-	}
 
-	.nav-bar {
-		display: inline-block;
-		line-height: 120%;
-		font-size: 2.4rem;
-
-		li {
-			&:not(:last-child) {
-				&:after {
-					margin-left: 1rem;
-					margin-right: 1rem;
+		&-bar {
+			display: inline-block;
+			line-height: 120%;
+			font-size: 2.4rem;
+	
+			li {
+				&:not(:last-child) {
+					&:after {
+						margin-left: 1rem;
+						margin-right: 1rem;
+					}
 				}
 			}
 		}
@@ -54,57 +57,71 @@
 
 	// Footer
 	.footer {
-		padding-top: @grid__pad_mobile;
-		padding-bottom: @grid__pad_mobile;
+		padding-top: @grid_pad_mobile;
+		padding-bottom: @grid_pad_mobile;
 
-		// Social icons
+		// Footer > Social icons
 		.icon--facebook,
 		.icon--instagram {
 			font-size: 1.8rem;
 		}
 	}
 
+	// Footer > Copyright
 	.copyright {
 		margin-bottom: 2rem;
 	}
 
 	// Blog
 	.blog {
+
+		// Blog > Grid
 		.wrap--grid {
-			padding-top: @grid__pad_mobile;
-			padding-bottom: @grid__pad_mobile;
+			padding-top: @grid_pad_mobile;
+			padding-bottom: @grid_pad_mobile;
+		}
+
+		// Blog > Title
+		&__title {
+			font-size: 2.0rem;
 		}
 	}
 
-	.blog__title {
-		font-size: 2.0rem;
-	}
-
 	// Post
-	.entry__thumbnail {
-		margin-left: -( @grid__pad_mobile );
-		margin-right: -( @grid__pad_mobile );
-	}
+	.entry {
 
-	.entry__nav-link {
-		+ .entry__nav-link {
-			margin-top: 2rem;
+		// Post > Thumbnail
+		&__thumbnail {
+			margin-left: -( @grid_pad_mobile );
+			margin-right: -( @grid_pad_mobile );
+		}
+
+		// Post > Nav
+		&__nav-link {
+			+ .entry__nav-link {
+				margin-top: 2rem;
+			}
 		}
 	}
 
 	// Slider
-	.slider__wrap {
-		margin-left: -( @grid__pad_mobile );
-		margin-right: -( @grid__pad_mobile );
-	}
+	.slider {
 
-	.slider__ui {
-		margin-top: -( @icon__mobile );
-		padding: @icon__desktop / 2;
-		width: @icon__mobile;
-		height: @icon__mobile;
-		line-height: @icon__mobile;
-		font-size: @icon__mobile;
+		// Slider > Wrap
+		&__wrap {
+			margin-left: -( @grid_pad_mobile );
+			margin-right: -( @grid_pad_mobile );
+		}
+
+		// Slider > UI
+		&__ui {
+			margin-top: -( @icon_mobile );
+			padding: @icon_desktop / 2;
+			width: @icon_mobile;
+			height: @icon_mobile;
+			line-height: @icon_mobile;
+			font-size: @icon_mobile;
+		}
 	}
 
 	// About
@@ -114,12 +131,11 @@
 		}
 	}
 
-
 	// CMS
 	.entry__cms {
 		&:not(:empty) {
-			padding-top: @grid__pad_mobile;
-			padding-bottom: @grid__pad_mobile;
+			padding-top: @grid_pad_mobile;
+			padding-bottom: @grid_pad_mobile;
 		}
 	}
 }
@@ -158,28 +174,31 @@
 
 	// Grid
 	.wrap {
-		padding-left: @grid__pad_desktop;
-		padding-right: @grid__pad_desktop;
-		max-width: @grid__max;
+		padding-left: @grid_pad_desktop;
+		padding-right: @grid_pad_desktop;
+		max-width: @grid_max;
 	}
 
 	// Masthead
 	.masthead {
-		padding-top: @grid__pad_desktop;
-		padding-bottom: @grid__pad_desktop;
+		padding-top: @grid_pad_desktop;
+		padding-bottom: @grid_pad_desktop;
 		height: 150px;
 
+		// Masthead > Scroll state
 		&.js-scrolling {
-			padding-top: @grid__pad_mobile;
-			padding-bottom: @grid__pad_mobile;
+			padding-top: @grid_pad_mobile;
+			padding-bottom: @grid_pad_mobile;
 			height: 64px;
 
+			// Masthead > Scroll state > Logo
 			.logo__svg {
 				width: 200px;
 			}
 		}
 	}
 
+	// Masthead > Logo
 	.logo {
 		display: block;
 		float: left;
@@ -188,16 +207,16 @@
 	// Navigation
 	.nav {
 		float: right;
-	}
 
-	.nav-bar {
-		font-size: 2.6rem;
+		&-bar {
+			font-size: 2.6rem;
 
-		li {
-			&:not(:last-child) {
-				&:after {
-					margin-left: 1.5rem;
-					margin-right: 1.5rem;
+			li {
+				&:not(:last-child) {
+					&:after {
+						margin-left: 1.5rem;
+						margin-right: 1.5rem;
+					}
 				}
 			}
 		}
@@ -205,16 +224,17 @@
 
 	// Footer
 	.footer {
-		padding-top: @grid__pad_desktop;
-		padding-bottom: @grid__pad_desktop;
+		padding-top: @grid_pad_desktop;
+		padding-bottom: @grid_pad_desktop;
 
+		// Footer > Wrap
 		.wrap {
 			.flex-display();
 			.flex-direction(row);
 			.align-items(flex-start);
 		}
 
-		// Social icons
+		// Footer > Social icons
 		.icon--facebook,
 		.icon--instagram {
 			font-size: 1.6rem;
@@ -223,54 +243,60 @@
 
 	// Blog
 	.blog {
+
+		// Blog > Grid
 		.wrap--grid {
-			padding-top: @grid__pad_desktop;
-			padding-bottom: @grid__pad_desktop;
+			padding-top: @grid_pad_desktop;
+			padding-bottom: @grid_pad_desktop;
+		}
+
+		// Blog > Title
+		&__title {
+			font-size: 2.8rem;
 		}
 	}
 
-	.blog__title {
-		font-size: 2.8rem;
-	}
-
 	// Post
-	.entry__nav-link {
-		max-width: 48%;
-	}
+	.entry {
 
-	.entry__nav-link--next {
-		float: left;
-	}
+		// Entry > CMS
+		&__cms {
 
-	.entry__nav-link--prev {
-		float: right;
-		text-align: right;
+			&:not(:empty) {
+				padding-top: @grid_pad_desktop;
+				padding-bottom: @grid_pad_desktop;
+			}
+
+			// Entry > CMS > Shopify
+			.shopify-buy-frame {
+				margin-left: -4.8rem !important;
+				margin-right: -4.8rem !important;
+			}
+		}
+
+		// Entry > Nav
+		&__nav-link {
+			max-width: 48%;
+
+			&--next {
+				float: left;
+			}
+
+			&--prev {
+				float: right;
+				text-align: right;
+			}
+		}
 	}
 
 	// Slider
 	.slider__ui {
-		margin-top: -( @icon__desktop );
-		padding: @icon__desktop / 2;
-		width: @icon__desktop;
-		height: @icon__desktop;
-		line-height: @icon__desktop;
-		font-size: @icon__desktop;
-	}
-
-	// CMS
-	.entry__cms {
-		&:not(:empty) {
-			padding-top: @grid__pad_desktop;
-			padding-bottom: @grid__pad_desktop;
-		}
-	}
-
-	// Shopify
-	.entry__cms {
-		.shopify-buy-frame {
-			margin-left: -4.8rem !important;
-			margin-right: -4.8rem !important;
-		}
+		margin-top: -( @icon_desktop );
+		padding: @icon_desktop / 2;
+		width: @icon_desktop;
+		height: @icon_desktop;
+		line-height: @icon_desktop;
+		font-size: @icon_desktop;
 	}
 
 	// Redbubble

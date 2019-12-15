@@ -12,9 +12,9 @@
 	background-color: #fff;
 	overflow: hidden;
 	.transition(all ease .2s);
-	transform: translateZ(0);
-	-webkit-transform: translateZ(0);
+	.transform(translateZ(0));
 
+	// Masthead > Scrolling state
 	&.js-scrolling {
 		.logo__2,
 		.logo__3 {
@@ -28,19 +28,28 @@
 	display: inline-block;
 	width: 100%;
 	max-width: 300px;
-}
 
-.logo__svg {
-	display: block;
-	width: 100%;
-	fill: #000;
-	.transition(all ease .2s);
-}
+	// Logo > Media
+	&__svg {
+		display: block;
+		width: 100%;
+		fill: #000;
+		.transition(all ease .2s);
+	}
 
-.logo__2 {
-	opacity: .25; 
-}
+	&:hover,
+	&:focus {
+		.logo__svg {
+			fill: @colour_link;
+		}
+	}
 
-.logo__3 {
-	opacity: .5;
+	// Logo > Paths
+	&__2 {
+		opacity: .25; 
+	}
+	
+	&__3 {
+		opacity: .5;
+	}
 }

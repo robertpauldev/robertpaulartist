@@ -4,22 +4,23 @@
 
 html {
 	height: 100%;
-	background-color: @colour__footer;
+	background-color: @colour_footer;
 }
 
 body {
-	background-color: @colour__html;
+	background-color: @colour_html;
+	font-family: @font_helvetica;
 }
 
 // Wrap
 .wrap {
 	margin: 0 auto;
 	width: 100%;
-
 	.box-sizing();
 	.transition(padding ease .2s);
-}
 
-.wrap--grid {
-	.grid();
+	// Wrap > Grid
+	&--grid {
+		.grid();
+	}
 }

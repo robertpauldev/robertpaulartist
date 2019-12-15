@@ -1,35 +1,32 @@
-/***
-Gulp
-***/
+// Get NPM packages
+const gulp   = require( 'gulp' ),
+      less     = require( 'gulp-less' ),
+      plumber  = require( 'gulp-plumber' ),
+      cleancss = require( 'gulp-clean-css' ),
+      watch    = require( 'gulp-watch' ),
+      path     = require( 'path' );
 
-var gulp = require('gulp'),
-	less = require('gulp-less'),
-	prefix = require('gulp-autoprefixer'),
-	plumber = require('gulp-plumber'),
-	cleancss = require('gulp-clean-css'),
-	watch = require('gulp-watch'),
-	path = require('path');
-
-// Compile LESS to CSS
-gulp.task('build-less', function() {
-	return gulp.src('less/style-min.less') // path to less file
-	.pipe(plumber())
-	.pipe(less({
-		paths: ['less/', 'css/']
-	}))
-	.pipe(cleancss({
+// Task: compile LESS to CSS
+gulp.task( 'build-less', function() {
+	return gulp.src( 'less/style-min.less' ) // Path to gulped LESS
+	.pipe( plumber() )
+	.pipe( less( {
+		paths: [ 'less/', 'css/' ]
+	} ) )
+	.pipe( cleancss( {
 		debug: true
-	}, function (details) {
-		console.log(details.name + ' Original size: ' + details.stats.originalSize + 'b');
-		console.log(details.name + ' Gulped size: ' + details.stats.minifiedSize + 'b');
-	}))
-	.pipe(gulp.dest('css/')) // output
-});
+	}, function ( details ) {
+		// Output original and minified file sizes
+		console.log( details.name + ' Original size: ' + details.stats.originalSize + 'b' );
+		console.log( details.name + ' Gulped size: ' + details.stats.minifiedSize + 'b' );
+	} ) )
+	.pipe( gulp.dest( 'css/' ) ) // Destination of minified CSS
+} );
 
-// Watch all LESS files, then run build-less
-gulp.task('watch', function() {
-	gulp.watch('less/*.less', ['build-less'])
-});
+// Task: watch changes to LESS files
+gulp.task( 'watch', function() {
+	gulp.watch( 'less/*.less', gulp.series( 'build-less' ) );
+} );
 
-// Default will run the 'entry' task
-gulp.task('default', ['watch', 'build-less']);
+// Task: run 'gulp watch' build process
+gulp.task( 'default', gulp.series( 'watch' ) );

@@ -3,17 +3,17 @@
 ////////////
 
 .footer {
-	background-color: @colour__footer;
+	background-color: @colour_footer;
 	color: #fff;
 
-	// Logo
+	// Footer > Logo
 	.logo__svg {
 		margin-bottom: 2rem;
 		max-width: 200px;
 		fill: #fff;
 	}
 
-	// Social icons
+	// Footer > Social icons
 	.icon--facebook,
 	.icon--instagram {
 		margin-left: 10px;
@@ -21,6 +21,12 @@
 	}
 }
 
+// Footer > Social
+.social {
+	margin-left: auto;
+}
+
+// Footer > Social icons
 .icon--facebook,
 .icon--instagram {
 	text-decoration: none;
@@ -28,17 +34,15 @@
 	// Helper text
 	> span {
 		display: none;
-		.font__serif();
+		.font--droid-serif();
 	}
 }
 
+// Footer > Copyright
 .copyright {
 	display: inline-block;
-	.font__serif();
+	.font--droid-serif();
 	font-size: 1.5rem;
 	color: #aaa;
 }
 
-.social {
-	margin-left: auto;
-}

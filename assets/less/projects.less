@@ -2,78 +2,77 @@
 // Projects //
 //////////////
 
-.projects {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
+.project {
 
-// Project > Link
-.project__link {
-	position: relative;
-	display: block;
-
-	// Product icon
-	.product-icon {
-		top: 0;
-		right: 0;
-		padding: .6rem;
-		width: 3.2rem;
-		height: 3.2rem;
+	// Project > Collection
+	&s {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
 
-	.product-icon__label {
-		display: none;
-	}
+	// Project > Link
+	&__link {
+		position: relative;
+		display: block;
 
-	// Hover
-	&:hover {
-		.project__view {
-			opacity: 1;
+		// Project > Link > Product icon
+		.product-icon {
+			top: 0;
+			right: 0;
+			padding: .6rem;
+			width: 3.2rem;
+			height: 3.2rem;
+
+			// Project > Link > Product icon > Label
+			&__label {
+				display: none;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			.project__view {
+				opacity: 1;
+			}
 		}
 	}
-}
 
-// Project > View
-.project__view {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: block;
-	background-color: darken( #e63b3b, 10% );
-	background-color: darken( rgba( 230, 59, 59, .85 ), 10% );
-	opacity: 0;
-
-	.transition(all ease .12s);
-
-	span {
-		.flex-display();
-
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		justify-content: center;
-
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center;
-
-		padding-left: 2rem;
-		padding-right: 2rem;
-		height: 100%;
-		.font__oswald();
-		font-size: 2.4rem;
-		font-weight: 200;
-		text-align: center;
-		text-transform: uppercase;
-		color: #fff;
+	// Project > View
+	&__view {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		background-color: darken( #e63b3b, 10% );
+		background-color: darken( rgba( 230, 59, 59, .85 ), 10% );
+		opacity: 0;
+		.transition(all ease .12s);
+	
+		span {
+			.flex-display();
+			.justify-content(center);
+			.align-items(center);
+			padding-left: 2rem;
+			padding-right: 2rem;
+			height: 100%;
+			line-height: 115%;
+			.font--oswald();
+			font-size: 2.4rem;
+			font-weight: 300;
+			letter-spacing: -.01rem;
+			text-align: center;
+			text-transform: uppercase;
+			color: #fff;
+		}
 	}
-}
 
-// Project > Image
-.project__image {
-	display: block;
-	width: 100%;
+	// Project > Image
+	&__image {
+		display: block;
+		width: 100%;
+	}
 }
 
 // Project > Attribution
@@ -95,14 +94,14 @@
 		font-weight: bold;
 		font-size: 1.7rem;
 	}
+
+	& > p {
+		font-size: inherit;
+		color: inherit;
+	}
 }
 
-.attribution > p {
-	font-size: inherit;
-	color: inherit;
-}
-
-// Shopify
+// Project > Shopify
 .entry__cms {
 	.shopify-buy-frame {
 		padding: 2rem;
@@ -111,38 +110,40 @@
 	}
 }
 
-// Redbubble
-.btn__redbubble-wrap {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-
-.btn__redbubble {
-	display: inline-block;
-	padding-top:  1rem;
-	padding-left: 6.4rem;
-	min-height: 4.8rem;
-	line-height: 125%;
-	background-image: url('../images/icons/icon_redbubble.svg');
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	background-size: 4.8rem;
-	.font__oswald();
-	font-weight: 300;
-	font-size: 2rem;
-	text-decoration: none;
-	color: #000;
-
-	strong {
-		font-weight: 400;
-		color: @colour__link;
-	}
-
-	// Hover/focus
-	&:hover,
-	&:focus {
+// Project > Redbubble
+.btn {
+	&__redbubble {
+		display: inline-block;
+		padding-top:  1rem;
+		padding-left: 6.4rem;
+		min-height: 4.8rem;
+		line-height: 125%;
+		background-image: url('../images/icons/icon_redbubble.svg');
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: 4.8rem;
+		.font--oswald();
+		font-weight: 300;
+		font-size: 2rem;
+		text-decoration: none;
+		color: #000;
+	
 		strong {
-			border-bottom: 2px solid @colour__link;
+			font-weight: 400;
+			color: @colour_link;
+		}
+
+		&:hover,
+		&:focus {
+			strong {
+				border-bottom: 2px solid @colour_link;
+			}
+		}
+
+		// Project > Redbubble > Wrap
+		&-wrap {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
 		}
 	}
 }

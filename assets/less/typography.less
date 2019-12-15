@@ -2,22 +2,20 @@
 // Typography //
 ////////////////
 
-// Oswald
-.font__oswald() {
-	font-family: 'Oswald', Arial, sans-serif;
+
+// Typography > Oswald
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+.font--oswald() {
+	font-family: 'Oswald', @font_helvetica;
 }
 
-// Open Sans
-.font__sans() {
-	font-family: 'Open Sans', Arial, sans-serif;
+// Typography > Droid Serif
+.font--droid-serif() {
+	font-family: 'Droid Serif', Georgia, @font_helvetica;
 }
 
-// Droid Serif
-.font__serif() {
-	font-family: 'Droid Serif', Georgia, sans-serif;
-}
-
-// Elegant Icons
+// Typography > Elegant Icons
 @font-face {
 	font-family: 'ElegantIcons';
 	src:url('../fonts/ElegantIcons/ElegantIcons.eot');
@@ -29,56 +27,75 @@
 	font-style: normal;
 }
 
-.icon-archive,
-.icon-caret-left,
-.icon-caret-right,
-.icon-clock,
-.icon-email,
-.icon-facebook,
-.icon-instagram {
-	font-family: 'ElegantIcons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
+// Typography > Icons
+.icon {
 
-.icon-archive:before {
-	content: '\e088';
-}
+	// Typography > Icons > All
+	&-archive,
+	&-caret-left,
+	&-caret-right,
+	&-clock,
+	&-email,
+	&-facebook,
+	&-instagram {
+		font-family: 'ElegantIcons';
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+	}
 
-.icon-caret-left:before {
-	content: '\34';
-}
+	// Typography > Icon > Archive
+	&-archive:before {
+		content: '\e088';
+	}
 
-.icon-caret-right:before {
-	content: '\35';
-}
+	// Typography > Icon > Carets
+	&-caret {
 
-.icon-clock:before {
-	content: '\7d';
-}
+		// Typography > Icon > Carets > Left
+		&-left {
+			&:before {
+				content: '\34';
+			}
+		}
 
-.icon-email:before {
-	content: '\e010';
-}
-
-.icon-facebook:before {
-	content: '\e093';
-}
-
-.icon-instagram:before {
-	content: '\e09a';
+		// Typography > Icon > Carets > Right
+		&-right {
+			&:before {
+				content: '\35';
+			}
+		}
+	}
+	
+	// Typography > Icon > Clock
+	&-clock:before {
+		content: '\7d';
+	}
+	
+	// Typography > Icon > Email
+	&-email:before {
+		content: '\e010';
+	}
+	
+	// Typography > Icon > Facebook
+	&-facebook:before {
+		content: '\e093';
+	}
+	
+	// Typography > Icon > Instagram
+	&-instagram:before {
+		content: '\e09a';
+	}
 }
 
 // Titles
 .page-title {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
-	.font__oswald();
+	.font--oswald();
 	font-weight: 400;
 	font-size: 2.6rem;
 	text-align: center;
@@ -93,7 +110,7 @@
 	h1,
 	h2,
 	h3 {
-		.font__oswald();
+		.font--oswald();
 	}
 
 	h1 {
@@ -118,7 +135,7 @@
 	h5,
 	h6 {
 		margin-bottom: 1em;
-		.font__serif();
+		.font--droid-serif();
 		font-size: 1.6rem;
 		font-weight: 200;
 	}
@@ -137,7 +154,7 @@
 
 		// Link
 		a {
-			color: @colour__link;
+			color: @colour_link;
 		}
 	}
 
@@ -175,7 +192,7 @@
 
 		caption,
 		th {
-			.font__oswald();
+			.font--oswald();
 			font-size: 2.0rem;
 			font-weight: 500;
 			text-transform: uppercase;
@@ -188,11 +205,11 @@
 		}
 
 		caption {
-			background-color: darken( @colour__footer, 2.5% );
+			background-color: darken( @colour_footer, 2.5% );
 		}
 
 		th {
-			background-color: @colour__footer;
+			background-color: @colour_footer;
 		}
 
 		td {
@@ -204,7 +221,7 @@
 			}
 
 			&.price-list__price {
-				.font__oswald();
+				.font--oswald();
 				font-size: 1.6rem;
 				font-weight: 500;
 			}
@@ -216,38 +233,48 @@
 	}
 }
 
-.entry__cms {
-	margin: 0 auto;
-	max-width: 620px;
-}
+// Entry
+.entry {
 
-.entry__header {
-	margin-bottom: 2rem;
-	.font__oswald();
-	text-align: center;
-}
+	// Entry > CMS
+	&__cms {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 620px;
+	}
 
-.entry__title {
-	margin-bottom: .5em;
-	font-size: 3.2rem;
-	font-weight: 400;
-}
+	// Entry > Header
+	&__header {
+		margin-bottom: 2rem;
+		.font--oswald();
+		text-align: center;
+	}
 
-.entry__date {
-	display: inline-block;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid #eee;
-	font-size: 1.6rem;
-	font-weight: 200;
-	text-transform: uppercase;
-	color: #aaa;
+	// Entry > Title
+	&__title {
+		margin-bottom: .5em;
+		font-size: 3.2rem;
+		font-weight: 400;
+	}
 
-	.icon-clock {
-		margin-right: .4rem;
+	// Entry > Date
+	&__date {
+		display: inline-block;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #eee;
+		font-size: 1.6rem;
+		font-weight: 200;
+		text-transform: uppercase;
+		color: #aaa;
+
+		// Entry > Date > Icon
+		.icon-clock {
+			margin-right: .4rem;
+		}
 	}
 }
 
-// Info
+// Typography > Info
 .infobox {
 	position: relative;
 	margin-top: 1.5rem;
@@ -267,7 +294,7 @@
 	}
 }
 
-// Contact Me
+// Typography > Contact Me
 .contact-me {
 	.flex-display();
 	.flex-flow(row nowrap);
@@ -283,7 +310,7 @@
 		font-weight: bold;
 		text-align: center;
 		text-decoration: none;
-		color: @colour__link;
+		color: @colour_link;
 
 		&:before {
 			display: inline-block;
@@ -295,7 +322,7 @@
 	.icon__text {
 		display: inline-block;
 		line-height: 2rem;
-		.font__oswald();
+		.font--oswald();
 		font-size: 1.6rem;
 		font-weight: 400;
 		text-transform: uppercase;
@@ -303,17 +330,37 @@
 	}
 }
 
-// FAQs
-.faq__title {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	.font__oswald();
-	font-size: 2.4rem;
-	font-weight: 200;
-}
+// Typography > FAQs
+.faq {
 
-.faq__content {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
-	.body-copy();
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:hover,
+	&:focus {
+		.faq__title {
+			&::-webkit-details-marker,
+			&::marker {
+				color: @colour_link;
+			}
+		}
+	}
+
+	// Typography > FAQs > Title
+	&__title {
+		// displa
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		.font--oswald();
+		font-size: 2.4rem;
+		font-weight: 200;
+	}
+
+	// Typography > FAQs > Content
+	&__content {
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+		.body-copy();
+	}
 }

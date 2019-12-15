@@ -2,7 +2,7 @@
 // Navigation //
 ////////////////
 
-// Nav Bar
+// Navigation > Nav Bar
 .nav-bar {
 	margin: 0;
 	padding: 0;
@@ -11,14 +11,11 @@
 	text-align: center;
 	text-transform: uppercase;
 
-	.clearfix;
-
-	// Nav Items
+	// Navigation > Nav Bar > Items
 	li {
 		float: left;
 
 		&:not(:last-child) {
-
 			&:after {
 				content: '/';
 				font-weight: 200;
@@ -27,27 +24,26 @@
 		}
 	}
 
-	// Current
+	// Navigation > Nav Bar > Items > Current
 	.current-menu-item {
 		a {
 			color: @colour__link;
 		}
 	}
 
-	// Link
+	// Navigation > Nav Bar > Links
 	a {
 		font-weight: 200;
 		text-decoration: none;
 		color: #000;
-
 		.transition(all ease .2s);
 
-		// Hover
 		&:hover {
 			color: @colour__link;
 		}
 	}
 
+	// Navigation > Nav Bar > Social icons
 	.icon--facebook,
 	.icon--instagram {
 		font-size: 2.3rem;
@@ -56,37 +52,38 @@
 
 // Navigation > Post Nav
 .entry__nav {
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	border-top: 1px solid #eee;
 	max-width: 620px;
 	.font__serif();
 	font-size: 1.5rem;
-}
 
-.entry__nav-link {
-	display: block;
-	line-height: 130%;
-
-	a {
-		text-decoration: none;
-		color: #000;
-
-		.transition(color ease .12s);
-
-		// Hover
-		&:hover {
-			color: @colour__link;
+	// Navigation > Post Nav > Links
+	&-link {
+		display: block;
+		line-height: 130%;
+	
+		a {
+			text-decoration: none;
+			color: #000;
+			.transition(color ease .12s);
+	
+			&:hover {
+				color: @colour__link;
+			}
 		}
 	}
-}
 
-.entry__nav-label {
-	display: block;
-	margin-bottom: .4rem;
-	.font__oswald();
-	font-size: 1.3rem;
-	text-transform: uppercase;
-	color: #aaa;
+	// Navigation > Post Nav > Labels
+	&-label {
+		display: block;
+		margin-bottom: .4rem;
+		.font__oswald();
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		color: #aaa;
+	}
 }

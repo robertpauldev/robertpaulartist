@@ -2,11 +2,6 @@
 // Slider //
 ////////////
 
-// Slider
-.slider {
-	position: relative;
-}
-
 .cycle-slideshow {
 	margin: 0;
 	padding: 0;
@@ -14,71 +9,81 @@
 	list-style: none;
 }
 
+// Slider
 .slide {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-}
 
-.slide__link {
-	display: block;
-	height: 100%;
+	&r {
+		position: relative;
 
-	// Product Icon
-	.product-icon {
-		top: 2rem;
-		right: -2rem;
-	}
-
-	.product-icon__wrap {
-		padding: 1rem;
-		box-shadow: -3px 3px 2px 0 rgba(0,0,0,.15);
-
-		&:after {
-			content: '';
+		// Slider > UI
+		&__ui {
+			z-index: 1000;
 			position: absolute;
-			bottom: -2rem;
-			right: 0;
-			width: 2rem;
-			height: 2rem;
-			background: url('../images/icons/icon_corner.svg') center center no-repeat;
-			background-size: 100%;
+			top: 50%;
+			text-align: center;
+			color: #aaa;
+			.box-sizing(content-box);
+			.transition(all ease .12s);
+		
+			&:hover {
+				cursor: pointer;
+				color: #000;
+			}
+		
+			// Slider > UI > Previous
+			&--prev {
+				left: 0;
+			}
+		
+			// Slider > UI > Next
+			&--next {
+				right: 0;
+			}
 		}
 	}
 
-	.product-icon__svg {
-		margin-right: 1rem;
+	// Slider > Slide > Link
+	&__link {
+		display: block;
+		height: 100%;
+
+		// Slider > Slide > Link > Product Icon
+		.product-icon {
+			top: 2rem;
+			right: -2rem;
+
+			// Slider > Slide > Link > Product Icon > Wrap
+			&__wrap {
+				padding: 1rem;
+				box-shadow: -3px 3px 2px 0 rgba(0,0,0,.15);
+	
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: -2rem;
+					right: 0;
+					width: 2rem;
+					height: 2rem;
+					background: url('../images/icons/icon_corner.svg') center center no-repeat;
+					background-size: 100%;
+				}
+			}
+
+			// Slider > Slide > Link > Product Icon > SVG
+			&__svg {
+				margin-right: 1rem;
+			}
+		}
 	}
-}
 
-.slide__image {
-	display: inline-block;
-	width: auto;
-	height: auto;
-	max-height: 100%;
-}
-
-.slider__ui {
-	z-index: 1000;
-	position: absolute;
-	top: 50%;
-	text-align: center;
-	color: #aaa;
-
-	.box-sizing(content-box);
-	.transition(all ease .12s);
-
-	// Hover
-	&:hover {
-		cursor: pointer;
-		color: #000;
+	// Slider > Slide > Image
+	&__image {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		max-height: 100%;
 	}
-}
-
-.slider__ui--prev {
-	left: 0;
-}
-
-.slider__ui--next {
-	right: 0;
 }

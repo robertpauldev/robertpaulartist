@@ -2,27 +2,70 @@
 // Post //
 //////////
 
-// Thumbnail
-.entry__thumbnail {
-	text-align: center;
+.entry {
 
-	img {
-		margin: 0 auto;
-		width: auto;
-		max-height: 960px;
+	// Post > Thumbnail
+	&__thumbnail {
+		text-align: center;
+
+		// Post > Thumbnail > Media
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			width: auto;
+			max-height: 960px;
+		}
+	}
+
+	// Post > Tags
+	&__tags {
+		margin-top: 2rem;
+		font-size: 1.6rem;
+		text-align: center;
+		color: @colour__body_copy;
+	
+		// Icon
+		.icon-archive {
+			margin-right: .4rem;
+			font-size: 1.6rem;
+			color: #aaa;
+		}
+	
+		// Links
+		a {
+			.font__oswald();
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: @colour__body_copy;
+	
+			.transition(all ease .12s);
+	
+			// Hover
+			&:hover {
+				color: @colour__link;
+			}
+		}
+
+		&-wrap {
+			display: inline-block;
+			padding: 1rem;
+			background-color: #fff;
+			border-radius: .4rem;
+		}
 	}
 }
 
-// Content
+// Post > Content
 .cms {
 
-	// iframe
+	// Post > Content > iframe
 	iframe {
 		max-width: 100%;
 	}
 }
 
-// Image Embeds
+// Post > Image Embeds
 .wp-caption {
 
 	// Image
@@ -39,12 +82,12 @@
 	}
 }
 
-// Image Embeds > Center
+// Post > Image Embeds > Center
 .aligncenter {
 	margin: 1.5em auto;
 }
 
-// Video Embeds
+// Post > Video Embeds
 .video {
 	position: relative;
 	width: 100%;
@@ -60,42 +103,4 @@
 		width: 100%;
 		height: 100%;
 	}
-}
-
-// Tags
-.entry__tags {
-	margin-top: 2rem;
-	font-size: 1.6rem;
-	text-align: center;
-	color: @colour__body_copy;
-
-	// Icon
-	.icon-archive {
-		margin-right: .4rem;
-		font-size: 1.6rem;
-		color: #aaa;
-	}
-
-	// Links
-	a {
-		.font__oswald();
-		font-size: 1.4rem;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: @colour__body_copy;
-
-		.transition(all ease .12s);
-
-		// Hover
-		&:hover {
-			color: @colour__link;
-		}
-	}
-}
-
-.entry__tags-wrap {
-	display: inline-block;
-	padding: 1rem;
-	background-color: #fff;
-	border-radius: .4rem;
 }

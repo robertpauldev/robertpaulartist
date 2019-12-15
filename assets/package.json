@@ -2,11 +2,11 @@
 	"name": "rpa-gulp",
 	"version": "1.0.14",
 	"devDependencies": {
-		"gulp": "*",
-		"gulp-less": "*",
+		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "*",
-		"gulp-plumber": "*",
 		"gulp-clean-css": "*",
+		"gulp-less": "*",
+		"gulp-plumber": "*",
 		"gulp-watch": "*",
 		"path": "*"
 	}

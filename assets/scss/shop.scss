@@ -14,9 +14,9 @@
 
 	// Shop > Empty title
 	&__empty-title {
-		.font--oswald();
+		font-family: $font_oswald;
 		font-size: 2.4rem;
 		font-weight: 200;
 		color: #aaa;
-	}
+	}	
 }

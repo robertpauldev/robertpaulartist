@@ -6,7 +6,7 @@
 	z-index: 100;
 	position: absolute;
 	display: inline-block;
-	background-color: @colour_link;
+	background-color: $colour_link;
 
 	// Product Icons > Wrap
 	&__wrap {
@@ -27,7 +27,7 @@
 	// Product Icons > Labels
 	&__label {
 		display: inline-block;
-		.font--oswald();
+		font-family: $font_oswald;
 		font-size: 1.8rem;
 		text-transform: uppercase;
 		text-decoration: none;

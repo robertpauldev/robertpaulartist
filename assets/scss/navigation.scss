@@ -1,0 +1,93 @@
+////////////////
+// Navigation //
+////////////////
+
+// Navigation > Nav Bar
+.nav-bar {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: $font_oswald;
+	text-align: center;
+	text-transform: uppercase;
+
+	// Navigation > Nav Bar > Items
+	li {
+		float: left;
+
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+				font-weight: 200;
+				color: #ddd;
+			}
+		}
+	}
+
+	// Navigation > Nav Bar > Items > Current
+	.current-menu-item {
+		a {
+			font-weight: 400;
+			color: $colour_link;
+		}
+	}
+
+	// Navigation > Nav Bar > Links
+	a {
+		font-weight: 200;
+		letter-spacing: -.01rem;
+		text-decoration: none;
+		color: #000;
+		transition: all ease .2s;
+
+		&:hover,
+		&:focus {
+			color: $colour_link;
+		}
+	}
+
+	// Navigation > Nav Bar > Social icons
+	.icon--facebook,
+	.icon--instagram {
+		font-size: 2.3rem;
+	}
+}
+
+// Navigation > Post Nav
+.entry__nav {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	border-top: 1px solid #eee;
+	max-width: 620px;
+	font-family: $font_droid_serif;
+	font-size: 1.5rem;
+
+	// Navigation > Post Nav > Links
+	&-link {
+		display: block;
+		line-height: 130%;
+	
+		a {
+			text-decoration: none;
+			color: #000;
+			transition: color ease .12s;
+	
+			&:hover,
+			&:focus {
+				color: $colour_link;
+			}
+		}
+	}
+
+	// Navigation > Post Nav > Labels
+	&-label {
+		display: block;
+		margin-bottom: .4rem;
+		font-family: $font_oswald;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		color: #aaa;
+	}
+}

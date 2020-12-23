@@ -6,7 +6,7 @@
 
 	// Projects
 	.projects {
-		.grid();
+		display: grid;
 		grid-gap: 2rem 2rem;
 	}
 
@@ -21,16 +21,16 @@
 	.shop {
 
 		.grid {
-			.grid();
+			display: grid;
 			grid-gap: 3rem 3rem;
 		}
 
 		// Shop > Empty
 		&__empty {
-			.flex-display();
-			.flex-direction(column);
-			.justify-content(center);
-			.align-items(center);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			min-height: 80vh;
 		}
 	}

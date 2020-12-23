@@ -10,14 +10,14 @@
 
 	// Grid
 	.wrap {
-		padding-left: @grid_pad_mobile;
-		padding-right: @grid_pad_mobile;
+		padding-left: $grid_pad_mobile;
+		padding-right: $grid_pad_mobile;
 	}
 
 	// Masthead
 	.masthead {
-		padding-top: @grid_pad_mobile;
-		padding-bottom: @grid_pad_mobile;
+		padding-top: $grid_pad_mobile;
+		padding-bottom: $grid_pad_mobile;
 		height: 184px;
 		text-align: center;
 
@@ -57,8 +57,8 @@
 
 	// Footer
 	.footer {
-		padding-top: @grid_pad_mobile;
-		padding-bottom: @grid_pad_mobile;
+		padding-top: $grid_pad_mobile;
+		padding-bottom: $grid_pad_mobile;
 
 		// Footer > Social icons
 		.icon--facebook,
@@ -77,8 +77,8 @@
 
 		// Blog > Grid
 		.wrap--grid {
-			padding-top: @grid_pad_mobile;
-			padding-bottom: @grid_pad_mobile;
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
 		}
 
 		// Blog > Title
@@ -92,8 +92,8 @@
 
 		// Post > Thumbnail
 		&__thumbnail {
-			margin-left: -( @grid_pad_mobile );
-			margin-right: -( @grid_pad_mobile );
+			margin-left: -( $grid_pad_mobile );
+			margin-right: -( $grid_pad_mobile );
 		}
 
 		// Post > Nav
@@ -109,18 +109,18 @@
 
 		// Slider > Wrap
 		&__wrap {
-			margin-left: -( @grid_pad_mobile );
-			margin-right: -( @grid_pad_mobile );
+			margin-left: -( $grid_pad_mobile );
+			margin-right: -( $grid_pad_mobile );
 		}
 
 		// Slider > UI
 		&__ui {
-			margin-top: -( @icon_mobile );
-			padding: @icon_desktop / 2;
-			width: @icon_mobile;
-			height: @icon_mobile;
-			line-height: @icon_mobile;
-			font-size: @icon_mobile;
+			margin-top: -( $icon_mobile );
+			padding: $icon_desktop / 2;
+			width: $icon_mobile;
+			height: $icon_mobile;
+			line-height: $icon_mobile;
+			font-size: $icon_mobile;
 		}
 	}
 
@@ -134,8 +134,8 @@
 	// CMS
 	.entry__cms {
 		&:not(:empty) {
-			padding-top: @grid_pad_mobile;
-			padding-bottom: @grid_pad_mobile;
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
 		}
 	}
 }
@@ -174,21 +174,21 @@
 
 	// Grid
 	.wrap {
-		padding-left: @grid_pad_desktop;
-		padding-right: @grid_pad_desktop;
-		max-width: @grid_max;
+		padding-left: $grid_pad_desktop;
+		padding-right: $grid_pad_desktop;
+		max-width: $grid_max;
 	}
 
 	// Masthead
 	.masthead {
-		padding-top: @grid_pad_desktop;
-		padding-bottom: @grid_pad_desktop;
+		padding-top: $grid_pad_desktop;
+		padding-bottom: $grid_pad_desktop;
 		height: 150px;
 
 		// Masthead > Scroll state
 		&.js-scrolling {
-			padding-top: @grid_pad_mobile;
-			padding-bottom: @grid_pad_mobile;
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
 			height: 64px;
 
 			// Masthead > Scroll state > Logo
@@ -224,14 +224,14 @@
 
 	// Footer
 	.footer {
-		padding-top: @grid_pad_desktop;
-		padding-bottom: @grid_pad_desktop;
+		padding-top: $grid_pad_desktop;
+		padding-bottom: $grid_pad_desktop;
 
 		// Footer > Wrap
 		.wrap {
-			.flex-display();
-			.flex-direction(row);
-			.align-items(flex-start);
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
 		}
 
 		// Footer > Social icons
@@ -246,8 +246,8 @@
 
 		// Blog > Grid
 		.wrap--grid {
-			padding-top: @grid_pad_desktop;
-			padding-bottom: @grid_pad_desktop;
+			padding-top: $grid_pad_desktop;
+			padding-bottom: $grid_pad_desktop;
 		}
 
 		// Blog > Title
@@ -263,8 +263,8 @@
 		&__cms {
 
 			&:not(:empty) {
-				padding-top: @grid_pad_desktop;
-				padding-bottom: @grid_pad_desktop;
+				padding-top: $grid_pad_desktop;
+				padding-bottom: $grid_pad_desktop;
 			}
 
 			// Entry > CMS > Shopify
@@ -291,12 +291,12 @@
 
 	// Slider
 	.slider__ui {
-		margin-top: -( @icon_desktop );
-		padding: @icon_desktop / 2;
-		width: @icon_desktop;
-		height: @icon_desktop;
-		line-height: @icon_desktop;
-		font-size: @icon_desktop;
+		margin-top: -( $icon_desktop );
+		padding: $icon_desktop / 2;
+		width: $icon_desktop;
+		height: $icon_desktop;
+		line-height: $icon_desktop;
+		font-size: $icon_desktop;
 	}
 
 	// Redbubble

@@ -1,0 +1,55 @@
+//////////////
+// Masthead //
+//////////////
+
+// Masthead
+.masthead {
+	z-index: 1001;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	overflow: hidden;
+	transition: all ease .2s;
+	transform: translateZ(0);
+
+	// Masthead > Scrolling state
+	&.js-scrolling {
+		.logo__2,
+		.logo__3 {
+			display: none;
+		}
+	}
+}
+
+// Logo
+.logo {
+	display: inline-block;
+	width: 100%;
+	max-width: 300px;
+
+	// Logo > Media
+	&__svg {
+		display: block;
+		width: 100%;
+		fill: #000;
+		transition: all ease .2s;
+	}
+
+	&:hover,
+	&:focus {
+		.logo__svg {
+			fill: $colour_link;
+		}
+	}
+
+	// Logo > Paths
+	&__2 {
+		opacity: .25; 
+	}
+	
+	&__3 {
+		opacity: .5;
+	}
+}

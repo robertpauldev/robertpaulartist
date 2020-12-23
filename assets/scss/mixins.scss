@@ -1,0 +1,11 @@
+////////////
+// Mixins //
+////////////
+
+// Body Copy
+@mixin body-copy {
+	line-height: 150%;
+	font-family: $font_droid_serif;
+	font-size: 1.7rem;
+	color: $colour_body_copy;
+}

@@ -1,0 +1,306 @@
+///////////////////
+// Media: Mobile //
+///////////////////
+
+@media only screen and (max-width: 767px) {
+
+	body {
+		padding-top: 184px;
+	}
+
+	// Grid
+	.wrap {
+		padding-left: $grid_pad_mobile;
+		padding-right: $grid_pad_mobile;
+	}
+
+	// Masthead
+	.masthead {
+		padding-top: $grid_pad_mobile;
+		padding-bottom: $grid_pad_mobile;
+		height: 184px;
+		text-align: center;
+
+		// Masthead > Scroll state
+		&.js-scrolling {
+			height: 64px;
+
+			// Masthead > Scroll state > Logo
+			.logo__svg {
+				margin-left: auto;
+				margin-right: auto;
+				width: 200px;
+			}
+		}
+	}
+
+	// Navigation
+	.nav {
+		margin-top: 2rem;
+		text-align: center;
+
+		&-bar {
+			display: inline-block;
+			line-height: 120%;
+			font-size: 2.4rem;
+	
+			li {
+				&:not(:last-child) {
+					&:after {
+						margin-left: 1rem;
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	// Footer
+	.footer {
+		padding-top: $grid_pad_mobile;
+		padding-bottom: $grid_pad_mobile;
+
+		// Footer > Social icons
+		.icon--facebook,
+		.icon--instagram {
+			font-size: 1.8rem;
+		}
+	}
+
+	// Footer > Copyright
+	.copyright {
+		margin-bottom: 2rem;
+	}
+
+	// Blog
+	.blog {
+
+		// Blog > Grid
+		.wrap--grid {
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
+		}
+
+		// Blog > Title
+		&__title {
+			font-size: 2.0rem;
+		}
+	}
+
+	// Post
+	.entry {
+
+		// Post > Thumbnail
+		&__thumbnail {
+			margin-left: -( $grid_pad_mobile );
+			margin-right: -( $grid_pad_mobile );
+		}
+
+		// Post > Nav
+		&__nav-link {
+			+ .entry__nav-link {
+				margin-top: 2rem;
+			}
+		}
+	}
+
+	// Slider
+	.slider {
+
+		// Slider > Wrap
+		&__wrap {
+			margin-left: -( $grid_pad_mobile );
+			margin-right: -( $grid_pad_mobile );
+		}
+
+		// Slider > UI
+		&__ui {
+			margin-top: -( $icon_mobile );
+			padding: $icon_desktop / 2;
+			width: $icon_mobile;
+			height: $icon_mobile;
+			line-height: $icon_mobile;
+			font-size: $icon_mobile;
+		}
+	}
+
+	// About
+	.about__cms {
+		h2 {
+			text-align: center;
+		}
+	}
+
+	// CMS
+	.entry__cms {
+		&:not(:empty) {
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
+		}
+	}
+}
+
+///////////////////////////////
+// Media: WP Admin Bar fixes //
+///////////////////////////////
+
+@media only screen and (max-width: 782px) {
+
+	.admin-bar {
+		.masthead {
+			top: 46px;
+		}
+	}
+}
+
+@media only screen and (min-width: 783px) {
+
+	.admin-bar {
+		.masthead {
+			top: 32px;
+		}
+	}
+}
+
+///////////////////
+// Media: Tablet //
+///////////////////
+
+@media only screen and (min-width: 768px) {
+
+	body {
+		padding-top: 150px;
+	}
+
+	// Grid
+	.wrap {
+		padding-left: $grid_pad_desktop;
+		padding-right: $grid_pad_desktop;
+		max-width: $grid_max;
+	}
+
+	// Masthead
+	.masthead {
+		padding-top: $grid_pad_desktop;
+		padding-bottom: $grid_pad_desktop;
+		height: 150px;
+
+		// Masthead > Scroll state
+		&.js-scrolling {
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
+			height: 64px;
+
+			// Masthead > Scroll state > Logo
+			.logo__svg {
+				width: 200px;
+			}
+		}
+	}
+
+	// Masthead > Logo
+	.logo {
+		display: block;
+		float: left;
+	}
+
+	// Navigation
+	.nav {
+		float: right;
+
+		&-bar {
+			font-size: 2.6rem;
+
+			li {
+				&:not(:last-child) {
+					&:after {
+						margin-left: 1.5rem;
+						margin-right: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	// Footer
+	.footer {
+		padding-top: $grid_pad_desktop;
+		padding-bottom: $grid_pad_desktop;
+
+		// Footer > Wrap
+		.wrap {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		// Footer > Social icons
+		.icon--facebook,
+		.icon--instagram {
+			font-size: 1.6rem;
+		}
+	}
+
+	// Blog
+	.blog {
+
+		// Blog > Grid
+		.wrap--grid {
+			padding-top: $grid_pad_desktop;
+			padding-bottom: $grid_pad_desktop;
+		}
+
+		// Blog > Title
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+
+	// Post
+	.entry {
+
+		// Entry > CMS
+		&__cms {
+
+			&:not(:empty) {
+				padding-top: $grid_pad_desktop;
+				padding-bottom: $grid_pad_desktop;
+			}
+
+			// Entry > CMS > Shopify
+			.shopify-buy-frame {
+				margin-left: -4.8rem !important;
+				margin-right: -4.8rem !important;
+			}
+		}
+
+		// Entry > Nav
+		&__nav-link {
+			max-width: 48%;
+
+			&--next {
+				float: left;
+			}
+
+			&--prev {
+				float: right;
+				text-align: right;
+			}
+		}
+	}
+
+	// Slider
+	.slider__ui {
+		margin-top: -( $icon_desktop );
+		padding: $icon_desktop / 2;
+		width: $icon_desktop;
+		height: $icon_desktop;
+		line-height: $icon_desktop;
+		font-size: $icon_desktop;
+	}
+
+	// Redbubble
+	.btn__redbubble-wrap {
+		text-align: center;
+	}
+}

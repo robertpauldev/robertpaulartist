@@ -1,0 +1,89 @@
+//////////////////
+// Promo Banner //
+//////////////////
+
+.promo {
+	position: relative;
+	background-color: $colour_link;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	text-align: center;
+
+	&:after {
+		content: '';
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		background-color: rgba(210,35,40,.8);
+	}
+
+	// Promo > Wrap
+	&__wrap {
+		display: block;
+	}
+
+	// Promo > Link
+	&__link {
+		z-index: 2;
+		position: relative;
+		display: block;
+		padding-top: 4vw;
+		padding-bottom: 4vw;
+		text-decoration: none;
+		color: #fff;
+
+		&:focus {
+			.promo__btn {
+				background-color: #333;
+			}
+		}
+	}
+
+	// Promo > Title
+	&__title {
+		display: block;
+		line-height: 115%;
+		font-family: $font_oswald;
+		font-size: 3.2rem;
+		font-weight: 400;
+		letter-spacing: -.02rem;
+		text-transform: uppercase;
+	}
+
+	// Promo > Content
+	&__content {
+		display: block;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		@include body-copy;
+		color: #fff;
+	}
+
+	// Promo > Button
+	&__btn {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 1.6rem;
+		background-color: $colour_link;
+		font-family: $font_oswald;
+		font-size: 2rem;
+		letter-spacing: -.01rem;
+		text-transform: uppercase;
+		color: #fff;
+		border-radius: 2px;
+		transition: all ease .2s;
+		box-shadow: 1px 1px 2px rgba(0,0,0,.25);
+
+		&:hover {
+			background-color: #333;
+		}
+	}
+}
+
+
+

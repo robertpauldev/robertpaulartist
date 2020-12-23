@@ -36,7 +36,7 @@ function rpa_scripts() {
 
 	/** Enqueue styles */
 	wp_enqueue_style( 'rpa-droid', 'https://fonts.googleapis.com/css?family=Droid+Serif' );
-	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style-min.css', '', RPA_VERSION );
+	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style.min.css', '', RPA_VERSION );
 
 	/** Enqueue scripts */
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' );

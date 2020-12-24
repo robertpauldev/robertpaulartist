@@ -28,22 +28,6 @@ get_header();
 
 			/** Projects */
 			if ( is_singular( 'project' ) ) {
-
-				/** Shopify */
-				$shopify = get_field( 'shopify_code' );
-
-				if ( false === empty( $shopify ) ) {
-					echo $shopify;
-				}
-				
-				/** Redbubble */
-				$redbubble = get_field( 'redbubble_url' );
-
-				if ( false === empty( $redbubble ) ) {
-					echo do_shortcode( '[redbubble url="' . esc_html( $redbubble ) . '"]' );
-				}
-
-				/** Image attribution */
 				get_template_part( 'template-parts/template', 'image-attribution' );
 			}
 

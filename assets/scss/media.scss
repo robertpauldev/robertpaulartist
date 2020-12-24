@@ -266,12 +266,6 @@
 				padding-top: $grid_pad_desktop;
 				padding-bottom: $grid_pad_desktop;
 			}
-
-			// Entry > CMS > Shopify
-			.shopify-buy-frame {
-				margin-left: -4.8rem !important;
-				margin-right: -4.8rem !important;
-			}
 		}
 
 		// Entry > Nav
@@ -297,10 +291,5 @@
 		height: $icon_desktop;
 		line-height: $icon_desktop;
 		font-size: $icon_desktop;
-	}
-
-	// Redbubble
-	.btn__redbubble-wrap {
-		text-align: center;
 	}
 }

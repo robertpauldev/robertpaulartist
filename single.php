@@ -29,13 +29,6 @@ get_header();
 			/** Projects */
 			if ( is_singular( 'project' ) ) {
 
-				/** Shopify */
-				$shopify = get_field( 'shopify_code' );
-
-				if ( false === empty( $shopify ) ) {
-					echo $shopify;
-				}
-				
 				/** Redbubble */
 				$redbubble = get_field( 'redbubble_url' );
 

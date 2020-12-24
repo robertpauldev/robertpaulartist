@@ -38,10 +38,9 @@ if ( false === empty( $projects ) ) :
 			<a title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="slide__link" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
 				<?php
 				/** Product icons */
-				$shopify   = get_field( 'shopify_code', $project->ID );
 				$redbubble = get_field( 'redbubble_url', $project->ID );
 
-				if ( false === empty( $shopify ) || false === empty( $redbubble ) ) {
+				if ( false === empty( $redbubble ) ) {
 					get_template_part( 'template-parts/template', 'products-available' );
 				}
 				?>

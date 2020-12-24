@@ -40,7 +40,7 @@ function rpa_scripts() {
 
 	/** Enqueue scripts */
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1' );
-	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.min.js', 'jquery' );
+	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.min.js', 'jquery', RPA_VERSION );
 
 	/** Scripts: Homepage */
 	if ( is_front_page() ) {
@@ -51,6 +51,30 @@ function rpa_scripts() {
 	wp_dequeue_style( 'wp-block-library' );
 }
 add_action( 'wp_enqueue_scripts', 'rpa_scripts' );
+
+/**
+ * Adds 'async' and 'defer' attributes to script tags.
+ *
+ * @param string $tag    The <script> tag for the enqueued script
+ * @param string $handle The script's registered handle
+ * @param string $src    The script's source URL
+ * @return string
+ */
+function rpa_async_script( $tag, $handle, $src ) {
+
+	// RPA JS
+	if ( 'rpa-script' === $handle ) {
+		$tag = str_replace( ' src', ' async src', $tag );
+	}
+
+	// Cycle2 JS
+	if ( 'cycle2' === $handle ) {
+		$tag = str_replace( ' src', ' defer src', $tag );
+	}
+
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'rpa_async_script', 10, 3 );
 
 /**
  * Sets up the Project custom post type.

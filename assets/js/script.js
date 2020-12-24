@@ -1,22 +1,16 @@
-(function ($) {
+/*global $, jQuery*/
+( function ( $ ) {
 	
 	'use strict';
 
-	$(document).ready(function () {
-
-		let delta = 1,
-			didScroll,
-			lastScrollTop    = 0,
-			siteContent      = $('.content'),
-			siteHeader       = $('.masthead'),
-			siteHeaderHeight = siteHeader.outerHeight();
-
-		// Elements
-		let iframe = $( '.cms iframe' );
+	$( document ).ready( function () {
 
 		/**
 		 * Videos
 		 */
+
+		// Elements
+		let iframe = $( '.cms iframe' );
 
 		// If iframe(s) in content
 		if ( iframe.length > 0 ) {
@@ -34,7 +28,7 @@
 					let thisProps = {
 						width:  $( this ).width(),
 						height: $( this ).height(),
-					}
+					};
 
 					// Set video ratio
 					thisProps.ratio = ( ( thisProps.height / thisProps.width ) * 100 ).toFixed( 2 );
@@ -47,50 +41,57 @@
 		}
 
 		/**
-		 * Scrolling functionality
+		 * Scrolling
 		 */
-		$(window).scroll(function () {
-			didScroll = true;
-		});
 
-		/**
-		 * Calculate rounded-up scroll value
-		 * This should hopefully result in smoother 'sticking' on scroll.
-		 */
-		function roundScroll(toRound, roundTo) {
-			return Math.round(toRound / roundTo) * roundTo;
+		// Calculate rounded-up scroll value
+		function roundScroll( toRound, roundTo ) {
+			return Math.round( toRound / roundTo ) * roundTo;
 		}
 
-		/** Scroll */
-		function hasScrolled() {
+		// Elements
+		let siteHeader  = $( '.masthead' );
+		let siteContent = $( '.content' );
 
-			var scrollPosition = $(window).scrollTop(),
-				roundScrollPos = roundScroll(scrollPosition, delta);
+		// Values
+		let scrollTimer;
+		let lastScrollTop    = 0;
+		let scrollDelta      = 1;
+		let siteHeaderHeight = siteHeader.outerHeight();
 
-			/** Make sure they scroll more than delta */
-			if (Math.abs(lastScrollTop - roundScrollPos) <= delta) {
-				return;
-			}
+		// On scroll
+		$( window ).on( 'scroll', function () {
 
-			/** Scroll Down / Up */
-			if (scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight) {
-				siteHeader.add(siteContent).addClass('js-scrolling');
-			}
+			// Stop timer
+			clearTimeout( scrollTimer );
 
-			/** Top of page */
-			if (scrollPosition <= siteHeaderHeight ) {
-				siteHeader.add(siteContent).removeClass('js-scrolling');
-			}
+			// Start timer
+			scrollTimer = setTimeout( function () {
 
-			lastScrollTop = roundScrollPos;
-		}
+				// Values
+				let scrollPosition = $( window ).scrollTop();
+				let roundScrollPos = roundScroll( scrollPosition, scrollDelta );
 
-		setInterval(function () {
-			if (didScroll) {
-				hasScrolled();
-				didScroll = false;
-			}
-		}, 250);
-	});
+				// Make sure they scroll more than delta
+				if ( Math.abs( lastScrollTop - roundScrollPos ) <= scrollDelta ) {
+					return;
+				}
 
-}(jQuery));
+				// Scroll Down / Up
+				if ( scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight ) {
+					siteHeader.add( siteContent ).addClass( 'js-scrolling' );
+				}
+
+				// Top of page
+				if ( scrollPosition <= siteHeaderHeight ) {
+					siteHeader.add( siteContent ).removeClass( 'js-scrolling' );
+				}
+
+				// Update last scroll position
+				lastScrollTop = roundScrollPos;
+
+			}, 100 );
+		} );
+	} );
+
+}( jQuery ) );

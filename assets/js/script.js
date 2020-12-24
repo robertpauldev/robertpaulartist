@@ -11,20 +11,40 @@
 			siteHeader       = $('.masthead'),
 			siteHeaderHeight = siteHeader.outerHeight();
 
-		/** Video */
-		$('iframe').each(function () {
+		// Elements
+		let iframe = $( '.cms iframe' );
 
-			var src = $(this).attr('src');
+		/**
+		 * Videos
+		 */
 
-			if (src !== undefined && (~src.indexOf('youtube.com') || ~src.indexOf('vimeo.com'))) {
-				var width  = $(this).width(),
-				height = $(this).height(),
-				ratio  = ((height/width) * 100).toFixed(2);
+		// If iframe(s) in content
+		if ( iframe.length > 0 ) {
 
-				$(this).removeAttr('width height');
-				$(this).wrap('<div class="video" style="padding-bottom: ' + ratio + '%;"></div>');
-			}
-		});
+			// Loop through iframes
+			iframe.each( function () {
+
+				// Get iframe src
+				let thisSrc = $( this ).attr( 'src' );
+
+				// If YouTube or Vimeo video
+				if ( thisSrc !== undefined && ( ~thisSrc.indexOf( 'youtube.com' ) || ~thisSrc.indexOf( 'vimeo.com' ) ) ) {
+
+					// Get video proportions
+					let thisProps = {
+						width:  $( this ).width(),
+						height: $( this ).height(),
+					}
+
+					// Set video ratio
+					thisProps.ratio = ( ( thisProps.height / thisProps.width ) * 100 ).toFixed( 2 );
+
+					// Remove iframe atts; add ratio wrapper
+					$( this ).removeAttr( 'width height' );
+					$( this ).wrap( '<div class="video" style="padding-bottom: ' + thisProps.ratio + '%;" />');
+				}
+			} );
+		}
 
 		/**
 		 * Scrolling functionality

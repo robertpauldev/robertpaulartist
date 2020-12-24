@@ -36,9 +36,9 @@ if ( false === empty( $projects ) ) :
 			$shopify   = get_field( 'shopify_code', $project );
 			$redbubble = get_field( 'redbubble_url', $project );
 
-			if ( false === empty( $shopify ) || false === empty( $redbubble ) ) :
+			if ( false === empty( $shopify ) || false === empty( $redbubble ) ) {
 				get_template_part( 'template-parts/template', 'products-available' );
-			endif;
+			}
 			?>
 			<span class="project__view">
 				<span>View Project</span>

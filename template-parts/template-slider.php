@@ -41,9 +41,9 @@ if ( false === empty( $projects ) ) :
 				$shopify   = get_field( 'shopify_code', $project->ID );
 				$redbubble = get_field( 'redbubble_url', $project->ID );
 
-				if ( false === empty( $shopify ) || false === empty( $redbubble ) ) :
+				if ( false === empty( $shopify ) || false === empty( $redbubble ) ) {
 					get_template_part( 'template-parts/template', 'products-available' );
-				endif;
+				}
 				?>
 				<img class="slide__image" alt="<?php echo esc_attr( $image_alt ); ?>" src="<?php echo esc_url( get_the_post_thumbnail_url( $project->ID ) ) ?>" />
 			</a>

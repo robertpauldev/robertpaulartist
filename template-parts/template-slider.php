@@ -36,14 +36,6 @@ if ( false === empty( $projects ) ) :
 		?>
 		<li class="slide">
 			<a title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="slide__link" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
-				<?php
-				/** Product icons */
-				$redbubble = get_field( 'redbubble_url', $project->ID );
-
-				if ( false === empty( $redbubble ) ) {
-					get_template_part( 'template-parts/template', 'products-available' );
-				}
-				?>
 				<img class="slide__image" alt="<?php echo esc_attr( $image_alt ); ?>" src="<?php echo esc_url( get_the_post_thumbnail_url( $project->ID ) ) ?>" />
 			</a>
 		</li>

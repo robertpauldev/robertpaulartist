@@ -31,14 +31,6 @@ if ( false === empty( $projects ) ) :
 
 	<div class="project__item">
 		<a class="project__link" title="<?php echo esc_attr( $project->post_title ); ?> | <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo esc_url( get_the_permalink( $project->ID ) ); ?>">
-			<?php
-			/** Product icons */
-			$redbubble = get_field( 'redbubble_url', $project );
-
-			if ( false === empty( $redbubble ) ) {
-				get_template_part( 'template-parts/template', 'products-available' );
-			}
-			?>
 			<span class="project__view">
 				<span>View Project</span>
 			</span>

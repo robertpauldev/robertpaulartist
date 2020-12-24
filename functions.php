@@ -39,20 +39,42 @@ function rpa_scripts() {
 	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style.min.css', '', RPA_VERSION );
 
 	/** Enqueue scripts */
-	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
-	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.js', 'jquery' );
+	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1' );
+	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.min.js', 'jquery', RPA_VERSION );
 
 	/** Scripts: Homepage */
 	if ( is_front_page() ) {
-		wp_enqueue_script( 'cycle2', RPA_DIRECTORY_URI . '/assets/js/cycle2.min.js', 'jquery', '2.1.6' );
+		wp_enqueue_script( 'cycle2', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js', 'jquery', '2.1.6', true );
 	}
-	
-	/** Scripts: Shop */
-	if ( is_page_template( 'page-shop.php' ) ) {
-		wp_enqueue_script( 'rpa-shop', RPA_DIRECTORY_URI . '/assets/js/shop.js', 'jquery', RPA_VERSION );
-	}
+
+	/** Dequeue styles */
+	wp_dequeue_style( 'wp-block-library' );
 }
 add_action( 'wp_enqueue_scripts', 'rpa_scripts' );
+
+/**
+ * Adds 'async' and 'defer' attributes to script tags.
+ *
+ * @param string $tag    The <script> tag for the enqueued script
+ * @param string $handle The script's registered handle
+ * @param string $src    The script's source URL
+ * @return string
+ */
+function rpa_async_script( $tag, $handle, $src ) {
+
+	// RPA JS
+	if ( 'rpa-script' === $handle ) {
+		$tag = str_replace( ' src', ' async src', $tag );
+	}
+
+	// Cycle2 JS
+	if ( 'cycle2' === $handle ) {
+		$tag = str_replace( ' src', ' defer src', $tag );
+	}
+
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'rpa_async_script', 10, 3 );
 
 /**
  * Sets up the Project custom post type.
@@ -126,3 +148,19 @@ function rpa_disable_emojis() {
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 }
 add_action( 'init', 'rpa_disable_emojis' );
+
+/**
+ * Add `loading="lazy"` attribute to images output by the_post_thumbnail().
+ *
+ * @param string       $html              The post thumbnail HTML.
+ * @param int          $post_id           The post ID.
+ * @param string       $post_thumbnail_id The post thumbnail ID.
+ * @param string|array $size              The post thumbnail size. Image size or array of width and height values (in that order). Default 'post-thumbnail'.
+ * @param string       $attr              Query string of attributes.
+ * 
+ * @return string
+ */
+function rpa_thumbnail_lazy_loading( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+	return str_replace( '<img', '<img loading="lazy"', $html );
+}
+add_filter( 'post_thumbnail_html', 'rpa_thumbnail_lazy_loading', 10, 5 );

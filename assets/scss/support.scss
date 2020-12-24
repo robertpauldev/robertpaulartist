@@ -17,24 +17,6 @@
 		}
 	}
 
-	// Shop
-	.shop {
-
-		.grid {
-			display: grid;
-			grid-gap: 3rem 3rem;
-		}
-
-		// Shop > Empty
-		&__empty {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			min-height: 80vh;
-		}
-	}
-
 	@media screen and (max-width: 480px) {
 
 		// Projects
@@ -63,13 +45,6 @@
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
-
-		// Shop
-		.shop {
-			.grid {
-				grid-template-columns: repeat(2, 1fr);
-			}
-		}
 	}
 
 	@media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -85,13 +60,6 @@
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}
-
-		// Shop
-		.shop {
-			.grid {
-				grid-template-columns: repeat(3, 1fr);
-			}
-		}
 	}
 
 	@media screen and (min-width: 1025px) {
@@ -104,13 +72,6 @@
 		// Blog
 		.blog {
 			.wrap--grid {
-				grid-template-columns: repeat(4, 1fr);
-			}
-		}
-
-		// Shop
-		.shop {
-			.grid {
 				grid-template-columns: repeat(4, 1fr);
 			}
 		}

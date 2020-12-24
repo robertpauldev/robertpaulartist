@@ -1,76 +1,97 @@
-(function ($) {
+/*global $, jQuery*/
+( function ( $ ) {
 	
 	'use strict';
 
-	$(document).ready(function () {
-
-		let delta = 1,
-			didScroll,
-			lastScrollTop    = 0,
-			siteContent      = $('.content'),
-			siteHeader       = $('.masthead'),
-			siteHeaderHeight = siteHeader.outerHeight();
-
-		/** Video */
-		$('iframe').each(function () {
-
-			var src = $(this).attr('src');
-
-			if (src !== undefined && (~src.indexOf('youtube.com') || ~src.indexOf('vimeo.com'))) {
-				var width  = $(this).width(),
-				height = $(this).height(),
-				ratio  = ((height/width) * 100).toFixed(2);
-
-				$(this).removeAttr('width height');
-				$(this).wrap('<div class="video" style="padding-bottom: ' + ratio + '%;"></div>');
-			}
-		});
+	$( document ).ready( function () {
 
 		/**
-		 * Scrolling functionality
+		 * Videos
 		 */
-		$(window).scroll(function () {
-			didScroll = true;
-		});
+
+		// Elements
+		let iframe = $( '.cms iframe' );
+
+		// If iframe(s) in content
+		if ( iframe.length > 0 ) {
+
+			// Loop through iframes
+			iframe.each( function () {
+
+				// Get iframe src
+				let thisSrc = $( this ).attr( 'src' );
+
+				// If YouTube or Vimeo video
+				if ( thisSrc !== undefined && ( ~thisSrc.indexOf( 'youtube.com' ) || ~thisSrc.indexOf( 'vimeo.com' ) ) ) {
+
+					// Get video proportions
+					let thisProps = {
+						width:  $( this ).width(),
+						height: $( this ).height(),
+					};
+
+					// Set video ratio
+					thisProps.ratio = ( ( thisProps.height / thisProps.width ) * 100 ).toFixed( 2 );
+
+					// Remove iframe atts; add ratio wrapper
+					$( this ).removeAttr( 'width height' );
+					$( this ).wrap( '<div class="video" style="padding-bottom: ' + thisProps.ratio + '%;" />');
+				}
+			} );
+		}
 
 		/**
-		 * Calculate rounded-up scroll value
-		 * This should hopefully result in smoother 'sticking' on scroll.
+		 * Scrolling
 		 */
-		function roundScroll(toRound, roundTo) {
-			return Math.round(toRound / roundTo) * roundTo;
+
+		// Calculate rounded-up scroll value
+		function roundScroll( toRound, roundTo ) {
+			return Math.round( toRound / roundTo ) * roundTo;
 		}
 
-		/** Scroll */
-		function hasScrolled() {
+		// Elements
+		let siteHeader  = $( '.masthead' );
+		let siteContent = $( '.content' );
 
-			var scrollPosition = $(window).scrollTop(),
-				roundScrollPos = roundScroll(scrollPosition, delta);
+		// Values
+		let scrollTimer;
+		let lastScrollTop    = 0;
+		let scrollDelta      = 1;
+		let siteHeaderHeight = siteHeader.outerHeight();
 
-			/** Make sure they scroll more than delta */
-			if (Math.abs(lastScrollTop - roundScrollPos) <= delta) {
-				return;
-			}
+		// On scroll
+		$( window ).on( 'scroll', function () {
 
-			/** Scroll Down / Up */
-			if (scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight) {
-				siteHeader.add(siteContent).addClass('js-scrolling');
-			}
+			// Stop timer
+			clearTimeout( scrollTimer );
 
-			/** Top of page */
-			if (scrollPosition <= siteHeaderHeight ) {
-				siteHeader.add(siteContent).removeClass('js-scrolling');
-			}
+			// Start timer
+			scrollTimer = setTimeout( function () {
 
-			lastScrollTop = roundScrollPos;
-		}
+				// Values
+				let scrollPosition = $( window ).scrollTop();
+				let roundScrollPos = roundScroll( scrollPosition, scrollDelta );
 
-		setInterval(function () {
-			if (didScroll) {
-				hasScrolled();
-				didScroll = false;
-			}
-		}, 250);
-	});
+				// Make sure they scroll more than delta
+				if ( Math.abs( lastScrollTop - roundScrollPos ) <= scrollDelta ) {
+					return;
+				}
 
-}(jQuery));
+				// Scroll Down / Up
+				if ( scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight ) {
+					siteHeader.add( siteContent ).addClass( 'js-scrolling' );
+				}
+
+				// Top of page
+				if ( scrollPosition <= siteHeaderHeight ) {
+					siteHeader.add( siteContent ).removeClass( 'js-scrolling' );
+				}
+
+				// Update last scroll position
+				lastScrollTop = roundScrollPos;
+
+			}, 100 );
+		} );
+	} );
+
+}( jQuery ) );

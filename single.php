@@ -27,30 +27,14 @@ get_header();
 			the_content();
 
 			/** Projects */
-			if ( is_singular( 'project' ) ) :
-
-				/** Shopify */
-				$shopify = get_field( 'shopify_code' );
-
-				if ( false === empty( $shopify ) ) :
-					echo $shopify;
-				endif;
-				
-				/** Redbubble */
-				$redbubble = get_field( 'redbubble_url' );
-
-				if ( false === empty( $redbubble ) ) :
-					echo do_shortcode( '[redbubble url="' . esc_html( $redbubble ) . '"]' );
-				endif;
-
-				/** Image attribution */
+			if ( is_singular( 'project' ) ) {
 				get_template_part( 'template-parts/template', 'image-attribution' );
-			endif;
+			}
 
 			/** Tags */
-			if ( has_tag() ) :
+			if ( has_tag() ) {
 				get_template_part( 'template-parts/template', 'entry-tags' );
-			endif;
+			}
 			?>
 		</div>
 		<div class="entry__nav clearfix">

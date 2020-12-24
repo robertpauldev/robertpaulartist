@@ -55,8 +55,8 @@ get_header();
 
 <?php
 /** Homepage */
-if ( is_front_page() ) :
+if ( is_front_page() ) {
 	get_template_part( 'template-parts/template', 'about' );
-endif;
+}
 
 get_footer();

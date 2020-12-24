@@ -20,19 +20,19 @@ if ( true === $toggle ) :
 		<span class="promo__wrap wrap">
 			<?php
 			/** Title */
-			if ( false === empty( $title ) ) :
+			if ( false === empty( $title ) ) {
 				printf( '<span class="promo__title">%s</span>', esc_html( $title ) );
-			endif;
+			}
 
 			/** Content */
-			if ( false === empty( $content ) ) :
+			if ( false === empty( $content ) ) {
 				echo '<span class="promo__content">' . wp_kses_post( $content ) . '</span>';
-			endif;
+			}
 
 			/** Button */
-			if ( false === empty( $button ) ) :
+			if ( false === empty( $button ) ) {
 				printf( '<span class="promo__btn">%s</span>', esc_html( $button['title'] ) );
-			endif;
+			}
 			?>
 		</span>
 	</a>

@@ -46,11 +46,6 @@ function rpa_scripts() {
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'cycle2', RPA_DIRECTORY_URI . '/assets/js/cycle2.min.js', 'jquery', '2.1.6' );
 	}
-	
-	/** Scripts: Shop */
-	if ( is_page_template( 'page-shop.php' ) ) {
-		wp_enqueue_script( 'rpa-shop', RPA_DIRECTORY_URI . '/assets/js/shop.js', 'jquery', RPA_VERSION );
-	}
 
 	/** Dequeue styles */
 	wp_dequeue_style( 'wp-block-library' );

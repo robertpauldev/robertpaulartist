@@ -18,7 +18,7 @@ if ( false === empty( $content ) ) :
 		</h2>
 		<?php if ( false === empty( $thumbnail ) ) : ?>
 		<figure class="about__thumbnail">
-			<img class="about__thumbnail-media" alt="<?php echo esc_attr( $thumbnail['alt'] ); ?>" src="<?php echo esc_url( $thumbnail['sizes']['preview'] ); ?>" />
+			<img class="about__thumbnail-media" alt="<?php echo esc_attr( $thumbnail['alt'] ); ?>" src="<?php echo esc_url( $thumbnail['sizes']['preview'] ); ?>" loading="lazy" />
 		</figure>
 		<?php endif; ?>
 		<div class="cms about__cms">

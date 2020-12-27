@@ -23,15 +23,15 @@ get_header();
 				</time>
 			</header>
 			<?php
-			/** Content */
+			// Content
 			the_content();
 
-			/** Projects */
+			// Projects
 			if ( is_singular( 'project' ) ) {
 				get_template_part( 'template-parts/template', 'image-attribution' );
 			}
 
-			/** Tags */
+			// Tags
 			if ( has_tag() ) {
 				get_template_part( 'template-parts/template', 'entry-tags' );
 			}
@@ -42,7 +42,7 @@ get_header();
 				$next_post = get_next_post();
 				$prev_post = get_previous_post();
 
-				/** Next Post */
+				// Next Post
 				if ( false === empty( $next_post ) ) :
 			?>
 
@@ -54,7 +54,7 @@ get_header();
 			<?php
 				endif;
 
-				/** Previous Post */
+				// Previous Post
 				if ( false === empty( $prev_post ) ) :
 			?>
 

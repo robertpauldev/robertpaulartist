@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or die();
  * Template Part: Slider
  */
 
-/** Get Projects */
+// Get Projects
 $projects = rpa_get_projects( -1 );
 update_post_thumbnail_cache( $projects );
 
@@ -26,11 +26,11 @@ if ( false === empty( $projects ) ) :
 		data-cycle-pager=".slider__pager"
 		data-cycle-log="false">
 		<?php
-		/** Loop through Projects */
+		// Loop through Projects
 		foreach ( $projects as $project ) :
 			setup_postdata( $project );
 
-			/** Get alt text */
+			// Get alt text
 			$image_id  = get_post_thumbnail_id( $project->ID );
 			$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 		?>

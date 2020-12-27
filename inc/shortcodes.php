@@ -16,11 +16,11 @@ function rpa_shortcode_contact() {
 
 	$yoast = get_option( 'wpseo_social' );
 
-	$channels = array(
+	$channels = [
 		'email'     => get_option( 'rpa_email' ),
 		'facebook'  => get_option( 'rpa_messenger' ),
 		'instagram' => $yoast['instagram_url'],
-	);
+	];
 
 	if ( false === empty( $channels ) ) {
 

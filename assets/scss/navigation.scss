@@ -28,7 +28,7 @@
 	.current-menu-item {
 		a {
 			font-weight: 400;
-			color: $colour_link;
+			color: $colour_link_safe;
 		}
 	}
 
@@ -42,7 +42,7 @@
 
 		&:hover,
 		&:focus {
-			color: $colour_link;
+			color: $colour_link_safe;
 		}
 	}
 
@@ -76,7 +76,7 @@
 	
 			&:hover,
 			&:focus {
-				color: $colour_link;
+				color: $colour_link_safe;
 			}
 		}
 	}

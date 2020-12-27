@@ -56,13 +56,14 @@ function rpa_social( $network ) {
 
 	if ( false === empty( $link ) ) {
 		return sprintf(
-			'<a title="Find %1$s on %2$s" class="icon-%3$s icon--%3$s" href="%4$s" target="_blank" rel="noopener">
-				<span class="icon__text">Find %1$s on %2$s</span>
+			'<a class="social-icon" title="Find %1$s on %2$s" href="%3$s" target="_blank" rel="noopener">
+				<span class="social-icon__icon icon--%4$s"></span>
+				<span class="social-icon__text">Find %1$s on %2$s</span>
 			</a>',
 			esc_attr( get_bloginfo( 'name' ) ),
 			esc_html( ucfirst( $network ) ),
-			esc_html( $network ),
-			esc_url( $link )
+			esc_url( $link ),
+			esc_html( $network )
 		);
 	}
 

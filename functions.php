@@ -9,6 +9,7 @@ define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
 
 /** Required files */
+require_once 'inc/acf.php';
 require_once 'inc/options.php';
 require_once 'inc/shortcodes.php';
 require_once 'inc/template-tags.php';

@@ -104,26 +104,6 @@
 		}
 	}
 
-	// Slider
-	.slider {
-
-		// Slider > Wrap
-		&__wrap {
-			margin-left: -( $grid_pad_mobile );
-			margin-right: -( $grid_pad_mobile );
-		}
-
-		// Slider > UI
-		&__ui {
-			margin-top: -( $icon_mobile );
-			padding: $icon_desktop / 2;
-			width: $icon_mobile;
-			height: $icon_mobile;
-			line-height: $icon_mobile;
-			font-size: $icon_mobile;
-		}
-	}
-
 	// About
 	.about__cms {
 		h2 {
@@ -281,15 +261,5 @@
 				text-align: right;
 			}
 		}
-	}
-
-	// Slider
-	.slider__ui {
-		margin-top: -( $icon_desktop );
-		padding: $icon_desktop / 2;
-		width: $icon_desktop;
-		height: $icon_desktop;
-		line-height: $icon_desktop;
-		font-size: $icon_desktop;
 	}
 }

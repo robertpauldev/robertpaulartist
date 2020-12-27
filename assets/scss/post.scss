@@ -27,8 +27,11 @@
 		// Icon
 		.icon-archive {
 			margin-right: .4rem;
-			font-size: 1.6rem;
-			color: #aaa;
+
+			&:before {
+				width: 16px;
+				height: 16px;
+			}
 		}
 	
 		// Links

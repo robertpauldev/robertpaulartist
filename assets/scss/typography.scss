@@ -2,6 +2,49 @@
 // Typography //
 ////////////////
 
+// Icons
+[class*="icon-"] {
+	display: inline-block;
+	vertical-align: middle;
+
+	&:before {
+		display: inline-block;
+	}
+}
+
+.icon {
+
+	&-archive {
+		&:before {
+			content: url('../images/icons/icon_archive.svg');
+		}
+	}
+
+	&-pencil {
+		&:before {
+			content: url('../images/icons/icon_pencil.svg');
+		}
+	}
+
+	&-email {
+		&:before {
+			content: url('../images/icons/icon_email.svg');
+		}
+	}
+
+	&-facebook {
+		&:before {
+			content: url('../images/icons/icon_facebook.svg');
+		}
+	}
+
+	&-instagram {
+		&:before {
+			content: url('../images/icons/icon_instagram.svg');
+		}
+	}
+}
+
 // Titles
 .page-title {
 	margin-top: 2rem;
@@ -174,13 +217,18 @@
 		padding-bottom: 1rem;
 		border-bottom: 1px solid #eee;
 		font-size: 1.6rem;
-		font-weight: 200;
+		font-weight: 300;
 		text-transform: uppercase;
-		color: #aaa;
 
 		// Entry > Date > Icon
-		.icon-clock {
-			margin-right: .4rem;
+		.icon-pencil {
+			margin-top: -.5rem;
+			margin-right: .5rem;
+
+			&:before {
+				width: 16px;
+				height: 16px;
+			}
 		}
 	}
 }

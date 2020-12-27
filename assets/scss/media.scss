@@ -59,12 +59,6 @@
 	.footer {
 		padding-top: $grid_pad_mobile;
 		padding-bottom: $grid_pad_mobile;
-
-		// Footer > Social icons
-		.icon--facebook,
-		.icon--instagram {
-			font-size: 1.8rem;
-		}
 	}
 
 	// Footer > Copyright
@@ -212,12 +206,6 @@
 			display: flex;
 			flex-direction: row;
 			align-items: flex-start;
-		}
-
-		// Footer > Social icons
-		.icon--facebook,
-		.icon--instagram {
-			font-size: 1.6rem;
 		}
 	}
 

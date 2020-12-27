@@ -14,27 +14,44 @@
 	}
 
 	// Footer > Social icons
-	.icon--facebook,
-	.icon--instagram {
-		margin-left: 10px;
-		color: #fff;
+	.social {
+		margin-left: auto;
 	}
-}
 
-// Footer > Social
-.social {
-	margin-left: auto;
-}
+	.social-icon {
+		display: inline-block;
 
-// Footer > Social icons
-.icon--facebook,
-.icon--instagram {
-	text-decoration: none;
-	
-	// Helper text
-	> span {
-		display: none;
-		font-family: $font_droid_serif;
+		&__text {
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			position: absolute;
+			margin: -1px;
+			padding: 0;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+		}
+	}
+
+	.icon {
+
+		&--facebook {
+			background-image: url('../images/icons/icon_facebook.svg');
+		}
+
+		&--instagram {
+			background-image: url('../images/icons/icon_instagram.svg');
+		}
+
+		&--facebook,
+		&--instagram {
+			display: inline-block;
+			width: 48px;
+			height: 48px;
+			background-position: center center;
+			background-size: 32px;
+			background-repeat: no-repeat;
+		}
 	}
 }
 

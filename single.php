@@ -19,7 +19,7 @@ get_header();
 			<header class="entry__header">
 				<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
 				<time class="entry__date">
-					<span class="icon-clock"></span><?php echo esc_html( get_the_date() ); ?>
+					<span class="icon-pencil"></span><?php echo esc_html( get_the_date() ); ?>
 				</time>
 			</header>
 			<?php

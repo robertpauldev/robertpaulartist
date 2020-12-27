@@ -22,6 +22,7 @@ function rpa_setup() {
 
 	// Thumbnails
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'promo', 1920, 300, true );
 	add_image_size( 'square', 300, 300, true );
 	add_image_size( 'preview', 600, 338, true );
 }
@@ -42,11 +43,6 @@ function rpa_scripts() {
 	// Enqueue scripts
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1' );
 	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.min.js', 'jquery', RPA_VERSION );
-
-	// Scripts: Homepage
-	if ( is_front_page() ) {
-		wp_enqueue_script( 'cycle2', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js', 'jquery', '2.1.6', true );
-	}
 
 	// Dequeue styles
 	wp_dequeue_style( 'wp-block-library' );

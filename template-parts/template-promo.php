@@ -11,6 +11,7 @@ $title   = get_field( 'promo_title' );
 $content = get_field( 'promo_content', false, false );
 $button  = get_field( 'promo_button' );
 $image   = get_field( 'promo_background_image' );
+$image   = $image['sizes']['promo'];
 
 if ( true === $toggle ) :
 ?>

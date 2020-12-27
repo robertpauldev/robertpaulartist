@@ -50,42 +50,13 @@ function rpa_options_section() {
 	register_setting( 'rpa-options', 'rpa_email', 'esc_attr' );
 	register_setting( 'rpa-options', 'rpa_messenger', 'esc_attr' );
 
-	add_settings_section(
-		'rpa_settings_all',
-		'<span class="dashicons dashicons-admin-generic"></span> All Settings',
-		'',
-		'rpa-options'
-	);
+	add_settings_section( 'rpa_settings_all', '<span class="dashicons dashicons-admin-generic"></span> All Settings', '', 'rpa-options' );
 
-	/**
-	 * Email
-	 */
+	// Email
+	add_settings_field( 'rpa_email', 'Email', 'rpa_callback_textbox', 'rpa-options', 'rpa_settings_all', [ 'rpa_email' ] );
 
-	add_settings_field(
-		'rpa_email',
-		'Email',
-		'rpa_callback_textbox',
-		'rpa-options',
-		'rpa_settings_all',
-		array(
-			'rpa_email',
-		)
-	);
-
-	/**
-	 * Messenger
-	 */
-
-	add_settings_field(
-		'rpa_messenger',
-		'Messenger',
-		'rpa_callback_textbox',
-		'rpa-options',
-		'rpa_settings_all',
-		array(
-			'rpa_messenger',
-		)
-	);
+	// Messenger
+	add_settings_field( 'rpa_messenger', 'Messenger', 'rpa_callback_textbox', 'rpa-options', 'rpa_settings_all', [ 'rpa_messenger' ] );
 }
 
 /**

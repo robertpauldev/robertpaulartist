@@ -103,7 +103,7 @@ function rpa_nav_menu() {
  * @return void
  */
 function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
-	wp_nav_menu( array(
+	wp_nav_menu( [
 		'menu'            => $id,
 		'menu_class'      => $child_id . ' clearfix',
 		'menu_id'         => $child_id,
@@ -111,7 +111,7 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
 		'container_class' => $parent_id,
 		'theme_location'  => 'navbar',
 		'items_wrap'      => rpa_nav_menu()
-	) );
+	] );
 }
 
 /**
@@ -123,10 +123,10 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
  */
 function rpa_get_projects( $count = 10, $tag = null ) {
 
-	$args = array(
+	$args = [
 		'post_type'      => 'project',
 		'posts_per_page' => $count
-	);
+	];
 
 	/** If tag is defined, add to query */
 	if ( false === empty( $tag ) ) {

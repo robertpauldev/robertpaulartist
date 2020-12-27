@@ -34,7 +34,7 @@ if ( false === empty( $projects ) ) :
 			<span class="project__view">
 				<span>View Project</span>
 			</span>
-			<?php echo get_the_post_thumbnail( $project->ID, 'square', array( 'class' => 'project__image' ) ); ?>
+			<?php echo get_the_post_thumbnail( $project->ID, 'square', [ 'class' => 'project__image' ] ); ?>
 		</a>
 	</div>
 

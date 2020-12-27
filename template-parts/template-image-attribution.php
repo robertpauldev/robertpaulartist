@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) or die();
 
-/** Custom Fields */
+// Custom Fields
 $attribution = get_field( 'image_attribution' );
 
 if ( false === empty( $attribution ) ) :

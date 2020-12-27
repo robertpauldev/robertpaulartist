@@ -128,7 +128,7 @@ function rpa_get_projects( $count = 10, $tag = null ) {
 		'posts_per_page' => $count
 	];
 
-	/** If tag is defined, add to query */
+	// If tag is defined, add to query
 	if ( false === empty( $tag ) ) {
 		$args['tag_id'] = $tag;
 	}

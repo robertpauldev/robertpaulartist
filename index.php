@@ -40,7 +40,6 @@ get_header();
 		
 		<div class="homepage-work">
 			<?php
-			get_template_part( 'template-parts/template', 'slider' );
 			get_template_part( 'template-parts/template', 'projects' );
 			?>
 		</div>

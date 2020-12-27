@@ -2,14 +2,10 @@
 defined( 'ABSPATH' ) or die();
 
 /**
- * Template Tags
- */
-
-/**
  * Returns Facebook OpenGraph data based on data type.
  *
  * @param string $type Sets which OpenGraph property to define.
- * @return void
+ * @return string
  */
 function rpa_og( $type ) {
 	switch ( $type ) {
@@ -39,7 +35,7 @@ function rpa_og( $type ) {
  * Returns a modified social network link via Yoast SEO.
  *
  * @param string $network The name of the social network (lowercase).
- * @return void
+ * @return string
  */
 function rpa_social( $network ) {
 
@@ -47,7 +43,7 @@ function rpa_social( $network ) {
 		return '';
 	}
 
-	$link      = '';
+	$link     = '';
 	$profiles = get_option( 'wpseo_social' );
 
 	if ( 'facebook' === $network ) {

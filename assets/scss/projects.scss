@@ -15,20 +15,6 @@
 		position: relative;
 		display: block;
 
-		// Project > Link > Product icon
-		.product-icon {
-			top: 0;
-			right: 0;
-			padding: .6rem;
-			width: 3.2rem;
-			height: 3.2rem;
-
-			// Project > Link > Product icon > Label
-			&__label {
-				display: none;
-			}
-		}
-
 		&:hover,
 		&:focus {
 			.project__view {

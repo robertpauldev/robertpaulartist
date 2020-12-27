@@ -11,7 +11,7 @@ get_header();
 <section class="content">
 	<div class="wrap">
 		<?php
-		/** Loop */
+		// Loop
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();
@@ -34,13 +34,12 @@ get_header();
 		<?php
 				endif;
 
-				/** Homepage */
+				// Homepage
 				if ( is_front_page() ) :
 		?>
 		
 		<div class="homepage-work">
 			<?php
-			get_template_part( 'template-parts/template', 'slider' );
 			get_template_part( 'template-parts/template', 'projects' );
 			?>
 		</div>
@@ -54,7 +53,7 @@ get_header();
 </section>
 
 <?php
-/** Homepage */
+// Homepage
 if ( is_front_page() ) {
 	get_template_part( 'template-parts/template', 'about' );
 }

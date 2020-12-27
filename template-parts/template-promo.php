@@ -5,12 +5,13 @@ defined( 'ABSPATH' ) or die();
  * Template Part: Promo Banner
  */
 
-/** Custom Fields */
+// Custom Fields
 $toggle  = get_field( 'promo_toggle' );
 $title   = get_field( 'promo_title' );
 $content = get_field( 'promo_content', false, false );
 $button  = get_field( 'promo_button' );
 $image   = get_field( 'promo_background_image' );
+$image   = $image['sizes']['promo'];
 
 if ( true === $toggle ) :
 ?>
@@ -19,17 +20,17 @@ if ( true === $toggle ) :
 	<a class="promo__link" title="<?php echo esc_attr( $button['title'] ); ?>" href="<?php echo esc_url( $button['url'] ); ?>">
 		<span class="promo__wrap wrap">
 			<?php
-			/** Title */
+			// Title
 			if ( false === empty( $title ) ) {
 				printf( '<span class="promo__title">%s</span>', esc_html( $title ) );
 			}
 
-			/** Content */
+			// Content
 			if ( false === empty( $content ) ) {
 				echo '<span class="promo__content">' . wp_kses_post( $content ) . '</span>';
 			}
 
-			/** Button */
+			// Button
 			if ( false === empty( $button ) ) {
 				printf( '<span class="promo__btn">%s</span>', esc_html( $button['title'] ) );
 			}

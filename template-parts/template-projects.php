@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or die();
  * Template Part: Grid
  */
 
-/** Check for Tag */
+// Check for Tag
 $tag = '';
 
 if ( is_tag() ) {
@@ -13,7 +13,7 @@ if ( is_tag() ) {
 	$tag = $queried_object->term_id;
 }
 
-/** Get Projects */
+// Get Projects
 $projects = rpa_get_projects( -1, $tag );
 update_post_thumbnail_cache( $projects );
 
@@ -24,7 +24,7 @@ if ( false === empty( $projects ) ) :
 
 <div class="projects wrap--grid">
 	<?php
-	/** Loop through Projects */
+	// Loop through Projects
 	foreach ( $projects as $project ) :
 		setup_postdata( $project );
 	?>
@@ -34,7 +34,7 @@ if ( false === empty( $projects ) ) :
 			<span class="project__view">
 				<span>View Project</span>
 			</span>
-			<?php echo get_the_post_thumbnail( $project->ID, 'square', array( 'class' => 'project__image' ) ); ?>
+			<?php echo get_the_post_thumbnail( $project->ID, 'square', [ 'class' => 'project__image' ] ); ?>
 		</a>
 	</div>
 

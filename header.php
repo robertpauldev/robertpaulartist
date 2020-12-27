@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) or die();
 	<head>
 		<title><?php echo esc_html( get_bloginfo( 'name' ) ); ?></title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
 		<!-- Facebook OG Meta -->
 		<meta property="og:url" content="<?php rpa_og( 'url' ); ?>" />

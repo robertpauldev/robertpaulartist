@@ -2,14 +2,10 @@
 defined( 'ABSPATH' ) or die();
 
 /**
- * Template Tags
- */
-
-/**
  * Returns Facebook OpenGraph data based on data type.
  *
  * @param string $type Sets which OpenGraph property to define.
- * @return void
+ * @return string
  */
 function rpa_og( $type ) {
 	switch ( $type ) {
@@ -39,7 +35,7 @@ function rpa_og( $type ) {
  * Returns a modified social network link via Yoast SEO.
  *
  * @param string $network The name of the social network (lowercase).
- * @return void
+ * @return string
  */
 function rpa_social( $network ) {
 
@@ -47,7 +43,7 @@ function rpa_social( $network ) {
 		return '';
 	}
 
-	$link      = '';
+	$link     = '';
 	$profiles = get_option( 'wpseo_social' );
 
 	if ( 'facebook' === $network ) {
@@ -60,13 +56,14 @@ function rpa_social( $network ) {
 
 	if ( false === empty( $link ) ) {
 		return sprintf(
-			'<a title="Find %1$s on %2$s" class="icon-%3$s icon--%3$s" href="%4$s" target="_blank" rel="noopener">
-				<span class="icon__text">Find %1$s on %2$s</span>
+			'<a class="social-icon" title="Find %1$s on %2$s" href="%3$s" target="_blank" rel="noopener">
+				<span class="social-icon__icon icon--%4$s"></span>
+				<span class="social-icon__text">Find %1$s on %2$s</span>
 			</a>',
 			esc_attr( get_bloginfo( 'name' ) ),
 			esc_html( ucfirst( $network ) ),
-			esc_html( $network ),
-			esc_url( $link )
+			esc_url( $link ),
+			esc_html( $network )
 		);
 	}
 
@@ -103,7 +100,7 @@ function rpa_nav_menu() {
  * @return void
  */
 function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
-	wp_nav_menu( array(
+	wp_nav_menu( [
 		'menu'            => $id,
 		'menu_class'      => $child_id . ' clearfix',
 		'menu_id'         => $child_id,
@@ -111,7 +108,7 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
 		'container_class' => $parent_id,
 		'theme_location'  => 'navbar',
 		'items_wrap'      => rpa_nav_menu()
-	) );
+	] );
 }
 
 /**
@@ -123,12 +120,12 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
  */
 function rpa_get_projects( $count = 10, $tag = null ) {
 
-	$args = array(
+	$args = [
 		'post_type'      => 'project',
 		'posts_per_page' => $count
-	);
+	];
 
-	/** If tag is defined, add to query */
+	// If tag is defined, add to query
 	if ( false === empty( $tag ) ) {
 		$args['tag_id'] = $tag;
 	}

@@ -39,7 +39,7 @@
 		&:hover,
 		&:focus {
 			text-decoration: underline;
-			color: $colour_link;
+			color: $colour_link_safe;
 		}
 	}
 
@@ -80,7 +80,7 @@
 		}
 
 		// Blog > Date > Icon
-		.icon-clock {
+		.icon-pencil {
 			margin-right: .4rem;
 		}
 	}

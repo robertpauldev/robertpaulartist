@@ -22,6 +22,7 @@ function rpa_setup() {
 
 	// Thumbnails
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'promo', 1920, 300, true );
 	add_image_size( 'square', 300, 300, true );
 	add_image_size( 'preview', 600, 338, true );
 }

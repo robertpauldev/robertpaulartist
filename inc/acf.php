@@ -128,7 +128,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 				'name'          => 'promo_background_image',
 				'label'         => 'Background Image',
 				'type'          => 'image',
-				'return_format' => 'url',
+				'return_format' => 'object',
 				'preview_size'  => 'thumbnail',
 				'library'       => 'all',
 			],

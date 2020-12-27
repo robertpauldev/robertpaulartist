@@ -50,7 +50,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 		'label_placement'       => 'top',
 		'instruction_placement' => 'label',
 		'active'                => true,
-		'description'           => 'Robert Paul Artist (2018)',
+		'description'           => RPA_THEME,
 	] );
 
 	/**
@@ -85,7 +85,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 		'label_placement'       => 'top',
 		'instruction_placement' => 'label',
 		'active'                => true,
-		'description'           => 'Robert Paul Artist (2018)',
+		'description'           => RPA_THEME,
 	] );
 
 	acf_add_local_field_group( [
@@ -147,6 +147,6 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 		'label_placement'       => 'top',
 		'instruction_placement' => 'label',
 		'active'                => true,
-		'description'           => 'Robert Paul Artist (2018)',
+		'description'           => RPA_THEME,
 	] );
 }

@@ -7,6 +7,7 @@ defined( 'ABSPATH' ) or die();
 define( 'RPA_VERSION', wp_get_theme( basename( __DIR__ ) )->get( 'Version' ) );
 define( 'RPA_STYLE_URI', get_stylesheet_uri() );
 define( 'RPA_DIRECTORY_URI', get_template_directory_uri() );
+define( 'RPA_THEME', wp_get_theme()->get( 'Name' ) . ' ' . wp_get_theme()->get( 'Version' ) );
 
 /** Required files */
 require_once 'inc/acf.php';

@@ -81,15 +81,6 @@ function rpa_navigation() {
 add_action( 'init', 'rpa_navigation' );
 
 /**
- * Returns a custom nav menu structure, incorporating a Facebook icon. 
- *
- * @return string Returns a HTML string.
- */
-function rpa_nav_menu() {
-	return '<ul class="%2$s">%3$s</ul>';
-}
-
-/**
  * Displays the 'navbar' navigation menu.
  *
  * @uses rpa_nav_menu() for the nav HTML structure.
@@ -107,7 +98,7 @@ function rpa_nav( $id = null, $parent_id = null, $child_id = null ) {
 		'container'       => 'nav',
 		'container_class' => $parent_id,
 		'theme_location'  => 'navbar',
-		'items_wrap'      => rpa_nav_menu()
+		'items_wrap'      => '<ul class="%2$s">%3$s</ul>'
 	] );
 }
 

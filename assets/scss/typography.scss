@@ -278,14 +278,25 @@
 		}
 	}
 
-	.icon__text {
+	.icon {
 		display: inline-block;
-		line-height: 2rem;
-		font-family: $font_oswald;
-		font-size: 1.6rem;
-		font-weight: 400;
-		text-transform: uppercase;
-		color: #333;
+		width: 2rem;
+		height: 2rem;
+		vertical-align: top;
+
+		path {
+			fill: #000;
+		}
+
+		&__text {
+			display: inline-block;
+			line-height: 2rem;
+			font-family: $font_oswald;
+			font-size: 1.6rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: #333;
+		}
 	}
 }
 

@@ -31,16 +31,14 @@ function rpa_shortcode_contact() {
 			}
 
 			$html .= sprintf(
-				'<a class="icon-%1$s icon--%1$s" href="%2$s" target="_blank" rel="noopener">
-					<span class="icon__text">%3$s</span>
-				</a>',
-				esc_attr( $k ),
-				esc_url( $v ),
+				'<a class="icon" href="%1$s" target="_blank" rel="noopener">%2$s <span class="icon__text">%3$s</span></a>',
+				esc_attr( $v ),
+				rpa_icon( $k ),
 				esc_html( ucfirst( $k ) )
 			);
 		}
 	}
 
-	return '<div class="contact-me">' . wp_kses_post( $html ) . '</div>';
+	return '<div class="contact-me">' . $html . '</div>';
 }
 add_shortcode( 'contactme', 'rpa_shortcode_contact' );

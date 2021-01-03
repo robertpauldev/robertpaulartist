@@ -32,6 +32,26 @@ function rpa_og( $type ) {
 }
 
 /**
+ * Renders an SVG icon by its handle.
+ *
+ * @param string $icon The icon handle to output
+ * @return void
+ */
+function rpa_icon( string $icon ) {
+
+	// If no icon, return early
+	if ( empty( $icon ) ) {
+		return '';
+	}
+
+	// Get icon; add class
+	$_icon = file_get_contents( RPA_DIRECTORY_URI . '/assets/images/icons/icon_' . $icon . '.svg' );
+	$_icon = str_replace( '<svg ', '<svg class="icon icon--' . $icon . '" ', $_icon );
+
+	return $_icon;
+}
+
+/**
  * Returns a modified social network link via Yoast SEO.
  *
  * @param string $network The name of the social network (lowercase).
@@ -57,13 +77,13 @@ function rpa_social( $network ) {
 	if ( false === empty( $link ) ) {
 		return sprintf(
 			'<a class="social-icon" title="Find %1$s on %2$s" href="%3$s" target="_blank" rel="noopener">
-				<span class="social-icon__icon icon--%4$s"></span>
+				%4$s
 				<span class="social-icon__text">Find %1$s on %2$s</span>
 			</a>',
 			esc_attr( get_bloginfo( 'name' ) ),
 			esc_html( ucfirst( $network ) ),
 			esc_url( $link ),
-			esc_html( $network )
+			rpa_icon( $network )
 		);
 	}
 

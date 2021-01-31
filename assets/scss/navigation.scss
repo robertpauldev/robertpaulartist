@@ -2,6 +2,8 @@
 // Navigation //
 ////////////////
 
+@import 'core';
+
 // Navigation > Nav Bar
 .nav-bar {
 	margin: 0;
@@ -44,44 +46,5 @@
 		&:focus {
 			color: $colour_link_safe;
 		}
-	}
-}
-
-// Navigation > Post Nav
-.entry__nav {
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-	border-top: 1px solid #eee;
-	max-width: 620px;
-	font-family: $font_droid_serif;
-	font-size: 1.5rem;
-
-	// Navigation > Post Nav > Links
-	&-link {
-		display: block;
-		line-height: 130%;
-	
-		a {
-			text-decoration: none;
-			color: #000;
-			transition: color ease .12s;
-	
-			&:hover,
-			&:focus {
-				color: $colour_link_safe;
-			}
-		}
-	}
-
-	// Navigation > Post Nav > Labels
-	&-label {
-		display: block;
-		margin-bottom: .4rem;
-		font-family: $font_oswald;
-		font-size: 1.3rem;
-		text-transform: uppercase;
-		color: #555;
 	}
 }

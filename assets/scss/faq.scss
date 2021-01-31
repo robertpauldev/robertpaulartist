@@ -1,0 +1,38 @@
+//////////
+// FAQs //
+//////////
+
+@import 'core';
+
+.faq {
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:hover,
+	&:focus {
+		.faq__title {
+			&::-webkit-details-marker,
+			&::marker {
+				color: $colour_link;
+			}
+		}
+	}
+
+	// Typography > FAQs > Title
+	&__title {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		font-family: $font_oswald;
+		font-size: 2.4rem;
+		font-weight: 200;
+	}
+
+	// Typography > FAQs > Content
+	&__content {
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+		@include body-copy;
+	}
+}

@@ -1,0 +1,36 @@
+///////////////
+// Variables //
+///////////////
+
+// Variables > Grid
+$grid_max: 1280px;
+$grid_pad_mobile: 2rem;
+$grid_pad_desktop: 3rem;
+
+// Variables > Colours
+$colour_html: #fafafa;
+$colour_footer: #333;
+$colour_body_copy: #555;
+$colour_link: #e63b3b;
+$colour_link_safe: #ce0d0d;
+
+// Variables > Icons
+$icon_mobile: 4rem;
+$icon_desktop: 4.8rem;
+
+// Variables > Fonts
+$font_helvetica: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font_oswald: 'Oswald', $font_helvetica, sans-serif;
+$font_droid_serif: 'Droid Serif', 'Georgia', sans-serif;
+
+////////////
+// Mixins //
+////////////
+
+// Body Copy
+@mixin body-copy {
+	line-height: 150%;
+	font-family: $font_droid_serif;
+	font-size: 1.7rem;
+	color: $colour_body_copy;
+}

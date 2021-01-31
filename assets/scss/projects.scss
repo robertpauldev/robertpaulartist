@@ -2,6 +2,13 @@
 // Projects //
 //////////////
 
+@import 'core';
+
+.homepage-work {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
 .project {
 
 	// Project > Link
@@ -78,5 +85,87 @@
 	& > p {
 		font-size: inherit;
 		color: inherit;
+	}
+}
+
+// Supports: Grid
+@supports ((display: -ms-grid) or (display: grid)) {
+
+	.projects {
+		display: grid;
+		grid-gap: 2rem 2rem;
+	}
+
+	// <=480px
+	@media screen and (max-width: 480px) {
+		.projects {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	// >=481px && <=767px
+	@media screen and (min-width: 481px) and (max-width: 767px) {
+		.projects {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	// >=768px && <=1024px
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+		.projects {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	// <=1025px
+	@media screen and (min-width: 1025px) {
+		.projects {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+}
+
+// No Support: Grid
+@supports not ((display: -ms-grid) or (display: grid)) {
+
+	// Projects
+	.project {
+
+		&s {
+			margin-left: -1.5rem;
+			margin-right: -1.5rem;
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+		}
+
+		&__item {
+			float: left;
+			padding: 1.5rem;
+		}
+	}
+
+	// <=480px
+	@media screen and (max-width: 480px) {
+		.project__item {
+			float: none;
+		}
+	}
+
+	// >=481px && <=767px
+	@media screen and (min-width: 481px) and (max-width: 767px) {
+		.project__item {
+			width: 25%;
+		}
+	}
+
+	// >=768px
+	@media screen and (min-width: 768px) {
+		.project__item {
+			width: 16.66%;
+		}
 	}
 }

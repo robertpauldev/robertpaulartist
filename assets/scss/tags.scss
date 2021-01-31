@@ -1,0 +1,44 @@
+//////////
+// Tags //
+//////////
+
+@import 'core';
+
+.entry__tags {
+	margin-top: 2rem;
+	font-size: 1.6rem;
+	text-align: center;
+	color: $colour_body_copy;
+
+	// Icon
+	.icon-archive {
+		margin-right: .4rem;
+
+		&:before {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	// Links
+	a {
+		font-family: $font_oswald;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $colour_body_copy;
+		transition: all ease .12s;
+
+		// Hover
+		&:hover {
+			color: $colour_link_safe;
+		}
+	}
+
+	&-wrap {
+		display: inline-block;
+		padding: 1rem;
+		background-color: #fff;
+		border-radius: .4rem;
+	}
+}

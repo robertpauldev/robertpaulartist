@@ -20,7 +20,10 @@ get_header();
 		?>
 
 		<div class="entry">
-			<?php rpa_inline_style_tag( 'cms' ); ?>
+			<?php
+			rpa_inline_style_tag( 'post' );
+			rpa_inline_style_tag( 'cms' );
+			?>
 			<div class="entry__cms cms">
 				<?php if ( is_singular( 'page' ) ) : ?>
 				<header class="entry__header">

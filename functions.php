@@ -30,14 +30,21 @@ function rpa_setup() {
 add_action( 'after_setup_theme', 'rpa_setup' );
 
 /**
+ * Inlines critical styles in the <head />.
+ *
+ * @return void
+ */
+function rpa_critical_styles() {
+	rpa_inline_style_tag( 'critical' );
+}
+add_action( 'wp_head', 'rpa_critical_styles' );
+
+/**
  * Enqueues the styles and scripts used in the theme header.
  *
  * @return void
  */
 function rpa_header_scripts() {
-
-	// Enqueue styles
-	wp_enqueue_style( 'rpa-style', RPA_DIRECTORY_URI . '/assets/css/style.min.css', '', RPA_VERSION );
 
 	// Dequeue styles
 	wp_dequeue_style( 'wp-block-library' );

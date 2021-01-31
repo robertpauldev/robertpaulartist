@@ -159,3 +159,34 @@ function rpa_the_excerpt( $class = '' ) {
 
 	echo false === empty( $excerpt ) ? sprintf( '<p class="excerpt %1$s">%2$s</p>', esc_html( $class ), esc_html( $excerpt ) ) : '';
 }
+
+/**
+ * Sets custom `srcset` breakpoints for responsive mobile imagery.
+ *
+ * @param array $sources     The list of `srcset` image sources.
+ * @param array $size_array  An array of width and height values.
+ * @param string $image_src  The `src` of the image.
+ * @param array $image_meta  The image meta data as returned by 'wp_get_attachment_metadata()'.
+ * @param int $attachment_id The image attachment ID.
+ * @return void
+ */
+function rpa_feature_thumbnail_srcset( array $sources, array $size_array, string $image_src, array $image_meta, int $attachment_id ){
+
+	// Get image properties
+	$size = 'promo-square';
+	$breakpoint = 767;
+ 
+	// Get upload directory
+	$upload_dir = wp_upload_dir();
+	$url        = $upload_dir['baseurl'] . '/' . str_replace( basename( $image_meta['file'] ), $image_meta['sizes'][$size]['file'], $image_meta['file'] );
+ 
+	// Set new `scrset` breakpoint
+	$sources[ $breakpoint ] = [
+		'url'        => $url,
+		'descriptor' => 'w',
+		'value'      => $breakpoint,
+	];
+
+	return $sources;
+}
+add_filter( 'wp_calculate_image_srcset', 'rpa_feature_thumbnail_srcset', 10, 5 );

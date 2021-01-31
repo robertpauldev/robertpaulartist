@@ -20,6 +20,9 @@ update_post_thumbnail_cache( $projects );
 $projects = $projects->posts;
 
 if ( false === empty( $projects ) ) :
+
+	// 'Project' styles
+	rpa_inline_style_tag( 'projects' );
 ?>
 
 <div class="projects wrap--grid">

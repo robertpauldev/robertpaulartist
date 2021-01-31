@@ -14,6 +14,9 @@ $image   = get_field( 'promo_background_image' );
 $image   = $image['sizes']['promo'];
 
 if ( true === $toggle ) :
+
+	// 'Promo' styles
+	rpa_inline_style_tag( 'promo' );
 ?>
 
 <section class="promo" style="background-image: url(<?php echo esc_url( $image ); ?>);">

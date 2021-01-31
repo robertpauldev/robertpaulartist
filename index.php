@@ -20,6 +20,7 @@ get_header();
 		?>
 
 		<div class="entry">
+			<?php rpa_inline_style_tag( 'cms' ); ?>
 			<div class="entry__cms cms">
 				<?php if ( is_singular( 'page' ) ) : ?>
 				<header class="entry__header">
@@ -39,9 +40,7 @@ get_header();
 		?>
 		
 		<div class="homepage-work">
-			<?php
-			get_template_part( 'template-parts/template', 'projects' );
-			?>
+			<?php get_template_part( 'template-parts/template', 'projects' ); ?>
 		</div>
 
 		<?php

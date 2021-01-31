@@ -7,6 +7,7 @@ defined( 'ABSPATH' ) or die();
 ?>
 		
 		</main>
+		<?php rpa_inline_style_tag( 'footer' ); ?>
 		<footer class="footer">
 			<div class="wrap">
 				<div class="copyright">

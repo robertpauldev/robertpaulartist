@@ -9,6 +9,9 @@ $thumbnail = get_field( 'block_about_thumbnail' );
 $content   = get_field( 'block_about_content' );
 
 if ( false === empty( $content ) ) :
+
+	// 'About' styles
+	rpa_inline_style_tag( 'about' );
 ?>
 
 <section id="about" class="about">
@@ -21,6 +24,7 @@ if ( false === empty( $content ) ) :
 			<img class="about__thumbnail-media" alt="<?php echo esc_attr( $thumbnail['alt'] ); ?>" src="<?php echo esc_url( $thumbnail['sizes']['preview'] ); ?>" loading="lazy" />
 		</figure>
 		<?php endif; ?>
+		<?php rpa_inline_style_tag( 'cms' ); ?>
 		<div class="cms about__cms">
 			<?php echo wp_kses_post( $content ); ?>
 		</div>

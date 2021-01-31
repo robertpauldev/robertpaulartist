@@ -63,8 +63,7 @@ function rpa_footer_scripts() {
 	wp_enqueue_style( 'rpa-droid', 'https://fonts.googleapis.com/css?family=Droid+Serif&display=swap' );
 
 	// Enqueue scripts
-	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1' );
-	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.min.js', 'jquery', RPA_VERSION );
+	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script.js', [], RPA_VERSION );
 }
 add_action( 'wp_footer', 'rpa_footer_scripts' );
 
@@ -78,8 +77,8 @@ add_action( 'wp_footer', 'rpa_footer_scripts' );
  */
 function rpa_async_script( $tag, $handle, $src ) {
 
-	// jQuery / RPA JS
-	if ( 'jquery' === $handle || 'rpa-script' === $handle ) {
+	// RPA JS
+	if ( 'rpa-script' === $handle ) {
 		$tag = str_replace( ' src', ' async src', $tag );
 	}
 

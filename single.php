@@ -21,7 +21,8 @@ get_header();
 			<header class="entry__header">
 				<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
 				<time class="entry__date">
-					<span class="icon-pencil"></span><?php echo esc_html( get_the_date() ); ?>
+					<span class="entry__date-icon"><?php echo file_get_contents( RPA_DIRECTORY_URI . '/assets/images/icons/icon_pencil.svg' ); ?></span>
+					<span><?php echo esc_html( get_the_date() ); ?></span>
 				</time>
 			</header>
 			<?php

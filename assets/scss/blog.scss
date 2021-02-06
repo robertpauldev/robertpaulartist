@@ -2,6 +2,8 @@
 // Blog //
 //////////
 
+@import 'core';
+
 .single {
 	.content {
 		.wrap {
@@ -82,6 +84,119 @@
 		// Blog > Date > Icon
 		.icon-pencil {
 			margin-right: .4rem;
+		}
+	}
+}
+
+// <=767px
+@media only screen and (max-width: 767px) {
+	.blog {
+
+		// Blog > Grid
+		.wrap--grid {
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
+		}
+
+		// Blog > Title
+		&__title {
+			font-size: 2.0rem;
+		}
+	}
+}
+
+// >=768px
+@media only screen and (min-width: 768px) {
+	.blog {
+
+		// Blog > Grid
+		.wrap--grid {
+			padding-top: $grid_pad_desktop;
+			padding-bottom: $grid_pad_desktop;
+		}
+
+		// Blog > Title
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+}
+
+// Supports: Grid
+@supports ((display: -ms-grid) or (display: grid)) {
+
+	.blog {
+		.wrap--grid {
+			grid-gap: 3rem 3rem;
+		}
+	}
+
+	// <=480px
+	@media screen and (max-width: 480px) {
+		.blog {
+			.wrap--grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	// >=480px && <=767px
+	@media screen and (min-width: 481px) and (max-width: 767px) {
+		.blog {
+			.wrap--grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	// >=768px && <=1024px
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+		.blog {
+			.wrap--grid {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+
+	// <=1025px
+	@media screen and (min-width: 1025px) {
+		.blog {
+			.wrap--grid {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+	}
+}
+
+// No Support: Grid
+@supports not ((display: -ms-grid) or (display: grid)) {
+
+	.blog {
+
+		.wrap--grid {
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+		}
+
+		&-post {
+			margin-bottom: 3rem;
+		}
+	}
+
+	// >=768px
+	@media screen and (min-width: 768px) {
+		.blog-post {
+			float: left;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+			width: 33.33%;
+
+			&:nth-child(3n+1) {
+				clear: both;
+			}
 		}
 	}
 }

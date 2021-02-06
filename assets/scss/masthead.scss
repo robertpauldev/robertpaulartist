@@ -2,6 +2,8 @@
 // Masthead //
 //////////////
 
+@import 'core';
+
 // Masthead
 .masthead {
 	z-index: 1001;
@@ -51,5 +53,115 @@
 	
 	&__3 {
 		opacity: .5;
+	}
+}
+
+// <=767px
+@media only screen and (max-width: 767px) {
+
+	// Masthead
+	.masthead {
+		padding-top: $grid_pad_mobile;
+		padding-bottom: $grid_pad_mobile;
+		height: 184px;
+		text-align: center;
+
+		// Masthead > Scroll state
+		&.js-scrolling {
+			height: 64px;
+
+			// Masthead > Scroll state > Logo
+			.logo__svg {
+				margin-left: auto;
+				margin-right: auto;
+				width: 200px;
+			}
+		}
+	}
+
+	// Navigation
+	.nav {
+		margin-top: 2rem;
+		text-align: center;
+
+		&-bar {
+			display: inline-block;
+			line-height: 120%;
+			font-size: 2.4rem;
+	
+			li {
+				&:not(:last-child) {
+					&:after {
+						margin-left: 1rem;
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+// <=782px
+@media only screen and (max-width: 782px) {
+	.admin-bar {
+		.masthead {
+			top: 46px;
+		}
+	}
+}
+
+// >=768px
+@media only screen and (min-width: 768px) {
+
+	// Masthead
+	.masthead {
+		padding-top: $grid_pad_desktop;
+		padding-bottom: $grid_pad_desktop;
+		height: 150px;
+
+		// Masthead > Scroll state
+		&.js-scrolling {
+			padding-top: $grid_pad_mobile;
+			padding-bottom: $grid_pad_mobile;
+			height: 64px;
+
+			// Masthead > Scroll state > Logo
+			.logo__svg {
+				width: 200px;
+			}
+		}
+	}
+
+	// Masthead > Logo
+	.logo {
+		display: block;
+		float: left;
+	}
+
+	// Navigation
+	.nav {
+		float: right;
+
+		&-bar {
+			font-size: 2.6rem;
+
+			li {
+				&:not(:last-child) {
+					&:after {
+						margin-left: 1.5rem;
+						margin-right: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+// >=783px
+@media only screen and (min-width: 783px) {
+	.admin-bar {
+		.masthead {
+			top: 32px;
+		}
 	}
 }

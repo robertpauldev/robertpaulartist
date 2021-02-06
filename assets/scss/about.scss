@@ -2,6 +2,8 @@
 // About //
 ///////////
 
+@import 'core';
+
 // About
 .about {
 
@@ -56,5 +58,14 @@
 	// About > Thumbnail
 	&__thumbnail {
 		margin-bottom: 2rem;
+	}
+}
+
+// <=767px
+@media only screen and (max-width: 767px) {
+	.about__cms {
+		h2 {
+			text-align: center;
+		}
 	}
 }

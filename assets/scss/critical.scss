@@ -1,0 +1,59 @@
+//////////////
+// Critical //
+//////////////
+
+@import 'reset';
+@import 'core';
+@import 'typography';
+
+html {
+	height: 100%;
+	background-color: $colour_footer;
+}
+
+body {
+	background-color: $colour_html;
+	font-family: $font_helvetica;
+}
+
+// Wrap
+.wrap {
+	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+	transition: padding ease .2s;
+
+	// Wrap > Grid
+	&--grid {
+		display: grid;
+	}
+}
+
+// <=767px
+@media only screen and (max-width: 767px) {
+
+	body {
+		padding-top: 184px;
+	}
+
+	// Grid
+	.wrap {
+		padding-left: $grid_pad_mobile;
+		padding-right: $grid_pad_mobile;
+	}
+}
+
+// >=768px
+@media only screen and (min-width: 768px) {
+
+	body {
+		padding-top: 150px;
+	}
+
+	// Grid
+	.wrap {
+		padding-left: $grid_pad_desktop;
+		padding-right: $grid_pad_desktop;
+		max-width: $grid_max;
+	}
+}

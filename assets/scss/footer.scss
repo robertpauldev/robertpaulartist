@@ -2,6 +2,8 @@
 // Footer //
 ////////////
 
+@import 'core';
+
 .footer {
 	background-color: $colour_footer;
 	color: #fff;
@@ -53,3 +55,32 @@
 	color: #aaa;
 }
 
+// <=767px
+@media only screen and (max-width: 767px) {
+
+	// Footer
+	.footer {
+		padding-top: $grid_pad_mobile;
+		padding-bottom: $grid_pad_mobile;
+	}
+
+	// Footer > Copyright
+	.copyright {
+		margin-bottom: 2rem;
+	}
+}
+
+// >=768px
+@media only screen and (min-width: 768px) {
+	.footer {
+		padding-top: $grid_pad_desktop;
+		padding-bottom: $grid_pad_desktop;
+
+		// Footer > Wrap
+		.wrap {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+		}
+	}
+}

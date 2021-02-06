@@ -11,15 +11,18 @@ get_header();
 <section class="wrap">
 	<?php while ( have_posts() ) : the_post(); ?>
 
+	<?php rpa_inline_style_tag( 'post' ); ?>
 	<article class="entry">
 		<figure class="entry__thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</figure>
+		<?php rpa_inline_style_tag( 'cms' ); ?>
 		<div class="entry__cms cms">
 			<header class="entry__header">
 				<h1 class="entry__title"><?php echo esc_html( get_the_title() ); ?></h1>
 				<time class="entry__date">
-					<span class="icon-pencil"></span><?php echo esc_html( get_the_date() ); ?>
+					<span class="entry__date-icon"><?php echo file_get_contents( RPA_DIRECTORY_URI . '/assets/images/icons/icon_pencil.svg' ); ?></span>
+					<span><?php echo esc_html( get_the_date() ); ?></span>
 				</time>
 			</header>
 			<?php
@@ -37,6 +40,7 @@ get_header();
 			}
 			?>
 		</div>
+		<?php rpa_inline_style_tag( 'pagination' ); ?>
 		<div class="entry__nav clearfix">
 			<?php
 				$next_post = get_next_post();

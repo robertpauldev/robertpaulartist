@@ -1,97 +1,102 @@
-/*global $, jQuery*/
-( function ( $ ) {
-	
-	'use strict';
+/**
+ * Videos
+ */
 
-	$( document ).ready( function () {
+// Get iframes
+let iframe = document.querySelectorAll( '.cms iframe' );
 
-		/**
-		 * Videos
-		 */
+// If iframe(s) in content
+if ( iframe.length > 0 ) {
 
-		// Elements
-		let iframe = $( '.cms iframe' );
+	// Loop through iframes
+	iframe.forEach(
+		( item, index ) => {
 
-		// If iframe(s) in content
-		if ( iframe.length > 0 ) {
+			let thisIframe = iframe[ index ];
 
-			// Loop through iframes
-			iframe.each( function () {
+			// Get iframe src
+			let thisSrc = thisIframe.attributes.src.nodeValue;
 
-				// Get iframe src
-				let thisSrc = $( this ).attr( 'src' );
+			// If YouTube or Vimeo video
+			if ( thisSrc !== undefined && ( ~thisSrc.indexOf( 'youtube.com' ) || ~thisSrc.indexOf( 'vimeo.com' ) ) ) {
 
-				// If YouTube or Vimeo video
-				if ( thisSrc !== undefined && ( ~thisSrc.indexOf( 'youtube.com' ) || ~thisSrc.indexOf( 'vimeo.com' ) ) ) {
+				// Get video proportions
+				let thisProps = {
+					width:  thisIframe.attributes.width.nodeValue,
+					height: thisIframe.attributes.height.nodeValue,
+				};
 
-					// Get video proportions
-					let thisProps = {
-						width:  $( this ).width(),
-						height: $( this ).height(),
-					};
+				// Set video ratio
+				thisProps.ratio = ( ( thisProps.height / thisProps.width ) * 100 ).toFixed( 2 );
 
-					// Set video ratio
-					thisProps.ratio = ( ( thisProps.height / thisProps.width ) * 100 ).toFixed( 2 );
+				// Remove iframe atts
+				thisIframe.removeAttribute( 'width' );
+				thisIframe.removeAttribute( 'height' );
 
-					// Remove iframe atts; add ratio wrapper
-					$( this ).removeAttr( 'width height' );
-					$( this ).wrap( '<div class="video" style="padding-bottom: ' + thisProps.ratio + '%;" />');
-				}
-			} );
+				// Create ratio wrapper
+				let thisHtml = thisIframe.outerHTML;
+				let newHtml  = '<div class="video" style="padding-bottom: ' + thisProps.ratio + '%;">' + thisHtml + '</div>';
+
+				// Wrap iframe
+				thisIframe.outerHTML = newHtml;
+			}
 		}
+	);
+}
 
-		/**
-		 * Scrolling
-		 */
+/**
+ * Scrolling
+ */
 
-		// Calculate rounded-up scroll value
-		function roundScroll( toRound, roundTo ) {
-			return Math.round( toRound / roundTo ) * roundTo;
-		}
+// Calculate rounded-up scroll value
+function roundScroll( toRound, roundTo ) {
+	return Math.round( toRound / roundTo ) * roundTo;
+}
 
-		// Elements
-		let siteHeader  = $( '.masthead' );
-		let siteContent = $( '.content' );
+// Elements
+let siteHeader  = document.querySelectorAll( '.masthead' );
+let siteContent = document.querySelectorAll( '.content' );
 
-		// Values
-		let scrollTimer;
-		let lastScrollTop    = 0;
-		let scrollDelta      = 1;
-		let siteHeaderHeight = siteHeader.outerHeight();
+// Values
+let scrollTimer;
+let lastScrollTop    = 0;
+let scrollDelta      = 1;
+let siteHeaderHeight = siteHeader[0].offsetHeight;
 
-		// On scroll
-		$( window ).on( 'scroll', function () {
+// On scroll
+window.onscroll = function () {
 
-			// Stop timer
-			clearTimeout( scrollTimer );
+	// Stop timer
+	clearTimeout( scrollTimer );
 
-			// Start timer
-			scrollTimer = setTimeout( function () {
+	// Start timer
+	scrollTimer = setTimeout(
+		function () {
+			
+			// Values
+			let scrollPosition = window.scrollY;
+			let roundScrollPos = roundScroll( scrollPosition, scrollDelta );
 
-				// Values
-				let scrollPosition = $( window ).scrollTop();
-				let roundScrollPos = roundScroll( scrollPosition, scrollDelta );
+			// Make sure they scroll more than delta
+			if ( Math.abs( lastScrollTop - roundScrollPos ) <= scrollDelta ) {
+				return;
+			}
 
-				// Make sure they scroll more than delta
-				if ( Math.abs( lastScrollTop - roundScrollPos ) <= scrollDelta ) {
-					return;
-				}
+			// Scroll Down / Up
+			if ( scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight ) {
+				siteHeader[0].classList.add( 'js-scrolling' );
+				siteContent[0].classList.add( 'js-scrolling' );
+			}
 
-				// Scroll Down / Up
-				if ( scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight ) {
-					siteHeader.add( siteContent ).addClass( 'js-scrolling' );
-				}
+			// Top of page
+			if ( scrollPosition <= siteHeaderHeight ) {
+				siteHeader[0].classList.remove( 'js-scrolling' );
+				siteContent[0].classList.remove( 'js-scrolling' );
+			}
 
-				// Top of page
-				if ( scrollPosition <= siteHeaderHeight ) {
-					siteHeader.add( siteContent ).removeClass( 'js-scrolling' );
-				}
-
-				// Update last scroll position
-				lastScrollTop = roundScrollPos;
-
-			}, 100 );
-		} );
-	} );
-
-}( jQuery ) );
+			// Update last scroll position
+			lastScrollTop = roundScrollPos;
+		},
+		100
+	);
+}

@@ -190,3 +190,28 @@ function rpa_feature_thumbnail_srcset( array $sources, array $size_array, string
 	return $sources;
 }
 add_filter( 'wp_calculate_image_srcset', 'rpa_feature_thumbnail_srcset', 10, 5 );
+
+/**
+ * Adds an inline <style /> tag for optimised style loading.
+ *
+ * @param string $file The file name to inline.
+ * @return void
+ */
+function rpa_inline_style_tag( string $file ) {
+
+	// No file, no tag!
+	if ( empty( $file ) ) {
+		return '';
+	}
+
+	// Get styles
+	$file = file_get_contents( RPA_DIRECTORY_URI . '/assets/css/' . $file . '.min.css' );
+
+	// No styles, no tag!
+	if ( empty( $file ) ) {
+		return '';
+	}
+
+	// Inline style
+	echo '<style type="text/css">' . $file . '</style>';
+}

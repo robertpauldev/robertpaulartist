@@ -6,11 +6,19 @@ defined( 'ABSPATH' ) or die();
  */
 
 get_header();
+
+// 'Home' styles
+rpa_inline_style_tag( 'home' );
 ?>
 
 <section class="wrap wrap--grid">
 	<?php
 	if ( have_posts() ) {
+
+		// 'Blog' styles
+		rpa_inline_style_tag( 'blog' );
+
+		// Loop blog posts
 		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'template-parts/template', 'blog' );

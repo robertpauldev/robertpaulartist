@@ -17,7 +17,8 @@ defined( 'ABSPATH' ) or die();
 		<?php rpa_the_excerpt( 'blog__excerpt' ); ?>
 		<time class="blog__date">
 			<span class="blog__date-wrap">
-				<span class="icon-pencil"></span><?php echo esc_html( get_the_date() ); ?>
+				<span class="entry__date-icon"><?php echo file_get_contents( RPA_DIRECTORY_URI . '/assets/images/icons/icon_pencil.svg' ); ?></span>
+				<span><?php echo esc_html( get_the_date() ); ?></span>
 			</span>
 		</time>
 	</figure>

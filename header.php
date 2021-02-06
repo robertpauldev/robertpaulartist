@@ -32,13 +32,20 @@ defined( 'ABSPATH' ) or die();
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<?php rpa_inline_style_tag( 'masthead' ); ?>
 		<header class="masthead">
 			<div class="wrap clearfix">
 				<h1 class="logo__wrap">
 					<a title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="logo" href="<?php echo esc_url( home_url() ); ?>"><?php get_template_part( 'template-parts/template', 'logo' ); ?></a>
 				</h1>
-				<?php rpa_nav( '', 'nav', 'nav-bar' ); ?>
+				<?php
+				// Navigation styles
+				rpa_inline_style_tag( 'navigation' );
+
+				// Navigation
+				rpa_nav( '', 'nav', 'nav-bar' );
+				?>
 			</div>
 		</header>
-		<main class="content-main">
+		<main class="content">
 			<?php get_template_part( 'template-parts/template', 'promo' ); ?>

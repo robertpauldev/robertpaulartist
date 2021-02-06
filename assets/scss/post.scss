@@ -37,14 +37,8 @@
 		text-transform: uppercase;
 
 		// Entry > Date > Icon
-		.icon-pencil {
-			margin-top: -.5rem;
-			margin-right: .5rem;
-
-			&:before {
-				width: 16px;
-				height: 16px;
-			}
+		&-icon {
+			@include svg-icon;
 		}
 	}
 

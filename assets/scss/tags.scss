@@ -11,17 +11,15 @@
 	color: $colour_body_copy;
 
 	// Icon
-	.icon-archive {
-		margin-right: .4rem;
-
-		&:before {
-			width: 16px;
-			height: 16px;
-		}
+	&-icon {
+		@include svg-icon;
+		vertical-align: middle;
 	}
 
 	// Links
 	a {
+		display: inline-block;
+		vertical-align: middle;
 		font-family: $font_oswald;
 		font-size: 1.4rem;
 		text-transform: uppercase;

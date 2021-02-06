@@ -77,13 +77,19 @@
 		// Blog > Date > Wrapper
 		&-wrap {
 			display: inline-block;
-			padding-top: .4rem;
+			padding-top: .75rem;
 			border-top: 1px solid #eee;
 		}
 
 		// Blog > Date > Icon
-		.icon-pencil {
-			margin-right: .4rem;
+		.entry__date-icon {
+			@include svg-icon;
+			margin-right: .5rem;
+			vertical-align: middle;
+
+			+ span {
+				vertical-align: middle;
+			}
 		}
 	}
 }

@@ -6,6 +6,10 @@ defined( 'ABSPATH' ) or die();
  */
 
 get_header();
+
+// Get low quality preview
+$lqip = get_the_post_thumbnail_url( get_the_ID(), 'lqip' );
+$lqip = base64_encode( file_get_contents( $lqip ) );
 ?>
 
 <section class="wrap">
@@ -13,7 +17,7 @@ get_header();
 
 	<?php rpa_inline_style_tag( 'post' ); ?>
 	<article class="entry">
-		<figure class="entry__thumbnail">
+		<figure class="entry__thumbnail" style="min-height: 47vw; background: url(data:image/gif;base64,<?php echo $lqip; ?> ) center center / cover no-repeat;">
 			<?php the_post_thumbnail(); ?>
 		</figure>
 		<?php rpa_inline_style_tag( 'cms' ); ?>

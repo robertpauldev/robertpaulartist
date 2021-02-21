@@ -26,6 +26,7 @@ function rpa_setup() {
 	add_image_size( 'promo-square', 800, 800, true );
 	add_image_size( 'square', 300, 300, true );
 	add_image_size( 'preview', 600, 338, true );
+	add_image_size( 'lqip', 80, 45, true );
 }
 add_action( 'after_setup_theme', 'rpa_setup' );
 

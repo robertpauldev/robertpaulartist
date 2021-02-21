@@ -11,7 +11,18 @@ $title   = get_field( 'promo_title' );
 $content = get_field( 'promo_content', false, false );
 $button  = get_field( 'promo_button' );
 $image   = get_field( 'promo_background_image' );
-$image   = $image['sizes']['promo'];
+
+// Get image
+if ( false === empty( $image ) ) {
+
+	// Get image size
+	$image = $image['sizes']['promo'];
+
+	// Set up background image
+	if ( false === empty( $image ) ) {
+		$image = 'style="background-image: url(' . esc_url( $image ) . ');"';
+	}
+}
 
 if ( true === $toggle ) :
 
@@ -19,7 +30,7 @@ if ( true === $toggle ) :
 	rpa_inline_style_tag( 'promo' );
 ?>
 
-<section class="promo" style="background-image: url(<?php echo esc_url( $image ); ?>);">
+<section class="promo" <?php echo wp_kses_post( $image ); ?>>
 	<a class="promo__link" title="<?php echo esc_attr( $button['title'] ); ?>" href="<?php echo esc_url( $button['url'] ); ?>">
 		<span class="promo__wrap wrap">
 			<?php

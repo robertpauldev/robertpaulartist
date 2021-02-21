@@ -21,7 +21,7 @@ if ( false === empty( $content ) ) :
 		</h2>
 		<?php if ( false === empty( $thumbnail ) ) : ?>
 		<figure class="about__thumbnail">
-			<img class="about__thumbnail-media" alt="<?php echo esc_attr( $thumbnail['alt'] ); ?>" src="<?php echo esc_url( $thumbnail['sizes']['preview'] ); ?>" loading="lazy" />
+			<img class="about__thumbnail-media" alt="<?php echo esc_attr( $thumbnail['alt'] ); ?>" src="<?php echo esc_url( $thumbnail['sizes']['preview'] ); ?>" width="600" height="338" loading="lazy" />
 		</figure>
 		<?php endif; ?>
 		<?php rpa_inline_style_tag( 'cms' ); ?>

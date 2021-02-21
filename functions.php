@@ -44,6 +44,11 @@ function rpa_header_scripts() {
 
 	// Enqueue script
 	wp_enqueue_script( 'rpa-script', RPA_DIRECTORY_URI . '/assets/js/script' . $min . '.js', [], RPA_VERSION );
+
+	// Deregister embed script on non-posts
+	if ( false === is_singular( 'post' ) ) {
+		wp_deregister_script( 'wp-embed' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'rpa_header_scripts' );
 

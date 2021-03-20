@@ -13,7 +13,6 @@
 	&:hover,
 	&:focus {
 		.faq__title {
-			&::-webkit-details-marker,
 			&::marker {
 				color: $colour_link;
 			}

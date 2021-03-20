@@ -5,6 +5,7 @@
 @import 'core';
 
 .footer {
+	content-visibility: auto;
 	background-color: $colour_footer;
 	color: #fff;
 
@@ -50,7 +51,7 @@
 // Footer > Copyright
 .copyright {
 	display: inline-block;
-	font-family: $font_droid_serif;
+	font-family: $font_serif;
 	font-size: 1.5rem;
 	color: #aaa;
 }

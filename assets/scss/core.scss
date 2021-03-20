@@ -21,7 +21,7 @@ $icon_desktop: 4.8rem;
 // Variables > Fonts
 $font_helvetica: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $font_oswald: 'Oswald', $font_helvetica, sans-serif;
-$font_droid_serif: 'Droid Serif', 'Georgia', sans-serif;
+$font_serif: Georgia, sans-serif;
 
 ////////////
 // Mixins //
@@ -30,7 +30,7 @@ $font_droid_serif: 'Droid Serif', 'Georgia', sans-serif;
 // Body Copy
 @mixin body-copy {
 	line-height: 150%;
-	font-family: $font_droid_serif;
+	font-family: $font_serif;
 	font-size: 1.7rem;
 	color: $colour_body_copy;
 }

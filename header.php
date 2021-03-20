@@ -30,7 +30,6 @@ defined( 'ABSPATH' ) or die();
 
 		<!-- Google Fonts -->
 		<link rel="stylesheet" type="text/css" id="rpa-oswald" href="https://fonts.googleapis.com/css2?family=Oswald%3Awght%40200..700&#038;display=swap&#038;ver=5.6.1" media="print" onload='this.media="all"; this.onload=null;' />
-		<link rel="stylesheet" type="text/css" id="rpa-droid" href="https://fonts.googleapis.com/css?family=Droid+Serif&#038;display=swap&#038;ver=5.6.1" media="print" onload='this.media="all"; this.onload=null;' />
 	</head>
 	<body <?php body_class(); ?>>
 		<?php rpa_inline_style_tag( 'masthead' ); ?>

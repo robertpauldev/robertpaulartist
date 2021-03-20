@@ -17,7 +17,7 @@ $lqip = base64_encode( file_get_contents( $lqip ) );
 
 	<?php rpa_inline_style_tag( 'post' ); ?>
 	<article class="entry">
-		<figure class="entry__thumbnail" style="min-height: 47vw; background: url(data:image/gif;base64,<?php echo $lqip; ?> ) center center / cover no-repeat;">
+		<figure class="entry__thumbnail" style="background: url(data:image/gif;base64,<?php echo $lqip; ?> ) center center / cover no-repeat;">
 			<?php the_post_thumbnail(); ?>
 		</figure>
 		<?php rpa_inline_style_tag( 'cms' ); ?>

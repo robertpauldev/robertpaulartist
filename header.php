@@ -5,11 +5,10 @@ defined( 'ABSPATH' ) or die();
  * Template: Header
  */
 ?>
-
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<title><?php echo esc_html( get_bloginfo( 'name' ) ); ?></title>
+		<?php wp_head(); ?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
@@ -28,8 +27,6 @@ defined( 'ABSPATH' ) or die();
 		  gtag('js', new Date());
 		  gtag('config', 'UA-113917322-1');
 		</script>
-
-		<?php wp_head(); ?>
 
 		<!-- Google Fonts -->
 		<link rel="stylesheet" type="text/css" id="rpa-oswald" href="https://fonts.googleapis.com/css2?family=Oswald%3Awght%40200..700&#038;display=swap&#038;ver=5.6.1" media="print" onload='this.media="all"; this.onload=null;' />

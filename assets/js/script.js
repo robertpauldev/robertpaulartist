@@ -62,6 +62,7 @@ let scrollTimer;
 let lastScrollTop    = 0;
 let scrollDelta      = 1;
 let siteHeaderHeight = siteHeader[0].offsetHeight;
+let scrollClass      = 'js-scrolling';
 
 // On scroll
 window.onscroll = function () {
@@ -72,7 +73,7 @@ window.onscroll = function () {
 	// Start timer
 	scrollTimer = setTimeout(
 		function () {
-			
+
 			// Values
 			let scrollPosition = window.scrollY;
 			let roundScrollPos = roundScroll( scrollPosition, scrollDelta );
@@ -84,14 +85,14 @@ window.onscroll = function () {
 
 			// Scroll Down / Up
 			if ( scrollPosition > lastScrollTop && scrollPosition > siteHeaderHeight ) {
-				siteHeader[0].classList.add( 'js-scrolling' );
-				siteContent[0].classList.add( 'js-scrolling' );
+				siteHeader[0].classList.add( scrollClass );
+				siteContent[0].classList.add( scrollClass );
 			}
 
 			// Top of page
 			if ( scrollPosition <= siteHeaderHeight ) {
-				siteHeader[0].classList.remove( 'js-scrolling' );
-				siteContent[0].classList.remove( 'js-scrolling' );
+				siteHeader[0].classList.remove( scrollClass );
+				siteContent[0].classList.remove( scrollClass );
 			}
 
 			// Update last scroll position

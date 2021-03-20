@@ -20,6 +20,9 @@ require_once 'inc/template-tags.php';
  */
 function rpa_setup() {
 
+	// Theme Supports
+	add_theme_support( 'title-tag' );
+
 	// Thumbnails
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'promo', 1920, 300, true );

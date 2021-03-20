@@ -2,10 +2,6 @@
 defined( 'ABSPATH' ) or die();
 
 /**
- * Options
- */
-
-/**
  * Sets up the Options page.
  *
  * @return void
